@@ -1,0 +1,1306 @@
+interactions:
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
+      information.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Search for ''tesla revenue 2022''
+      and write the revenue of Tesla in 2022 to a file called output.txt. You should
+      write the number without commas and you should not use signs like B for billion
+      and M for million.\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      google: Google Search, args: \"query\": \"<query>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3379'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6ySwW7bMAyG73sKgmclSJymWXwrsEOyHXrphg3zUCgKbau1RE+il3SB331wHHdB
+        imEDuislfv9HiQe0W0zRlFqMq6vR4sPPT1eSP6zurubLenV9e/P+3Wf9JZfV7W6PCnnzQEZOHWPD
+        rq5ILHtUaAJpoS2m0+u382S2mCWJQsdbqjDFopbRbDwfSRM2PJrMJlNU2ERdEKYHrAO7Wu6FH8lH
+        TBfzqcLf7Of6dLFUKCy6ei4tZ5NWoSnZGoqYfj2gozhgA1eEKeoYbRTtpZNkL+S7AQ6ZBwDIUEpu
+        ilJihimciqcD2ktXzHANnmgLwhBJB1NCzgGkJAj0g3xDwDncUaw0WA/JJEnGsAajPTSRjvcK5qIi
+        MOyc9i9BNoL1OQenu3nHGapzj0A6sre+GGR2tqr+Ff1nR9iQ0R3FCth4vOo4ClCeW2PJC+z0U8fL
+        bcf9i2Rdad/7jeDja9Uu4SZYscZGd/kd5GMTujAtsAbtoInWF0e24RDIyBApFFw8m4bOh4GeeBkb
+        a9KP//fRxxn2Ca0a9u8EebF+Xjvqw/u0CzkdisuV7Q++NxSe+kY5Rg8uXf4Qf1Q4mWS+xVZhbr2N
+        5X2/bZhiFK5RofVb2mM6ab+1b34BAAD//wMAICAryC4EAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7ce2b8edc81622c4-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 28 May 2023 01:28:53 GMT
+      Function-Execution-Id:
+      - bbqehw6oisfk
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '11220'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - c659399da8f52a41461b8f71600c6995;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86493'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.338s
+      X-Request-Id:
+      - b0efd4eb84d040ac066df2c2ca5a2a32
+    status:
+      code: 200
+      message: OK
+- request:
+    body: q=tesla+revenue+2022
+    headers:
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/x-www-form-urlencoded
+    method: POST
+    uri: https://duckduckgo.com/
+  response:
+    body:
+      string: '<!DOCTYPE html><html lang="en-US" class="no-js has-zcm  no-theme is-link-style-exp
+        is-link-order-exp is-link-breadcrumb-exp is-related-search-exp is-vertical-tabs-exp"><head><meta
+        name="description" content="DuckDuckGo. Privacy, Simplified."><meta name="darkreader-lock"><meta
+        http-equiv="content-type" content="text/html; charset=utf-8"><title>tesla
+        revenue 2022 at DuckDuckGo</title><meta name="apple-itunes-app" content="app-id=663592361,
+        app-argument=https://duckduckgo.com/&smartbanner=1"><link rel="stylesheet"
+        href="/s2159.css" type="text/css"><link rel="stylesheet" href="/r2159.css"
+        type="text/css"><link rel="stylesheet" href="/wbml2159.css" type="text/css"
+        data-handle-css-custom-properties="true"><meta name="robots" content="noindex,nofollow"><meta
+        name="referrer" content="origin"><meta name="apple-mobile-web-app-title" content="tesla
+        revenue 2022"><link rel="preconnect" href="https://links.duckduckgo.com"><link
+        rel="preload" href="/font/ProximaNova-Reg-webfont.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous" /><link rel="preload" href="/font/ProximaNova-Sbold-webfont.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous" /><link rel="shortcut
+        icon" href="/favicon.ico" type="image/x-icon" /><link id="icon60" rel="apple-touch-icon"
+        href="/assets/icons/meta/DDG-iOS-icon_60x60.png?v=2"/><link id="icon76" rel="apple-touch-icon"
+        sizes="76x76" href="/assets/icons/meta/DDG-iOS-icon_76x76.png?v=2"/><link
+        id="icon120" rel="apple-touch-icon" sizes="120x120" href="/assets/icons/meta/DDG-iOS-icon_120x120.png?v=2"/><link
+        id="icon152" rel="apple-touch-icon" sizes="152x152" href="/assets/icons/meta/DDG-iOS-icon_152x152.png?v=2"/><link
+        rel="image_src" href="/assets/icons/meta/DDG-icon_256x256.png"/><script type="text/javascript">var
+        baseLinkUrl="links.duckduckgo.com",baseLinkEnvName="prod",testTrafficType=0,settings_js_version="s2490.js",is_twitter="",rpl=0,fq=0,fd=1,it=0,iqa=0,iqbi=0,iqm=0,iqs=0,iqp=0,iqq=0,qw=3,dl="en",ct="US",iqd=0,r1hc=0,r1c=0,r2c,r3c=0,rq="tesla%20revenue%202022",rqd="tesla
+        revenue 2022",rfq=0,rt="",ra="",rv="",rad="",rds=30,rs=0,spice_version="2000",spice_paths="{}",locale="en_US",settings_url_params={},rl="us-en",shfl=1,shrl="us-en",rlo=0,df="",ds="",sfq="",iar="",vqd="4-290362423543623584831872993136734154523",safe_ddg=0,show_covid=0,ti,tig,y,y1,didNotLoadScripts=[];function
+        handleScriptError(el) { if (el && el.getAttribute) { window.didNotLoadScripts.push(el.getAttribute(''src''));
+        }}</script><meta name="viewport" content="width=device-width, initial-scale=1"
+        /><meta name="HandheldFriendly" content="true" /><meta name="apple-mobile-web-app-capable"
+        content="no" /><script>var backendExperimentAssignments = {"3adexp":{"active":false,"assignedVariant":null},"biaexp":{"active":true,"assignedVariant":"b"},"dexp2":{"active":true,"assignedVariant":"f"},"eclsexp":{"active":false,"assignedVariant":null},"eslexp":{"active":false,"assignedVariant":null},"filtdistexp":{"active":false,"assignedVariant":null},"infoboxexp":{"active":false,"assignedVariant":null},"litexp":{"active":true,"assignedVariant":"c"},"msnexp":{"active":false,"assignedVariant":null},"msvrtexp":{"active":true,"assignedVariant":"b"},"qfcls":{"active":false,"assignedVariant":null},"related":{"active":false,"assignedVariant":null},"related_click":{"active":false,"assignedVariant":null},"related_done":{"active":false,"assignedVariant":null},"related_requery":{"active":false,"assignedVariant":null},"rspexp2":{"active":false,"assignedVariant":null},"svpadexp":{"active":false,"assignedVariant":null},"svpamexp":{"active":false,"assignedVariant":null},"tqcls":{"active":false,"assignedVariant":null},"useclsexp":{"active":false,"assignedVariant":null},"videxp":{"active":false,"assignedVariant":null}},
+        backendRandomNumbers = {"ads":0.109626494096602};</script><script>var _bootstrapBackendData={"_region":"","hasExtension":false,"hostRegion":"usc","isDesktop":true,"isMobile":false,"showAutoAds":true,"showProductAds":true};</script><script
+        src="/b210.js" onerror="handleScriptError(this)"></script><script> function
+        DeepPreloaderV2(scriptId, linkId, timeout) { this.scriptId = scriptId; this.linkId
+        = linkId; this.status = ''pending''; this.afterTimeoutStatus = ''pending'';
+        this.startFetchTime = Date.now(); this.endFetchTime = null; this._onLoad =
+        null; this._onError = null; this._onTimeout = null; if (timeout > 0) { this._timeoutId
+        = setTimeout( function () { this.status = ''timeout''; if (this._onTimeout)
+        { this._onTimeout(); } this._onLoad = null; this._onError = null; this._onTimeout
+        = null; }.bind(this), timeout ); } } DeepPreloaderV2.prototype.addEventListener
+        = function (type, cb) { switch (type) { case ''load'': this._onLoad = cb;
+        break; case ''error'': this._onError = cb; break; case ''timeout'': this._onTimeout
+        = cb; break; case ''loadAfterTimeout'': this._onLoadAfterTimeout = cb; break;
+        case ''errorAfterTimeout'': this._onErrorAfterTimeout = cb; break; } }; DeepPreloaderV2.prototype._cleanup
+        = function () { this._onLoad = null; this._onError = null; this._onTimeout
+        = null; this._onLoadAfterTimeout = null; this._onErrorAfterTimeout = null;
+        var script = document.getElementById(this.scriptId); if (script) { script.onload
+        = null; script.onerror = null; document.head.removeChild(script); script =
+        null; } var link = document.getElementById(this.linkId); if (link) { document.head.removeChild(link);
+        link = null; } }; DeepPreloaderV2.prototype.onLoad = function () { clearTimeout(this._timeoutId);
+        this.endFetchTime = Date.now(); var duration = this.endFetchTime - this.startFetchTime;
+        if (this.status === ''timeout'') { this.afterTimeoutStatus = ''success'';
+        if (this._onLoadAfterTimeout) { this._onLoadAfterTimeout(duration); } } else
+        { this.status = ''success''; if (this._onLoad) { this._onLoad(duration); }
+        } this._cleanup(); }; DeepPreloaderV2.prototype.onError = function () { clearTimeout(this._timeoutId);
+        this.endFetchTime = Date.now(); var duration = this.endFetchTime - this.startFetchTime;
+        if (this.status === ''timeout'') { this.afterTimeoutStatus = ''error''; if
+        (this._onErrorAfterTimeout) { this._onErrorAfterTimeout(duration); } } else
+        { this.status = ''error''; if (this._onError) { this._onError(duration); }
+        } this._cleanup(); }; window.deepPreloader = new DeepPreloaderV2(''deep_preload_script'',
+        ''deep_preload_link'', 4750); window.deepPreloaderOnLoad = window.deepPreloader.onLoad.bind(window.deepPreloader);
+        window.deepPreloaderOnError = window.deepPreloader.onError.bind(window.deepPreloader);</script><link
+        id="deep_preload_link" rel="preload" as="script" href="https://links.duckduckgo.com/d.js?q=tesla%20revenue%202022&l=us-en&s=0&dl=en&ct=US&vqd=4-290362423543623584831872993136734154523&p_ent=&ex=-1&sp=1&dfrsp=1&bpa=1&baa=1&wrap=1&biaexp=b&litexp=c&msvrtexp=b"><script
+        async id="deep_preload_script" src="https://links.duckduckgo.com/d.js?q=tesla%20revenue%202022&l=us-en&s=0&dl=en&ct=US&vqd=4-290362423543623584831872993136734154523&p_ent=&ex=-1&sp=1&dfrsp=1&bpa=1&baa=1&wrap=1&biaexp=b&litexp=c&msvrtexp=b"
+        onload="window.deepPreloaderOnLoad()" onerror="window.deepPreloaderOnError()"></script></head><body
+        class="body--serp"><input id="state_hidden" name="state_hidden" type="text"
+        size="1"><!-- Ignore this input please --><div id="spacing_hidden_wrapper"><div
+        id="spacing_hidden"></div></div><script type="text/javascript" src="/lib/l132.js"
+        onerror="handleScriptError(this)"></script><script type="text/javascript"
+        src="/locale/en_US/duckduckgo14.js" onerror="handleScriptError(this)"></script><script
+        type="text/javascript" src="/util/u715.js" onerror="handleScriptError(this)"></script><script
+        type="text/javascript">DDG.Utils.WebVitals.reportWebVitals(DDG.pixel)</script><script
+        type=module>!function(e,t,n){!("noModule"in(t=e.createElement("script")))&&"onbeforeload"in
+        t&&(n=!1,e.addEventListener("beforeload",function(e){if(e.target===t)n=!0;else
+        if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()},!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove())}(document)</script><script
+        src="/wbvm18.js" type="module" onerror="handleScriptError(this)"></script><script
+        src="/wbmm124.js" type="module" onerror="handleScriptError(this)"></script><script
+        src="/wbvl20.js" nomodule defer onerror="handleScriptError(this)"></script><script
+        src="/wbml124.js" nomodule defer onerror="handleScriptError(this)"></script><script
+        type="text/javascript" src="/d3216.js" onerror="handleScriptError(this)"></script><div
+        class="site-wrapper  js-site-wrapper"><div class="welcome-wrap js-welcome-wrap"></div><div
+        id="header_wrapper" class="header-wrap js-header-wrap"><div id="header" class="header  cw"><div
+        class="header__shrink-beyond-min-size"><div class="header__search-wrap"><a
+        tabindex="-1" href="/" class="header__logo-wrap js-header-logo"><span class="header__logo
+        js-logo-ddg">DuckDuckGo</span></a><div class="header__content  header__search"><form
+        id="search_form" class="search--adv  search--header js-search-form" name="x"
+        action="/"><input type="text" name="q" tabindex="1" autocomplete="off" id="search_form_input"
+        class="search__input search__input--adv js-search-input" value="tesla revenue
+        2022"><input id="search_form_input_clear" class="search__clear  js-search-clear"
+        type="button" tabindex="3" value="X"/><input id="search_button" class="search__button  js-search-button"
+        type="submit" tabindex="2" value="S" /><a id="search_dropdown" class="search__dropdown"
+        href="javascript:;" tabindex="4"></a><div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div></form></div></div><div
+        class="header--aside js-header-aside"></div></div><div class="zcm-wrap-wrap"><div
+        id="duckbar" class="zcm-wrap  zcm-wrap--header  is-noscript-hidden"></div><div
+        class="zcm--right js-zcm-right"></div></div></div></div><div id="zero_click_wrapper"
+        class="zci-wrap"></div><div id="vertical_wrapper" class="verticals"></div><div
+        id="web_content_wrapper" class="content-wrap " data-hide-untill-css-vars-polyfilled="true"><div
+        class="serp__top-right  js-serp-top-right"></div><div class="serp__bottom-right  js-serp-bottom-right"><div
+        class="js-feedback-btn-wrap"></div></div><div class="cw"><div id="links_wrapper"
+        class="serp__results js-serp-results"><div data-testid="mainline" class="results--main"><div
+        class="search-filters-wrap"><div class="js-search-filters search-filters"></div></div><noscript><meta
+        http-equiv="refresh" content="0;URL=/html?q=tesla%20revenue%202022"><link
+        href="/css/noscript.css" rel="stylesheet" type="text/css"><div class="msg
+        msg--noscript"><p class="msg-title--noscript">You are being redirected to
+        the non-JavaScript site.</p>Click <a href="/html/?q=tesla%20revenue%202022">here</a>
+        if it doesn''t happen automatically.</div></noscript></div></div></div><div
+        id="react-layout"></div></div><div id="bottom_spacing2"> </div></div><script
+        type="text/javascript"></script><script type="text/JavaScript">function nrji()
+        {nrj(''/t.js?q=tesla%20revenue%202022&l=us-en&s=0&dl=en&ct=US&p_ent=&ex=-1&dfrsp=1&baa=1'');DDG.deep.initialize(''/d.js?q=tesla%20revenue%202022&l=us-en&s=0&dl=en&ct=US&vqd=4-290362423543623584831872993136734154523&p_ent=&ex=-1&sp=1&dfrsp=1&bpa=1&baa=1&wrap=1'');;};DDG.ready(nrji,
+        1);</script><script src="/g2991.js" onerror="handleScriptError(this)"></script><script
+        type="text/javascript">DDG.page = new DDG.Pages.SERP({ showSafeSearch: 0,
+        instantAnswerAds: false, hostRegion: "usc" });</script><div id="z2"> </div><div
+        id="z"></div></body></html><script type="text/JavaScript">DDG.index = DDG.index
+        || {}; DDG.index.signalSummary = "";</script>'
+    headers:
+      Cache-Control:
+      - max-age=1
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - 'default-src ''none'' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com
+        https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ ;
+        manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ''unsafe-inline'' ''unsafe-eval'' ; font-src data:  https://duckduckgo.com
+        https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ''unsafe-inline'' ; object-src ''none'' ; worker-src blob: ; child-src blob:  https://duckduckgo.com
+        https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; frame-ancestors ''self'' ; base-uri ''self'' ; block-all-mixed-content ;'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Date:
+      - Sun, 28 May 2023 01:28:56 GMT
+      Expect-CT:
+      - max-age=0
+      Expires:
+      - Sun, 28 May 2023 01:28:57 GMT
+      Permissions-Policy:
+      - interest-cohort=()
+      Referrer-Policy:
+      - origin
+      Server:
+      - nginx
+      Server-Timing:
+      - total;dur=26;desc="Backend Total"
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DuckDuckGo-Locale:
+      - en_US
+      X-DuckDuckGo-Results:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1;mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://links.duckduckgo.com/d.js?q=tesla+revenue+2022&l=wt-wt&p=-1&s=0&o=json&vqd=4-290362423543623584831872993136734154523
+  response:
+    body:
+      string: '{"deep_answers":{},"results":[{"a":"The automaker now turns its attention
+        to software to drive profit. The Model 3 and Model Y make up around 95% of
+        the 1.31 million <b>Teslas</b> sold in <b>2022</b>. finished <b>2022</b> on
+        a tear, bolstered by recent ...","ae":null,"b":"c\tCNET\twww.cnet.com","c":"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/","d":"www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/","da":"news,qna,translations","h":0,"i":"www.cnet.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Reports Record Revenue for 2022, With 1.31 Million EVs Sold","u":"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/"},{"a":"What:
+        <b>Tesla</b> Fourth Quarter and Full Year <b>2022</b> Financial Results Q&amp;A
+        Webcast When: Wednesday, January 25, 2023 Time: 4:30 p.m. Central Time / 5:30
+        p.m. Eastern Time Q4 &amp; FY 22 Update: https://ir.<b>tesla</b>.com Webcast:
+        https://ir.<b>tesla</b>.com (live and replay) The webcast will be archived
+        on the company&#x27;s website following the call. Investors ...","ae":null,"c":"https://ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results","d":"ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results","da":"qna,translations","h":0,"i":"ir.tesla.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Releases Fourth Quarter and Full Year 2022 Financial Results","u":"https://ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results"},{"a":"<b>Tesla&#x27;s</b>
+        <b>revenue</b> 2008-<b>2022</b>. Published by. Mathilde Carlier , Mar 17,
+        2023. <b>Tesla&#x27;s</b> <b>revenue</b> grew to nearly 81.5 billion U.S.
+        dollars in the <b>2022</b> fiscal year, a 51 percent increase from the ...","ae":null,"c":"https://www.statista.com/statistics/272120/revenue-of-tesla/","d":"www.statista.com/statistics/272120/revenue-of-tesla/","da":"qna,translations","h":0,"i":"www.statista.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla&#x27;s
+        revenue 2022 | Statista","u":"https://www.statista.com/statistics/272120/revenue-of-tesla/"},{"a":"540.
+        <b>Tesla</b> published its financial results for the fourth quarter of <b>2022</b>
+        on Wednesday afternoon. The company brought in $24.3 billion in <b>revenue</b>,
+        a 37 percent increase on Q4 2021. Automotive ...","ae":null,"c":"https://arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/","d":"arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/","da":"qna,translations","h":0,"i":"arstechnica.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        made an annual profit of $12.6 billion in 2022","u":"https://arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/"},{"a":"For
+        <b>Tesla</b>, which brought in $81.5 billion in <b>revenue</b> in <b>2022</b>
+        according to its end-of-year earnings report (pdf), that could amount to a
+        $3.3 billion fine. That would be the largest GDPR fine since ...","ae":null,"b":"yf\tYahoo
+        Finance\tfinance.yahoo.com","c":"https://finance.yahoo.com/news/tesla-could-face-3-3-200700787.html","d":"finance.yahoo.com/news/tesla-could-face-3-3-200700787.html","da":"qna,stocks,translations","h":0,"i":"finance.yahoo.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        could face a $3.3 billion fine over a massive data leak","u":"https://finance.yahoo.com/news/tesla-could-face-3-3-200700787.html"},{"a":"<b>Tesla</b>
+        business lines. During the <b>2022</b> second-quarter earnings report, <b>Tesla</b>
+        announced that total <b>revenue</b> was up 42% YoY to $16.9 billion due to
+        growth in vehicle deliveries, an increased average ...","ae":null,"c":"https://www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/","d":"www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/","da":"news,qna,translations","e":"2022-09-08","h":0,"i":"www.forbes.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Stock Breakdown: By The Numbers, How Does Tesla Make Money In 2022?","u":"https://www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/"},{"a":"Key
+        Points. <b>Tesla</b> just reported fourth-quarter earnings for <b>2022</b>
+        including <b>revenue</b> of $24.32 billion, and earnings per share of $1.19.
+        Automotive <b>revenue</b> amounted to $21.3 billion in the three ...","ae":null,"c":"https://www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html","d":"www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html","da":"news,qna,translations","e":"2023-01-25","h":0,"i":"www.cnbc.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        (TSLA) earnings Q4 2022 - CNBC","u":"https://www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html"},{"a":"<b>Tesla</b>
+        CEO Elon Musk predicted his midsize SUV would outpace all other vehicles this
+        year back in August <b>2022</b>. &quot;You definitely don&#x27;t want to count
+        chickens until they&#x27;re hatched.","ae":null,"c":"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1","d":"www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1","da":"news,qna,translations","h":0,"i":"www.businessinsider.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Had the World&#x27;s Top-Selling Car for the First Time - Business Insider","u":"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1"},{"a":"Mar
+        17, 2023. <b>Revenue</b> generated by <b>Tesla</b> increased to around 81.5
+        billion U.S. dollars in the <b>2022</b> fiscal year, with the United States
+        spearheading demand. The U.S. generated about 40.6 billion U ...","ae":null,"c":"https://www.statista.com/statistics/314759/revenue-of-tesla-by-region/","d":"www.statista.com/statistics/314759/revenue-of-tesla-by-region/","da":"","h":0,"i":"www.statista.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla&#x27;s
+        domestic and international revenue 2022 | Statista","u":"https://www.statista.com/statistics/314759/revenue-of-tesla-by-region/"},{"a":"<b>Tesla</b>
+        <b>revenue</b> for the twelve months ending March 31, 2023 was $86.035B, a
+        38.34% increase year-over-year. <b>Tesla</b> annual <b>revenue</b> for <b>2022</b>
+        was $81.462B, a 51.35% increase from 2021. <b>Tesla</b> annual <b>revenue</b>
+        for 2021 was $53.823B, a 70.67% increase from 2020. <b>Tesla</b> annual <b>revenue</b>
+        for 2020 was $31.536B, a 28.31% increase from 2019.","ae":null,"c":"https://www.macrotrends.net/stocks/charts/TSLA/tesla/revenue","d":"www.macrotrends.net/stocks/charts/TSLA/tesla/revenue","da":"","h":0,"i":"www.macrotrends.net","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Revenue 2010-2023 | TSLA | MacroTrends","u":"https://www.macrotrends.net/stocks/charts/TSLA/tesla/revenue"},{"a":"<b>Tesla</b>
+        CEO Elon Musk predicted his midsize SUV would outpace all other vehicles this
+        year back in August <b>2022</b>. &quot;You definitely don&#x27;t want to count
+        chickens until they&#x27;re hatched.","ae":null,"c":"https://www.autoblog.com/2023/05/26/tesla-had-the-world-s-top-selling-car-for-the-first-time/","d":"www.autoblog.com/2023/05/26/tesla-had-the-world-s-top-selling-car-for-the-first-time/","da":"qna,translations","h":0,"i":"www.autoblog.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        had the world&#x27;s top-selling car for the first time","u":"https://www.autoblog.com/2023/05/26/tesla-had-the-world-s-top-selling-car-for-the-first-time/"},{"a":"In
+        the first quarter of 2023, <b>Tesla&#x27;s</b> energy business accounted for
+        6.6% of the company&#x27;s total <b>revenue</b>. This is a solid increase
+        from the recent quarters because of the combination of the energy ...","ae":null,"b":"fool\tFool.com\twww.fool.com","c":"https://www.fool.com/investing/2023/05/20/tsla-lithium-ion-battery-energy-storage/","d":"www.fool.com/investing/2023/05/20/tsla-lithium-ion-battery-energy-storage/","da":"qna,translations","h":0,"i":"www.fool.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla&#x27;s
+        Energy Storage Business Is Growing Like Gangbusters","u":"https://www.fool.com/investing/2023/05/20/tsla-lithium-ion-battery-energy-storage/"},{"a":"<b>Tesla&#x27;s</b>
+        services division, which includes <b>revenue</b> from its charger fees, brought
+        in $1.8 billion during the first three months of 2023, accounting for 8% of
+        total sales and rising 44% year-over ...","ae":null,"c":"https://www.forbes.com/sites/dereksaul/2023/05/26/ford-stock-rides-tesla-ev-partnership-to-best-day-since-october/","d":"www.forbes.com/sites/dereksaul/2023/05/26/ford-stock-rides-tesla-ev-partnership-to-best-day-since-october/","da":"news,qna,translations","e":"2023-05-26","h":0,"i":"www.forbes.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Ford
+        Stock Rides Tesla EV Partnership To Best Day Since October - Forbes","u":"https://www.forbes.com/sites/dereksaul/2023/05/26/ford-stock-rides-tesla-ev-partnership-to-best-day-since-october/"},{"a":"<b>Revenue</b>:
+        $21.45 billion vs $21.96 billion expected, per Refinitiv. <b>Tesla&#x27;s</b>
+        net income (GAAP) for Q3 <b>2022</b> reached $3.33 billion, with automotive
+        gross margins holding steady at 27.9%, exactly where ...","ae":null,"c":"https://www.cnbc.com/2022/10/19/tesla-tsla-earnings-q3-2022-.html","d":"www.cnbc.com/2022/10/19/tesla-tsla-earnings-q3-2022-.html","da":"news,qna,translations","e":"2022-10-19","h":0,"i":"www.cnbc.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        TSLA earnings Q3 2022 - CNBC","u":"https://www.cnbc.com/2022/10/19/tesla-tsla-earnings-q3-2022-.html"},{"a":"Although
+        <b>Tesla</b> has made the NACS port available to other automakers since November
+        of <b>2022</b>, ... <b>Tesla</b> risks losing some of the advantages for its
+        own cars but opens up new ways to generate <b>revenue</b> ...","ae":null,"b":"randt\tRoad
+        & Track\twww.roadandtrack.com","c":"https://www.roadandtrack.com/news/a44016443/ford-will-integrate-teslas-charging-ports-into-new-evs/","d":"www.roadandtrack.com/news/a44016443/ford-will-integrate-teslas-charging-ports-into-new-evs/","da":"qna,translations","h":0,"i":"www.roadandtrack.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Ford
+        Will Integrate Tesla&#x27;s Charging Ports Into New EVs - Road &amp; Track","u":"https://www.roadandtrack.com/news/a44016443/ford-will-integrate-teslas-charging-ports-into-new-evs/"},{"a":"Business
+        Wire. Apr 20, <b>2022</b>. AUSTIN, Texas, April 20, <b>2022</b> - <b>Tesla</b>
+        has released its financial results for the first quarter of <b>2022</b> by
+        posting an update on its Investor Relations website. Please visit https://ir.<b>tesla</b>.com
+        to view the update. As previously announced, <b>Tesla</b> management will
+        host a live question and answer (Q&amp;A) webcast at 4:30 p ...","ae":null,"c":"https://ir.tesla.com/press-release/tesla-releases-first-quarter-2022-financial-results","d":"ir.tesla.com/press-release/tesla-releases-first-quarter-2022-financial-results","da":"qna,translations","h":0,"i":"ir.tesla.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Releases First Quarter 2022 Financial Results","u":"https://ir.tesla.com/press-release/tesla-releases-first-quarter-2022-financial-results"},{"a":"That
+        represents a 59 percent increase year over year compared to $2.8 billion in
+        <b>revenue</b> in Q4 2021. It was also <b>Tesla&#x27;s</b> third year ending
+        in the black, with $14.1 billion in net income for <b>2022</b> ...","ae":null,"c":"https://www.theverge.com/2023/1/25/23571618/tesla-q4-2022-earnings-revenue-profit-prices-demand","d":"www.theverge.com/2023/1/25/23571618/tesla-q4-2022-earnings-revenue-profit-prices-demand","da":"qna,translations","h":0,"i":"www.theverge.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        made more money in 2022 than ever before, but its future still ...","u":"https://www.theverge.com/2023/1/25/23571618/tesla-q4-2022-earnings-revenue-profit-prices-demand"},{"a":"Get
+        the detailed quarterly/annual income statement for <b>Tesla</b>, Inc. (TSLA).
+        Find out the <b>revenue</b>, expenses and profit or loss over the last fiscal
+        year. ... 12/31/<b>2022</b>. 12/31/2021. 12/31/2020. 12 ...","ae":null,"b":"yf\tYahoo
+        Finance\tfinance.yahoo.com","c":"https://finance.yahoo.com/quote/TSLA/financials","d":"finance.yahoo.com/quote/TSLA/financials","da":"stocks","h":0,"i":"finance.yahoo.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla,
+        Inc. (TSLA) Income Statement - Yahoo Finance","u":"https://finance.yahoo.com/quote/TSLA/financials"},{"a":"<b>Tesla</b>,
+        Inc. ( TSLA) reported Q1 FY <b>2022</b> earnings results that surpassed analysts&#x27;
+        expectations. Adjusted earnings per share (EPS) beat estimates, rising 246.2%
+        compared to the year-ago quarter ...","ae":null,"b":"ivst\tInvestopedia\twww.investopedia.com","c":"https://www.investopedia.com/tesla-q1-fy2022-earnings-report-recap-5235803","d":"www.investopedia.com/tesla-q1-fy2022-earnings-report-recap-5235803","da":"qna,translations","h":0,"i":"www.investopedia.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Earnings: What Happened with TSLA - Investopedia","u":"https://www.investopedia.com/tesla-q1-fy2022-earnings-report-recap-5235803"},{"a":"With
+        a <b>revenue</b> increase of $18.7 billion USD despite inflation. <b>Tesla</b>
+        (NASDAQGS:TSLA -3.25%) has bested analysts&#x27; expectations with the recent
+        report of its Q1 <b>2022</b> earnings. CNBC reported that ...","ae":null,"c":"https://hypebeast.com/2022/4/tesla-doubles-revenue-record-margins-reports-q1-2022-earnings-announcement","d":"hypebeast.com/2022/4/tesla-doubles-revenue-record-margins-reports-q1-2022-earnings-announcement","da":"qna,translations","h":0,"i":"hypebeast.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Doubles Revenue and Reports Record Margins for Q1 2022","u":"https://hypebeast.com/2022/4/tesla-doubles-revenue-record-margins-reports-q1-2022-earnings-announcement"},{"a":"<b>Tesla</b>
+        said Wednesday that its profit leapt more than sixfold last year to $5.5 billion,
+        the highest total in its 19-year history, as sales soared further, especially
+        in Europe and China.","ae":null,"b":"nyt\tNew York Times\tquery.nytimes.com","c":"https://www.nytimes.com/2022/01/26/business/tesla-earnings.html","d":"www.nytimes.com/2022/01/26/business/tesla-earnings.html","da":"news,qna,translations","e":"2022-01-26","h":0,"i":"www.nytimes.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        reports record yearly profit but warns that supply problems ...","u":"https://www.nytimes.com/2022/01/26/business/tesla-earnings.html"},{"a":"The
+        following is a quick overview of <b>Tesla&#x27;s</b> Q4 and FY <b>2022</b>
+        results. <b>REVENUE</b>. <b>Tesla</b> posted total <b>revenues</b> of $24.318
+        billion, a 37% YoY growth, with a gross profit of $5.777 billion in the ...","ae":null,"c":"https://www.teslarati.com/tesla-tsla-q4-and-fy-2022-earnings-results/","d":"www.teslarati.com/tesla-tsla-q4-and-fy-2022-earnings-results/","da":"qna,translations","h":0,"i":"www.teslarati.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Q4 and FY 2022 results: TSLA beats on revenue and EPS - TESLARATI","u":"https://www.teslarati.com/tesla-tsla-q4-and-fy-2022-earnings-results/"},{"a":"Fred
+        Lambert Mar 28 <b>2022</b> - 10:38 am PT. According to new local flings, <b>Tesla</b>
+        is planning a big Megapack project at Gigafactory Texas in order to complement
+        its planned giant solar system and to ...","ae":null,"c":"https://electrek.co/guides/tesla-gigafactory-texas/","d":"electrek.co/guides/tesla-gigafactory-texas/","da":"","h":0,"i":"electrek.co","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        Gigafactory Texas | Electrek","u":"https://electrek.co/guides/tesla-gigafactory-texas/"},{"a":"1
+        As of June 30, 2016 2 NPV at 6% discount rate . FORWARD-LOOKING STATEMENTS;
+        ADDITIONAL INFORMATION Certain statements in this document, including statements
+        relating to the proposed combination of SolarCity Corporation (&quot;SolarCity&quot;)
+        and <b>Tesla</b> Motors, Inc. (&quot;<b>Tesla</b>&quot;) and the combined
+        company&#x27;s future financial condition, performance and operating results,
+        strategy and plans are ...","ae":null,"c":"https://www.tesla.com/blog/tesla-and-solarcity","d":"www.tesla.com/blog/tesla-and-solarcity","da":"","h":0,"i":"www.tesla.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        and SolarCity | Tesla","u":"https://www.tesla.com/blog/tesla-and-solarcity"},{"a":"<b>Tesla</b>
+        is accelerating the world&#x27;s transition to sustainable energy with electric
+        cars, solar and integrated renewable energy solutions for homes and businesses.
+        Up to $7,500 tax credit available for Model Y and Model 3. Learn More. Up
+        to $7,500 tax credit available for Model Y and Model 3. ...","ae":null,"c":"https://www.tesla.com/","d":"www.tesla.com","da":"","h":0,"i":"www.tesla.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Electric
+        Cars, Solar &amp; Clean Energy | Tesla","u":"https://www.tesla.com/"},{"a":"The
+        average <b>Tesla</b> salary ranges from approximately $40,000 per year for
+        Quality Control Inspector to $164,763 per year for Validation Engineer. Average
+        <b>Tesla</b> hourly pay ranges from approximately $13.18 per hour for Maintenance
+        Mechanic to $40.35 per hour for Industrial Electrician. Salary information
+        comes from 10,218 data points collected ...","ae":null,"b":"jobs\tIndeed\twww.indeed.com","c":"https://www.indeed.com/cmp/Tesla/salaries","d":"www.indeed.com/cmp/Tesla/salaries","da":"","h":0,"i":"www.indeed.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Tesla
+        salaries: How much does Tesla pay? | Indeed.com","u":"https://www.indeed.com/cmp/Tesla/salaries"},{"a":"Xiaomi
+        Corp. quarterly <b>revenue</b> slid 19% in a reflection of crumbling demand
+        for electronics and internet services in a sputtering Chinese economy. Sales
+        fell across all its businesses, led by a 24 ...","ae":null,"c":"https://www.bloomberg.com/news/articles/2023-05-24/xiaomi-profit-beats-estimates-as-company-navigates-gloomy-market","d":"www.bloomberg.com/news/articles/2023-05-24/xiaomi-profit-beats-estimates-as-company-navigates-gloomy-market","da":"news,qna,translations","e":"2023-05-24","h":0,"i":"www.bloomberg.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Xiaomi
+        Revenue Dives 19% After Chinese Mobile Gloom Deepens","u":"https://www.bloomberg.com/news/articles/2023-05-24/xiaomi-profit-beats-estimates-as-company-navigates-gloomy-market"},{"a":"Texas
+        lawmakers appear ready to revive a school property tax abatement program intended
+        to lure major corporate projects to the state. State senators on May 24 voted
+        27-4 in favor of the Texas ...","ae":null,"c":"https://www.bizjournals.com/sanantonio/news/2023/05/26/texas-chapter-403-incentives-senate-ok.html","d":"www.bizjournals.com/sanantonio/news/2023/05/26/texas-chapter-403-incentives-senate-ok.html","da":"qna,translations","h":0,"i":"www.bizjournals.com","m":0,"o":0,"p":0,"s":"bingv7aa","t":"Texas
+        business incentives: New Chapter 403 tax breaks on cusp of ...","u":"https://www.bizjournals.com/sanantonio/news/2023/05/26/texas-chapter-403-incentives-senate-ok.html"},{"n":"/d.js?q=tesla%20revenue%202022&l=wt-wt&p=-1&s=28&o=json&ct=US&sp=0&vqd=4-290362423543623584831872993136734154523"}]}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - 'default-src ''none'' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com
+        https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ ;
+        manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ''unsafe-inline'' ''unsafe-eval'' ; font-src data:  https://duckduckgo.com
+        https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ''unsafe-inline'' ; object-src ''none'' ; worker-src blob: ; child-src blob:  https://duckduckgo.com
+        https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+        ; frame-ancestors ''self'' ; base-uri ''self'' ; block-all-mixed-content ;'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 28 May 2023 01:28:56 GMT
+      Expect-CT:
+      - max-age=0
+      Expires:
+      - Sun, 28 May 2023 01:28:55 GMT
+      Permissions-Policy:
+      - interest-cohort=()
+      Referrer-Policy:
+      - origin
+      Server:
+      - nginx
+      Server-Timing:
+      - total;dur=628;desc="Backend Total"
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-DuckDuckGo-Locale:
+      - en_US
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - 1;mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
+      information.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Search for ''tesla revenue 2022''
+      and write the revenue of Tesla in 2022 to a file called output.txt. You should
+      write the number without commas and you should not use signs like B for billion
+      and M for million.\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      google: Google Search, args: \"query\": \"<query>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I need to search for the revenue
+      of Tesla in 2022. I can use the google command to search for this information.\",\n        \"reasoning\":
+      \"I will use the google command to search for the revenue of Tesla in 2022 because
+      it is the most efficient way to find this information.\",\n        \"plan\":
+      \"- Use the google command to search for the revenue of Tesla in 2022.\",\n        \"criticism\":
+      \"I need to ensure that I am using the correct search terms to find the information
+      I need.\",\n        \"speak\": \"I will use the google command to search for
+      the revenue of Tesla in 2022.\"\n    },\n    \"command\": {\n        \"name\":
+      \"google\",\n        \"args\": {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command google returned: [\n    {\n        \"title\":
+      \"Tesla Reports Record Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\":
+      \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
+      \"The automaker now turns its attention to software to drive profit. The Model
+      3 and Model Y make up around 95% of the 1.31 million Teslas sold in 2022. finished
+      2022 on a tear, bolstered by recent ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Releases Fourth Quarter and Full Year 2022 Financial Results\",\n        \"href\":
+      \"https://ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results\",\n        \"body\":
+      \"What: Tesla Fourth Quarter and Full Year 2022 Financial Results Q&A Webcast
+      When: Wednesday, January 25, 2023 Time: 4:30 p.m. Central Time / 5:30 p.m. Eastern
+      Time Q4 & FY 22 Update: https://ir.tesla.com Webcast: https://ir.tesla.com (live
+      and replay) The webcast will be archived on the company''s website following
+      the call. Investors ...\"\n    },\n    {\n        \"title\": \"Tesla''s revenue
+      2022 | Statista\",\n        \"href\": \"https://www.statista.com/statistics/272120/revenue-of-tesla/\",\n        \"body\":
+      \"Tesla''s revenue 2008-2022. Published by. Mathilde Carlier , Mar 17, 2023.
+      Tesla''s revenue grew to nearly 81.5 billion U.S. dollars in the 2022 fiscal
+      year, a 51 percent increase from the ...\"\n    },\n    {\n        \"title\":
+      \"Tesla made an annual profit of $12.6 billion in 2022\",\n        \"href\":
+      \"https://arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/\",\n        \"body\":
+      \"540. Tesla published its financial results for the fourth quarter of 2022
+      on Wednesday afternoon. The company brought in $24.3 billion in revenue, a 37
+      percent increase on Q4 2021. Automotive ...\"\n    },\n    {\n        \"title\":
+      \"Tesla could face a $3.3 billion fine over a massive data leak\",\n        \"href\":
+      \"https://finance.yahoo.com/news/tesla-could-face-3-3-200700787.html\",\n        \"body\":
+      \"For Tesla, which brought in $81.5 billion in revenue in 2022 according to
+      its end-of-year earnings report (pdf), that could amount to a $3.3 billion fine.
+      That would be the largest GDPR fine since ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Stock Breakdown: By The Numbers, How Does Tesla Make Money In 2022?\",\n        \"href\":
+      \"https://www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/\",\n        \"body\":
+      \"Tesla business lines. During the 2022 second-quarter earnings report, Tesla
+      announced that total revenue was up 42% YoY to $16.9 billion due to growth in
+      vehicle deliveries, an increased average ...\"\n    },\n    {\n        \"title\":
+      \"Tesla (TSLA) earnings Q4 2022 - CNBC\",\n        \"href\": \"https://www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html\",\n        \"body\":
+      \"Key Points. Tesla just reported fourth-quarter earnings for 2022 including
+      revenue of $24.32 billion, and earnings per share of $1.19. Automotive revenue
+      amounted to $21.3 billion in the three ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Had the World''s Top-Selling Car for the First Time - Business Insider\",\n        \"href\":
+      \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
+      \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
+      this year back in August 2022. \\\"You definitely don''t want to count chickens
+      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
+      which next command to use, and respond using the format specified above:"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8032'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7yTTW/bMAyG7/sVBM9OEDtN2vq6UzAUWIGtwDAPgSLTsVZZNCS6aRvkvw+ynWTJ
+        zquP/Hjfh5S5R1NijrpWopvWTm6/vD89PO5edm7xnD2k74+3j8sfy6fPy5uvbx4T5M1v0jJ2TDU3
+        rSUx7DBB7UkJlZiny7tFNr+d38wSbLgkizluW5nMp4uJdH7Dk9l8lmKCXVBbwnyPreemlbXwM7mA
+        eXqfpQmexU+JLLtPUFiUPYfSxeyQoK7ZaAqY/9xjQ+Eo7NkS5qhCMEGUk4jJTsjFEfaFAwAoUGru
+        trWEAnMYg2OCXiUGC1xBxZ0rQWoC4yr2jYpksAJHVIJxfaYyPggEUl7X4Cl0VqawAq0cdIH6kp03
+        QmvhdWUsgeamUVGWh0Rf4umFXEfAFXyjYFVUz2ZZFqsUDH3KWiqBO2k7mcqrTAtM/ib3pAI747ZH
+        /J2x9n9DwIa0ih5GwIRepuEgQFVltCEnsFNvUSCol+hiwsUuK/ZglZCPnNcDtVa5YZYJfP/YXWpv
+        xGgTmuMu+ycXBnKh89FHCaxANb2vcdveWbP3pOViQuHxN7EEPWrsPEVMgA3F9rie0z911LGse5Fr
+        utCSev7IV54WOPgfkuMBjdr/3I9TDQ1oFyxXEyi/vT69IRFrzxJngov+60u9Sxez8TuC9rAjc+EO
+        eEiwMs6Eej2cCeYYhFtM0LiSXjGfHX4dPv0BAAD//wMA5mjW4hsFAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7ce2b960eb8086d4-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 28 May 2023 01:29:14 GMT
+      Function-Execution-Id:
+      - bbqevpi2cg3n
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '14075'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - e222e18cc549ddf93eacf56f55afc4db;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86083'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.61s
+      X-Request-Id:
+      - e3473edc3db147f6a37ee8180f495433
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
+      information.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Search for ''tesla revenue 2022''
+      and write the revenue of Tesla in 2022 to a file called output.txt. You should
+      write the number without commas and you should not use signs like B for billion
+      and M for million.\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
+      Your short term memory is short, so immediately save important information to
+      files.\n2. If you are unsure how you previously did something or want to recall
+      past events, thinking about similar events will help you remember.\n3. No user
+      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
+      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
+      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
+      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
+      google: Google Search, args: \"query\": \"<query>\"\n7. delete_agent: Delete
+      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
+      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
+      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
+      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
+      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
+      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
+      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
+      access for searches and information gathering.\n2. Long Term memory management.\n3.
+      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
+      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
+      performing to the best of your abilities.\n2. Constructively self-criticize
+      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
+      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
+      Aim to complete tasks in the least number of steps.\n5. Write all code to a
+      file.\n\nYou should only respond in JSON format as described below \nResponse
+      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I need to search for the revenue
+      of Tesla in 2022. I can use the google command to search for this information.\",\n        \"reasoning\":
+      \"I will use the google command to search for the revenue of Tesla in 2022 because
+      it is the most efficient way to find this information.\",\n        \"plan\":
+      \"- Use the google command to search for the revenue of Tesla in 2022.\",\n        \"criticism\":
+      \"I need to ensure that I am using the correct search terms to find the information
+      I need.\",\n        \"speak\": \"I will use the google command to search for
+      the revenue of Tesla in 2022.\"\n    },\n    \"command\": {\n        \"name\":
+      \"google\",\n        \"args\": {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}"},
+      {"role": "system", "content": "Command google returned: [\n    {\n        \"title\":
+      \"Tesla Reports Record Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\":
+      \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
+      \"The automaker now turns its attention to software to drive profit. The Model
+      3 and Model Y make up around 95% of the 1.31 million Teslas sold in 2022. finished
+      2022 on a tear, bolstered by recent ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Releases Fourth Quarter and Full Year 2022 Financial Results\",\n        \"href\":
+      \"https://ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results\",\n        \"body\":
+      \"What: Tesla Fourth Quarter and Full Year 2022 Financial Results Q&A Webcast
+      When: Wednesday, January 25, 2023 Time: 4:30 p.m. Central Time / 5:30 p.m. Eastern
+      Time Q4 & FY 22 Update: https://ir.tesla.com Webcast: https://ir.tesla.com (live
+      and replay) The webcast will be archived on the company''s website following
+      the call. Investors ...\"\n    },\n    {\n        \"title\": \"Tesla''s revenue
+      2022 | Statista\",\n        \"href\": \"https://www.statista.com/statistics/272120/revenue-of-tesla/\",\n        \"body\":
+      \"Tesla''s revenue 2008-2022. Published by. Mathilde Carlier , Mar 17, 2023.
+      Tesla''s revenue grew to nearly 81.5 billion U.S. dollars in the 2022 fiscal
+      year, a 51 percent increase from the ...\"\n    },\n    {\n        \"title\":
+      \"Tesla made an annual profit of $12.6 billion in 2022\",\n        \"href\":
+      \"https://arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/\",\n        \"body\":
+      \"540. Tesla published its financial results for the fourth quarter of 2022
+      on Wednesday afternoon. The company brought in $24.3 billion in revenue, a 37
+      percent increase on Q4 2021. Automotive ...\"\n    },\n    {\n        \"title\":
+      \"Tesla could face a $3.3 billion fine over a massive data leak\",\n        \"href\":
+      \"https://finance.yahoo.com/news/tesla-could-face-3-3-200700787.html\",\n        \"body\":
+      \"For Tesla, which brought in $81.5 billion in revenue in 2022 according to
+      its end-of-year earnings report (pdf), that could amount to a $3.3 billion fine.
+      That would be the largest GDPR fine since ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Stock Breakdown: By The Numbers, How Does Tesla Make Money In 2022?\",\n        \"href\":
+      \"https://www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/\",\n        \"body\":
+      \"Tesla business lines. During the 2022 second-quarter earnings report, Tesla
+      announced that total revenue was up 42% YoY to $16.9 billion due to growth in
+      vehicle deliveries, an increased average ...\"\n    },\n    {\n        \"title\":
+      \"Tesla (TSLA) earnings Q4 2022 - CNBC\",\n        \"href\": \"https://www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html\",\n        \"body\":
+      \"Key Points. Tesla just reported fourth-quarter earnings for 2022 including
+      revenue of $24.32 billion, and earnings per share of $1.19. Automotive revenue
+      amounted to $21.3 billion in the three ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Had the World''s Top-Selling Car for the First Time - Business Insider\",\n        \"href\":
+      \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
+      \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
+      this year back in August 2022. \\\"You definitely don''t want to count chickens
+      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
+      which next command to use, and respond using the format specified above:"},
+      {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I found the information I need in the first search result. I can use the write_to_file
+      command to write the revenue of Tesla in 2022 to a file called output.txt.\",\n        \"reasoning\":
+      \"I will use the write_to_file command to write the revenue of Tesla in 2022
+      to a file called output.txt because it is the most efficient way to save this
+      information for later use.\",\n        \"plan\": \"- Use the write_to_file command
+      to write the revenue of Tesla in 2022 to a file called output.txt.\",\n        \"criticism\":
+      \"I need to ensure that I am writing the correct information to the file and
+      that the file is being saved in the correct location.\",\n        \"speak\":
+      \"I will use the write_to_file command to write the revenue of Tesla in 2022
+      to a file called output.txt.\"\n    },\n    \"command\": {\n        \"name\":
+      \"write_to_file\",\n        \"args\": {\n            \"filename\": \"output.txt\",\n            \"text\":
+      \"81500000000\"\n        }\n    }\n}"}, {"role": "system", "content": "Command
+      write_to_file returned: File written to successfully."}, {"role": "user", "content":
+      "Determine which next command to use, and respond using the format specified
+      above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '9297'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6SSwY7aQAyG730Ky+eAIJTSzW1VqRLaQ6WK7aFNhYaJk0yZeKJ4AuyivHs1mwC7
+        oD1UvY3G9u/Pv31Ek2GCulReV7UdLR6ef+STx8PP1Zem/H6/iR98SWZ/nz9/Nd8wQrf5Q9oPFWPt
+        qtqSN44xQt2Q8pRhMv30eR7PFrP5XYSVy8higkXtR7PxfOTbZuNGk9lkihG2ogrC5Ih146rar73b
+        Egsm8fQujvAifg5M5/MIvfPKXnJnHxddhLp0RpNg8uuIFclJuHGWMEElYsQr9gHTsScOIxxTBgBI
+        0ZeuLUovKSYwfA4BOvjwmeISSrUjGJgoA18SeCVbcDnkhjPDBSjOQNQuPEO4oR1xSyFjRWIVGIZ4
+        EsdjWIJWDOz2QBykjICQiHE8TjF6TdCQEseGixPG3lgLrdAZYH1iCnBVQPDuRhY2pFWoen+OJeyV
+        QHCqYHoRydw1TW0V9yAjePxXhmsx3RhvtJHqNBoTDYXSNkFc+VteZS0w6bDi5umlucCGctdQaNhb
+        /35PqUlt/8/KcYq9Yhed7mfIvjkfVhX1zd6oXzGppri+vNe77wVWYUUXF6TVwYK8tfbpDPQCNbCl
+        3GEXYW7YSLnulTBB8a7GCA1ndMBk0v3uPvwFAAD//wMAviHCJgIEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7ce2b9d7aae01122-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 28 May 2023 01:29:29 GMT
+      Function-Execution-Id:
+      - bbqertkhr7sg
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '10441'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 115fa361d7460e7084669c0567b7a4f3;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86077'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.614s
+      X-Request-Id:
+      - 251ae4d92ef1d70786f69d9e421863e9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
+      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"81500000000\"\"\"\n\n\nCONCISE
+      SUMMARY: The text is best summarized as"}], "temperature": 0, "max_tokens":
+      0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '252'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0SOTWsCMRRF9/0V4a4zMhrUIbuCi0LpxoJdlCJx5unETvJC8rRSmf9eLP3YHs49
+        3Ct8B4u2d9KGNFTLx8+NPD/J6nj/smrOa1q7RWmM2T9sqECDd0dq5WcxaTmkgcRzhEabyQl1sNNF
+        M5+ZpVkajcAdDbA4JKnMZF7JKe+4qk09hcapuAPBXpEyhyRb4XeKBdY0Gv/pPzydaQiLG/7IvB41
+        2p59SwX29YpA5beZeSBYuFJ8ERfl9pCjULy9d6pI9vGgeK/iKewoF60+vPQqsvrWLqI4q0Au3rSU
+        +ew76iYYNfY++tJvM7nCERZFOEHDx44usPX4Nt59AQAA//8DAD+x1WJXAQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7ce2ba309eea22c7-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 28 May 2023 01:29:34 GMT
+      Function-Execution-Id:
+      - bbqede7uymrm
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '1169'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 10e46a43da44a36765b0bbe77149b761;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89466'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 356ms
+      X-Request-Id:
+      - e68d4af8501d00838886ca89631424bd
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": ["81500000000"], "model": "text-embedding-ada-002", "encoding_format":
+      "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '90'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+        sB7p4SAAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7ce2ba402e582b24-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 28 May 2023 01:29:36 GMT
+      Function-Execution-Id:
+      - bbqeuqbn1ez9
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '33'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 94debe206be974de29025f091274dca4
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 2b56f8f748de4b5716d3fe2973e55377
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": "a string of numbers, with no context or meaning provided.",
+      "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '134'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1SaWc+7vJbl78+nePXe0kchhODNuSMMgQCxScjYarWYQiADYbDBLtV3byX/o+qq
+        m+eCBylxvL3XWr/t//jHX3/93aR1kQ1//+uvv59VP/z9v77P8mRI/v7XX//7H3/99ddf//H7+z/e
+        LF5pkefVu/y9/vtn9c6L6e9//SX/15P//9K//vq7Y3zOwi2rAkGE0cDhmQSMlO0UMJY9PITyY8K2
+        Ha8DIcl3rMddeqAK5WMsZkrL0ebWhVRdpnuLz8R8DXhsXBJm99QaVm5U6ZuXIZNItxxBA9eUQMGS
+        jrl3Nbr5Ndsf4HVXOZY6xw/E2W1PSDvqK4rc41X0WXfjsDtFGq5Pu3fH4RFUELpqzrIXQYFop30J
+        U0o6zLeR0SljiC7wVqUVvUM6i8fztCnhoCoB856zHRJP9LaRuk1ezFYzZgmdHE7w2HzuzGQ7Q8iL
+        oLnAzTNiWqSfDZoc6VIBrTwVn6qqFlzzugq5aBWQ0NYPtcik6gTrderjmd/bMXtDZoK1BkbVzaNL
+        eWyufRg3tGTuR58sUbeNhnj62JDUaYd6Cm96BEt1uFLIsqZuI56V0JdTw4z38hlTkV5Oy7BTFFrd
+        61JMb+KXgBaByQyzn1L+0eI9gvNhR9Z5VyNhf5oKbgh6YlzvUjAO9kpBctwGZHsaPxYNN2GpWW68
+        xMiN3jFftzqA/MgpcXftKKY6PBjabWk5zLnwOhi19AoQ7/Y1w+Exsugxpz5cMjxjhho64vf7ou1N
+        EBLOwqobbXd30uc0e5CErt2AY1gl+htYQOxS9WpxWDoHKPtZQZfagSPxGGZr2H16jZjH56xr3mEm
+        Q4FXGQukUqunJtNKhMZsx9ZnvEEL1ys4RI69ZO7jfI75gSgeSH3REbwRVj3plc9he7ULUryXp/Sj
+        ZM8R9utsw66LhYoEL1mk/dZLEhgRVezyArKBA+Jlu53gs236gM7T5liz1mU6RXSPYWFdR7K91KmY
+        nGvQAFjqjpndKU6HempUuJhrjFV4PwVnj8se5LUKxPtEqtVOszHS15vThKkantBU1aOqf+uVmIvX
+        DU0LUvVad9tnbLuiLOivIljD+zJy4i7EIh2gXIXI61c6cybHisfj8VNCX18cgmd5hvpbO9rAUxQz
+        U+Oi5lGADNCyjhODF063kBrONU+dQjr0HyvmuXexUWxjn9gsb+rp9E4VdFUoodILt0Efplya7f1t
+        zFaMGNb0fIP5O4/Eo65qdcGj7tGY+yXxQ+eFxoM7lfrv+5vXchv0NswKVFfiTqUzzVLasysHdH1E
+        xL/aQ/Axj16JjO+6N/GhD/h9Ftk6M08uhhdJLa6/HBv6eCAkzAMzlkGZJDSvtoyFL0lGHyUbOARG
+        aTPzlRioD81DBXWASrLtP1Y63zomhnJJB7KNH/O0uUhTqSvLSGIrSGepCCXTg8V1OjP3dB/R+A68
+        EOJHX2N955N02oGPER7CNUvc+GqN3ng/QcqchGxsg6fT5t08IC+zjpBey+vplW1fkGVnkwpNPqTj
+        4hVn6Lndj8ROfS/lvTfuYbahMcHNCkRvRNc9yNv3gEelk2LeIQPr5V4eiGU9Vtb8YiIV3W4kp/r6
+        yazXu0DRn/0ufvVzmAyqtav5izhts0kn19j7YIrFkuH4XnciN2rQX8egpsur2aecXCQbyjB32FbJ
+        joKN7cGD5cwxKFp+kk4cFioF/qSIuPjq18rnVoZAkXSjaP+4x+8dLqluN/7IvHXsBKMNi0xbzgXH
+        c++9sRh35BDa7mThyTiEVr9nrIFQRQSXEt0H/We74So8Li1x69Tu+r6bSdpEu45t9/O0nmIpGGFV
+        qAPZZLgM+u18dwE4n3Z43sRHMQm+WoN1WHnEWtTUEmw12bq3QyFd6uWrHo7C3MOSPt4M21B3A9GM
+        Rr/dtjnbeAsej/otXwM7chfzORJdfzXdEfTL0WJhkOB0/njy4qcXOAf/FPD4HRtokB9rlnceQtQ/
+        YAN9vz/VuimOx/ggv4AUWKW6bBJEy/c6Arpqb8xTls9u2rzLx/JxPZzZTuqMtP9sVxxW85Hi+XP6
+        xGOAfQnludF+6/GWUlkNJQh2Zs681X1Rc3ySK9SeNYsFofTu+GrWn+Dc7F/MaXAdi2AztnqwM3KS
+        lBc3UF5K5IF6ri//1pv7c2pBJyuZGM26SIWH0hbZjqURb4o7McnJIwR10b+prGYsYHXBCziGUcCc
+        6nmsx+f1pv3WR+y1h9MPHJIR2F4pifM+W9b4uI8+xNL8QHbTFNby0NYHCJ+eQ7abqUK0Z7sROKwr
+        5h1UJ+6UzewE1VY5Eme+/XQ8h/sL8HVcM7OHbcql5NTCRTHfbHN7qPXoMDmBd0CvxDrt3rUoEjNB
+        9ZN5eHp4N4u66gCg8NeWbIfnHA3vZJRATk5Atuce1ey2ilToczNn5HmfrJEsEkDLYjnhBTydQAwr
+        24dvP6X3eOwtsaklDqZSnMhqXJfxJz5Xe1C1FhNz9FaWnCS7F/QyabC+NTfBGJDzA055EVKV+I4l
+        lM3iAK/5iWO0cLHFkIA91NV0x5MvFfXkfypfT1zcECf/WJYY0lkIsxPviWGcczH2mTjBJPcbkuSh
+        iD+JrWdwmJXA8CwH1ETFJ4NBfq3ZhhmqGIZYeyAcZSqz7+8q7h8jcOQeNgExxs0+oJVJD2BIlwMJ
+        XnCwxnHpRahaPUu2ai9GsEhnCoC10U7EU/tLzPTWTeDbb9h2lmbWV88rMPWNizlZzGLKxEGFjE0m
+        8Q6brpuqWlXBa/aCgnXW6mnR5hzV6evE/uxXpBQKOmbjA3fZTYvZS0sKtPkIiVjXahDT2dBOMHMd
+        hXKNxzVd1qcHMCUqsYpGpx6XK1GhXpEdYt/fZjzOfZQhSw7PzMx6A023YwxwWEFArmV6EeL25olu
+        HNACr4xDb/FbPdp68VjmePz5k/dT7JHr2pyYZHGL291zV+hfPWLulS8s+u2v6OGoZyx6/y7a8o0j
+        2IW3PV4Un7M19LePqQ33PMK6YVWIXp3PA90n12XbRGXpaNitjCaUaL/zZPFzu6mQHDcBcw+K3Y3C
+        W6pwX2QUL6RoSqdsFyn602oveHZyRvT1wwDmKXbx0HlIjBBdMhDj/UilXRhZI4mmQstMvCPrXTNa
+        /fN6U9GmgZTy1X6WDkPMXwDtuGNk3neWSP1I1uXkAJhuNhCPs24s4CntKmY4WEeDstJ6VPPiTHCl
+        14g+PvII4dN3GJH1XTrdT54G13pP2PpxPHVNTQWG8hoeWPReOqn8Dgys53GyJ6u1W3TCO+ERaTPe
+        UOadRyT01OQ6Os0ECVvfq39+/edPmfeiXd39/Gl/ahSyNu5WN4+qjsPz4U10PLRSQLuRJggOTCYe
+        ToNUjA6JtHtcHfEik1oxocHeg0U3S+YWD7vmIaMGUq4OI74nl93YXMYQtOzD2fZwqq1BvPYtmKF/
+        JFbQv1POLVwi2dKPX7206kXtZCZK3LAhxlePxS5/nuBbPyy41W6noFNa/fwdVZXls54qP8nQ67ip
+        iXtfT9Yw33487avvuC6VNxJGar1grysVc8qA1Cw3OoBaIXcsP1lTf/czgzA95cyr82c6SsPWhhMy
+        JCprytGaptN9DV9/xAJGV51CHo8KcbArKs0ZoPfmwH1tVxsbgrdog7geJCZoG8KZv11d08mZDT4a
+        jbXHVvVOQuJOPA0qNS/x0trsrQkOe67vHwYi+Ewh7TfS9QQpv6e//oKmolcVmOP4yEy7iC3FWxeG
+        ps9fHQnm2V2wh3pRYfehGnHoyDpeTqUNH8lOqfLLRwE6FPr1vbpiNjxswee7OoPYVxFWuXQJhAxu
+        BMH2lZHwcD2I8XFa9Si3hgwjRu+dWAr3BOLEBowsbxWIYFaMsORGw379c7h88kRjWaHS5Tzfo9EP
+        VwksdDYSIwmcdDqFzQj17Viy7ScntUD4ncCoDXtm92HVMXTdhKDMdEb8phzSbkMvD0gP8GGeN5+6
+        sVeuXPvky5CO44YHXA9pi+zLTcNiRbb1Y7x9FHjv7RWVRjVDk3n0KuC88LESTpEl6uVQaW1lzIlz
+        4Vag/PKAa1xWdOZPJ8GeR+eF/O1WoqrlTvFYFFm//OoXrV/ZqptPvtZqbTO86Pyrl30b3QCqiTO8
+        PE6vgKcjxgiajUw1qbgKdssCCXKLZczy9aHu8acF0OePjqz86YmEJH/wnzzvim6yeAuZolFGIgqt
+        33TCvc9DUC78SS+HTVdPTVNK+rdeSXj0cEfV4+sF/TsgdPE4L2IqIqlCt/3GoW2Otha/SZ0HgJ4y
+        XbhOVPfv8CCj+1qsCW5PUTwtPhsPffMMC71NE4ufHxB7qL/9KBe06esImLZqqSI+YzySaFlAVGgl
+        W69yJZgOk0fRY8QXPF7vhSXyt5Op/KL3zITLthPwmkK0eFUvZjUSDvg836n6I3fuDM/bNhX3YluB
+        5/KEbI7T2pJf+sXXAn82ww1adaKvD4an//QRHy6W+MMXEmOxouUkS6kIxsSD533rE2OSi3S8yOce
+        7Euusa26ZEhY6VhBea0LPJ9DHfeLV5ohqVJitp6TNhbts7fBWXYIq0f5jEZpn5goF2pHMluXO/pW
+        dxSy5aMlZo2HoF/Mltoff7qdpWBR47yKwPwMLrOsxz3giqMbyEqGJcFvH7ruWYIJtPJV5mxOFRLw
+        WmL09Qsk8JRVPEbLrETaRWswX29u6VDWFsDabA0SuJGbik/dVrAs0IQv1FUDCpfjGpLdOaH6pU6R
+        qHZmBtKntql+7tNOYCPgsFQTQmfTpHff/O3DLZhyRpz5I55eWwP0iX66r3+6B5yJTAXic5V+/UD6
+        ejmZgogGLvn5Perkzr+/D2msvB7f04fCBdiF6j9eocHc/OVp/HufLYV7QA5EFywvAw+NcnU5ocXC
+        mLE16u2Ak8ej/H0eI2hvo8Xb8ytI00NEguPc7cQ20DBazTmlIFUo5aeos9F2JhXMOhv3lGnBLoT3
+        zb+yP3l/vr17MLnFnYVC9eo5GsIIDedTQce5sbd6ZJYZNDdlxS6Pg9P9qY/oY+2pmu0mNK1D4/Xz
+        o8SNZ4+4hyjKIEnahu7K1gim1l6Zuod68d3PrJ6g3GBI8hfBv/4myDvB6Hse8ESaJ+qPx3uF7FU0
+        skAePIv//MpX/6mkoqiTv/0CvWctpyjf3DvOs4cEZX1ck85T7uk4FLK6DHe9Q27P+xTwhbpUkXdQ
+        BPn1//svbxmr24KstbWfTmGkNrBi1zWWHxsqKLkoNlp/SoPg8DgGkxY/FW0ZeG92bTcqEnGXnxCR
+        2I5gcB/p2O9CDf14zPmbL8X59AJkht6R8ldSiqm1NwZ0sfVmW9kk4l5JHaAB7Rd4qtErGK+Xi/nz
+        L8TeZV489be7oX95B7EwFuLrFy6a5wQ6HQ4nKxAf/vbAm5sm8VxpSnkOnxd8LJ4yzMC3JtdIfCje
+        C5tt5jkX4lr7Bzh8giOVu2OVTu+P/oBeqAUxaeUGi1luH8BojAFLjnqyhIfiFjX59kGXZqKm9GTL
+        DSyrI2cuh3PaH9xlhcq1U1Dx9cO947MS/fwExm1di20iKeBrXsZy65rGYnTc6Me76OvVtpawbpgC
+        SHjHVt/1i4ZFEkTOesnCLGs6fuktG1I6Rrj77u+nem4r1OfHNyG6PKU8KD8JSuQiYsYvf1+kqQLP
+        2ejMnyd3i2/1wkDdcvlmxJAe6Vc/L/ok0803n9QW95eJin76b2Eco09iNTIa/L1Dn8bNRCK8zPfg
+        JiVnl1O9q6dgv90DPdo3YuWtbH3wMOxRpFKPbULrZfUQXQoQS6Wmo5fsOrmTLxi+fp74vzydZakP
+        P77861/f81tBd5xhZs81s/vDd758iKyuRRiPqSlT2CpdhH/7RdP76vWrV2YFvZt++5cNyi0/4Vt+
+        bVF/3Ahb++Vh79d/15dbCYMfOVhcxCHgtrE76ZaGPKq8Wt/qknOsovt5d2Mb9bOulcStfVgspRdz
+        YttEi7j1esiWrxZL76WSTtPpswYmDkuSI2zFE0H5HtDaj+hCmgWBSta3FnUVzRl+3qK4yaO+R/zZ
+        IxK4x6X4+jMVfDHOKRdXNxD+9Boh8X3CQrGhqC+WLodreWi++TbtmD9RjmJfQwSroSLGdbU8wJff
+        EX9flXXz5TPw5SO/vCL4uYjXi+OIn8w8SUYtf/ksDAYsiP/lm+K66VT045c/PkiT6hTCx5Bl4lHT
+        6aZRNx/QvW5vWmd0VYul/vHg60+Icw43QZsiuYWj8goJKbxHPd77ZQO3tIiZ12eBGN0XqeARPj2y
+        1UeGxOcMNlK8fchwexrTQVW3IzT13sTaUbwE1YO9+fM7zIv3QcqnpEu+yOD4R0/EVAwUffkVMZ6P
+        HRLlvLoAhfjDguUnqcfJswFm8cJhzuAfhdhnEYXTef3E2k5dxhTDJkGxOzsQnJWtRak/KdAsrJCK
+        28yt54nVKOibb3GTJlPNZUtk8IhWm28+KOIp5vkBPEQFIzx9oM/XLwHZ0hueXaoWcRFJJaxejkr8
+        rz8TdUnWaH+C6scDOl6cDBukk2szMyEvxFbYK0G5uoyYn861hLSYJej+MOmXRxjx/KaVCmxZ5rCi
+        c9qAJlURIiXtQ/LVm7r75fmjvteZURMp+KNHKeUR8bpnUMv80JxQYMcYS+nnI8acRGtENMll/vwm
+        uvmMaRwtV/Mrwfezb3H3cz+Bv663xJzENhVW5K/RPXpQ5tlDF4vDUGg/vWA2DqpgUtKrD7/1cc5m
+        4qOsNIrydWdRkS7u6eTKXQNzu9FpNi+qjgeuDyDNtA7PnCAPRoVvVKC82zFCmpPge7HKfrwLo2/e
+        GOhR9oDYa5eYr5tIOfUnGarVu6SL62B3477fFVBs+z2JjH2QTptU87R99EK4/PGvH+/Z9c0dzyfH
+        SsX3fMNbMRJy+863/vjjj++ZLL4/V514bc4++LptMf9cxJYwzf0a+GzRk/BF0J/+jH55JDwJTQyP
+        p5ahkw7PH2+vh+tc5XBfT2vi2UOQjrW+kGHDuUXMJLt1n9KLVMBbY/Hbn045zAMDCVJVzAvXZ9HP
+        1vUL8uFusXCU0/i7Hl8r7n7MVsYhDKa0D1TwH+4Mq640xZ3V6h6IwTkQZ/FmHfvxpefiMTHyVh5d
+        4dpZBu47WpFVH3A07svaRFptJYycnEhM70SV4IYHm05FUiCh+v0e0cv8Q395jb+X9PDvembmtRsW
+        7XHUqgc9ffneM6WyJQpoFGpS6Vs/Y5ozDrfn0yHnulwEY3UPQrS+zn0WSnmDRP4cZT1FyoetHnwd
+        jxe/MUG7qA3zpd393/OAMQmXxFqqdyRgm4xa2iQfZl/m8q/fnWC7pwvmsNsmXux3ivbzS7QW6Vuw
+        kMcUOeSsUY3jIR4r7d6Avmv333ljWfPrzTDhxyvgRJv0D0/51iez5rocT5+2rWDjlOmPZwper3a9
+        9riezrR8L534O9+J0E73NBbwiAaj/4Lix//Jd54gevV6uUCTk8f391Mt/uU7mhYohBgT69C4rqbT
+        b38wv61faGzkhQrzrRSQdVVZaPE9byCJj4KXyXDp2IrkHpSv/UAsSGhKrdVT+vFYPH55Dr0/l82f
+        +ZTVxfeudxhc0F6XK7Zensd6xJ9KQq8tXMj2tUvFS/4YBx0WcjvAuqapmJm76Jdffv4g4NqgXn76
+        983jq3paocoAFM5XZBNpL+s371iaomSY6nysu/n67sO7D/mX316+/O+kQF4WHVWpe7F4Oq5D+Cyo
+        TJe2wePhPLcU9J3HEjyqgH7+6Jc/iW9MPRrN+6348RGyBceq+efWhOA08oUcXkUVDxFNQmhh86KL
+        CC2sycO+D7dL1eMmXJ/RtFEGjH782JhkKaZJrxrIPQQB1ZfNpm6Ny1FDe5/E3/nVWgx3qC46b5qK
+        GI7qWO1ebDLQg6glQeu9hRCa06OTLj3pHT1uAV8edgDTodTI6cuveD2vMcqOzY7tnKC3qPv5HNCz
+        nVdsLeltPF6FtdaX2Mbf+XIpxj1jrabP0ZxYsROjaRiuJvrph8joveYgKS/45jtmcjZDP3+Cgndi
+        U1Wv1ZTVy2cFrpGsSHDZ3+tWq1YA3/7z5WeFNU5r9fTj1czeHExrvnmXL33V0COzp9ncYndrn0Gu
+        vbM/fG/4zj/0v3+3Av7zH3/99X9+NwxeTV48vxcDhmIa/vlfVwX+meTJP2VZ+SdT/txEoH1SFn//
+        69+XEP7+dM3rM/zfoXkU7/7vf/01V/5cN/h7aIbk+d+f/+P7af/5j/8HAAD//wMA7BI8p+MgAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7ce2ba482fec636c-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 28 May 2023 01:29:37 GMT
+      Function-Execution-Id:
+      - bbqew0ywq4v2
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '30'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - e00814431ce5eac27f0864c78eaab11c
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 8c0b4b5c78521d43cba9429d5af45045
+    status:
+      code: 200
+      message: OK
+version: 1
