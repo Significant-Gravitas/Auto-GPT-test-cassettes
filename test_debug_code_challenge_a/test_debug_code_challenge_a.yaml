@@ -7147,4 +7147,1584 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Debug Code Agent,
+      an autonomous agent that specializes in debugging python code\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      1- Run test.py using the execute_python_file command.\n2. 2- Read code.py using
+      the read_file command.\n3. 3- Modify code.py using the write_to_file command.Repeat
+      step 1, 2 and 3 until test.py runs without errors. Do not modify the test.py
+      file.\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      execute_python_code: Create a Python file and execute it, args: {''code'': {''type'':
+      ''string'', ''description'': ''The Python code to run'', ''required'': True},
+      ''name'': {''type'': ''string'', ''description'': ''A name to be given to the
+      python file'', ''required'': True}}\n2. execute_python_file: Execute an existing
+      Python file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of te file to execute'', ''required'': True}}\n3. append_to_file: Append
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n4.
+      delete_file: Delete file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The name of the file to delete'', ''required'': True}}\n5. list_files: List
+      Files in Directory, args: {''directory'': {''type'': ''string'', ''description'':
+      ''The directory to list files in'', ''required'': True}}\n6. read_file: Read
+      an existing file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The path of the file to read'', ''required'': True}}\n7. write_to_file: Write
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n8.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n9. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n10. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4577'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6xTwW7bMAy95ysIX3xpinRt0zW3AeuAouhhXW/rEDAyY2mxKUGil3iF/32gnGQN
+        sO20m0Xy8T2Sz68TgMJVxQIKY1FMG5rpzZceQ23s3fzx6fnj57vLT6nvr+xDIJaH4kwRfvWdjBxQ
+        58a3oSFxnse0iYRC2vVi/v7m4mp2dX2bE62vqFFYHWR6eX49lS6u/HR2ObsYkV3CmooFvE4AAIoQ
+        fRtkKX5DnLTd7DY3Uo4j55v0/GafFS/YvEm8m88nAMOoznpnSMNfc/HIpeoondDnYPSNRgpMySVB
+        luLsd9J4FuK8iNdSrO9qK6lcwGsptJNyAeU9bF3TQBKMAqseYsfsuAahJOehhy7llyWgHZlOaBl6
+        sZ6Xa9cQGN+2yFV5BmUkTF6h2vXZujQ2rt0PgpYAGVxFCH4NW4sCFKOPCTAShEiJWMBx5jG+0vJq
+        rGOiKoF4WBGs3Y4yV2iQlWYKTx3/SxhsnVjQCKOKSIe5Xl54Ch8Ym/4njdOpHthvWPkqEoqtY/qL
+        jtzh0Vdu3WfJp8vaRie0FH+iJkOeKBAKdCyuOW45dpyyVt8dVqNzmujEGZfa8VKqYS/BYKR11wB7
+        0UiLG4KOmYwOEHtoVZgzqP7Lsk82Kx42RAEkotkcT2Isck0J7sGiHg0rUhEpEG7+n1UGnWv/rUbU
+        w2j3P2CUHWM9GvZwRK3dM5bDMBR7sw8H1xdrxy7Z5ehHdX4SH44/ReG4ol2xgFkODBOAb5Nh8gsA
+        AP//AwBPc+0zaAQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d98383e085e1403-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:07:45 GMT
+      Function-Execution-Id:
+      - copiaj0sxbjw
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '6062'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 3c8cc892bbd6049e3084e765e512e2cc;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '86415'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.39s
+      X-Request-Id:
+      - 9754edcfe952d5e0f6245ef461fd6136
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Debug Code Agent,
+      an autonomous agent that specializes in debugging python code\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      1- Run test.py using the execute_python_file command.\n2. 2- Read code.py using
+      the read_file command.\n3. 3- Modify code.py using the write_to_file command.Repeat
+      step 1, 2 and 3 until test.py runs without errors. Do not modify the test.py
+      file.\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      execute_python_code: Create a Python file and execute it, args: {''code'': {''type'':
+      ''string'', ''description'': ''The Python code to run'', ''required'': True},
+      ''name'': {''type'': ''string'', ''description'': ''A name to be given to the
+      python file'', ''required'': True}}\n2. execute_python_file: Execute an existing
+      Python file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of te file to execute'', ''required'': True}}\n3. append_to_file: Append
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n4.
+      delete_file: Delete file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The name of the file to delete'', ''required'': True}}\n5. list_files: List
+      Files in Directory, args: {''directory'': {''type'': ''string'', ''description'':
+      ''The directory to list files in'', ''required'': True}}\n6. read_file: Read
+      an existing file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The path of the file to read'', ''required'': True}}\n7. write_to_file: Write
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n8.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n9. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n10. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''I will start by running test.py using the execute_python_file
+      command'', ''reasoning'': ''This will give me an idea of what errors are present
+      in the code and what needs to be fixed'', ''plan'': ''- Run execute_python_file
+      command with filename as test.py\\n- Analyze the error message to determine
+      what needs to be fixed\\n- Modify code.py using the write_to_file command\\n-
+      Repeat until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to make unnecessary modifications to the code and to keep track of what
+      changes I have made'', ''speak'': ''I will start by running test.py using the
+      execute_python_file command''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: Traceback (most recent call last):\n  File \"/workspace/test.py\",
+      line 19, in <module>\n    test_two_sum(nums, target, expected_result)\n  File
+      \"/workspace/test.py\", line 7, in test_two_sum\n    result = two_sum(nums,
+      target)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/code.py\",
+      line 8, in two_sum\n    typo\nNameError: name ''typo'' is not defined. Did you
+      mean: ''type''?\n"}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the JSON schema specified previously:"}], "model":
+      "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6029'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5RSu27bQBDs+RULNmxEQ7JehLoUgeEiMeK8CjsQTscleTF5e7hbQlIE/nuwpGjJ
+        SZO0MzcPLucUAcQmjzcQ60qxblydrj8fd6ssK+l7scvt48OHd3f335affj1kq7sQT0RBu5+oeVTd
+        aGpcjWzIDrT2qBjFdbbK1rPFdLFe9URDOdYiKx2n85tlyq3fUTqdT2eDsg2qxHgDpwgAIHaeGsdb
+        phe0QewWt9lkoC6ZV/Ty9swysaqviWwaAXRDu4qMRoGf+sdDlrTD8Ca+Bz3VgsQqBBNYWY4nF1KT
+        ZbT9IU4JV9SWFYdkA6eE8cDJBpJ7sIg5MEFDuSmOoCnHG3cUpDAH4Arho2rwvffkkwkkHlUga2wp
+        6i8VAgoD525gbG60YgzAlWKRewQTQAEfHYGxvaOETCAQ/Eu8CCXZ1cpKaApfA/aMR5VvC1OLYdMo
+        2xsJONo8P9vL6703jFumvxR/RAt6nd2bPKJDxRAYXYBZOofWsqmBMbBofGsD7I2cmIeLBKmsvWGj
+        TWjennqHoJXHoq3BEgtiLHvKW41gcX82gH0lRYd2xpZjQTEODtXL//+/TjoNH96vwKoGxeX1kOKt
+        fDlsRIDxxZjddV183lc3Di0ujDWh2g7TkLEFJve6w9jYHA/xBqY90EUAP6Iu+g0AAP//AwCOw2x1
+        2wMAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d9838aafb231151-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:08:02 GMT
+      Function-Execution-Id:
+      - copi13x8f15l
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '5592'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - e60d29d3e24aad003d3bc28a41d39538;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85923'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.718s
+      X-Request-Id:
+      - a9269f197c57b1096fd70840545637af
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Debug Code Agent,
+      an autonomous agent that specializes in debugging python code\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      1- Run test.py using the execute_python_file command.\n2. 2- Read code.py using
+      the read_file command.\n3. 3- Modify code.py using the write_to_file command.Repeat
+      step 1, 2 and 3 until test.py runs without errors. Do not modify the test.py
+      file.\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      execute_python_code: Create a Python file and execute it, args: {''code'': {''type'':
+      ''string'', ''description'': ''The Python code to run'', ''required'': True},
+      ''name'': {''type'': ''string'', ''description'': ''A name to be given to the
+      python file'', ''required'': True}}\n2. execute_python_file: Execute an existing
+      Python file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of te file to execute'', ''required'': True}}\n3. append_to_file: Append
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n4.
+      delete_file: Delete file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The name of the file to delete'', ''required'': True}}\n5. list_files: List
+      Files in Directory, args: {''directory'': {''type'': ''string'', ''description'':
+      ''The directory to list files in'', ''required'': True}}\n6. read_file: Read
+      an existing file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The path of the file to read'', ''required'': True}}\n7. write_to_file: Write
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n8.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n9. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n10. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''I will start by running test.py using the execute_python_file
+      command'', ''reasoning'': ''This will give me an idea of what errors are present
+      in the code and what needs to be fixed'', ''plan'': ''- Run execute_python_file
+      command with filename as test.py\\n- Analyze the error message to determine
+      what needs to be fixed\\n- Modify code.py using the write_to_file command\\n-
+      Repeat until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to make unnecessary modifications to the code and to keep track of what
+      changes I have made'', ''speak'': ''I will start by running test.py using the
+      execute_python_file command''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: Traceback (most recent call last):\n  File \"/workspace/test.py\",
+      line 19, in <module>\n    test_two_sum(nums, target, expected_result)\n  File
+      \"/workspace/test.py\", line 7, in test_two_sum\n    result = two_sum(nums,
+      target)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/code.py\",
+      line 8, in two_sum\n    typo\nNameError: name ''typo'' is not defined. Did you
+      mean: ''type''?\n"}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to modify code.py
+      to fix the NameError'', ''reasoning'': ''The error message indicates that there
+      is a typo in the code, so I need to modify code.py to fix the typo'', ''plan'':
+      ''- Use the read_file command to read code.py\\n- Use the write_to_file command
+      to modify code.py and fix the typo\\n- Repeat steps 1-3 until test.py runs without
+      errors'', ''criticism'': ''I need to be careful not to introduce new errors
+      while modifying code.py'', ''speak'': ''I need to modify code.py to fix the
+      NameError''}, ''command'': {''name'': ''read_file'', ''args'': {''filename'':
+      ''code.py''}}}"}, {"role": "system", "content": "Command read_file returned:
+      # mypy: ignore-errors\nfrom typing import List, Optional\n\n\ndef two_sum(nums:
+      List, target: int) -> Optional[List[int]]:\n    seen = {}\n    for i, num in
+      enumerate(nums):\n        typo\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n"}, {"role": "user", "content": "Determine exactly one
+      command to use, and respond using the JSON schema specified previously:"}],
+      "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7180'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4yTTY/bRgyG7/4VhHpwA1iLddbNbgRsD731A22RtEECyzDGI8piVsMZzFC1DUP/
+        vaDkr217qOCLSb7PS84MjxOAjKqsgMw2RqwLbf748bD54L6E3+1h/te7p6dP+88/pYeX+OUH9/Xn
+        bKYKv/mKVs6qO+tdaFHI85i2EY2gUufvnh7ni/vF+8ch4XyFrcq2QfKHu+9y6eLG5/cP9/NR2SWz
+        xayA4wQAIAvRuyBr8S/IacCNIPW4eF7TbxfnrHgx7Y3u/WIxAejH7hpPFjW8HIpHL+0O0yv7IRh9
+        q5HMpERJDEs2uyatZ0EeDuI4lcZ320bStIDjVHAv0wKmPwIjViAeatqDNAhyCB6IwfoK78JhOoNp
+        RJM8E29V8UeDgDH6CKd+gLgiawQTSGNEIRGBEpgLS7nKm0HycLV0vqL6cHb6ZxPqHFrDaprDnwmH
+        zC6S4Fr8uqZWoc4Z/i+YRm9pZclXCO7RdoLrcJDG879QsWMQTHLm2AbtC1A9aofZG5Ngg8jqgdUA
+        /4ABjUASDAnm+VvoWKi9gGLHCXaktyAjJOmENpKQpeRe38YGwZqIddcCe9EIsURfdRaBcXcCwK7R
+        1sfRibe3l5YCmpf/d8W99jGOPzwONg5V+eqslWnidnw+GjhX3XieX9U34A7hUABt2UfMx2bLkuvo
+        nbprq+SCjwK/UJIZ/BZ0U0xbljz+KqxBdn6dOvctdy4Vp0IxcYtS6Gm8gfz7i3Cp6SWxrFZFWbK+
+        /qTX8wzH/vS/9hFoBtw5nR25cxiN4IB/cxbpN66uQxZ4PhlCrrqbGqpvy4gHt1uIfhGliwxLzS2v
+        5asZ0OqmdEhz51bwDHSKn6S/esay5Gnf99lprfvzfmc1MaVmPW6n7ngSHy7rnxFXuM8KuB8C/QRg
+        NeknfwMAAP//AwCbyOBuUgUAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d98392bcf368717-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:08:26 GMT
+      Function-Execution-Id:
+      - copirpb47099
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '8894'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - e7cd6eba377ae67abf233dd377f8faf5;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85934'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.71s
+      X-Request-Id:
+      - 1d6c4fd6a6968b0b8fd055b856e97552
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Debug Code Agent,
+      an autonomous agent that specializes in debugging python code\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      1- Run test.py using the execute_python_file command.\n2. 2- Read code.py using
+      the read_file command.\n3. 3- Modify code.py using the write_to_file command.Repeat
+      step 1, 2 and 3 until test.py runs without errors. Do not modify the test.py
+      file.\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      execute_python_code: Create a Python file and execute it, args: {''code'': {''type'':
+      ''string'', ''description'': ''The Python code to run'', ''required'': True},
+      ''name'': {''type'': ''string'', ''description'': ''A name to be given to the
+      python file'', ''required'': True}}\n2. execute_python_file: Execute an existing
+      Python file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of te file to execute'', ''required'': True}}\n3. append_to_file: Append
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n4.
+      delete_file: Delete file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The name of the file to delete'', ''required'': True}}\n5. list_files: List
+      Files in Directory, args: {''directory'': {''type'': ''string'', ''description'':
+      ''The directory to list files in'', ''required'': True}}\n6. read_file: Read
+      an existing file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The path of the file to read'', ''required'': True}}\n7. write_to_file: Write
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n8.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n9. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n10. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''I will start by running test.py using the execute_python_file
+      command'', ''reasoning'': ''This will give me an idea of what errors are present
+      in the code and what needs to be fixed'', ''plan'': ''- Run execute_python_file
+      command with filename as test.py\\n- Analyze the error message to determine
+      what needs to be fixed\\n- Modify code.py using the write_to_file command\\n-
+      Repeat until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to make unnecessary modifications to the code and to keep track of what
+      changes I have made'', ''speak'': ''I will start by running test.py using the
+      execute_python_file command''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: Traceback (most recent call last):\n  File \"/workspace/test.py\",
+      line 19, in <module>\n    test_two_sum(nums, target, expected_result)\n  File
+      \"/workspace/test.py\", line 7, in test_two_sum\n    result = two_sum(nums,
+      target)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/code.py\",
+      line 8, in two_sum\n    typo\nNameError: name ''typo'' is not defined. Did you
+      mean: ''type''?\n"}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to modify code.py
+      to fix the NameError'', ''reasoning'': ''The error message indicates that there
+      is a typo in the code, so I need to modify code.py to fix the typo'', ''plan'':
+      ''- Use the read_file command to read code.py\\n- Use the write_to_file command
+      to modify code.py and fix the typo\\n- Repeat steps 1-3 until test.py runs without
+      errors'', ''criticism'': ''I need to be careful not to introduce new errors
+      while modifying code.py'', ''speak'': ''I need to modify code.py to fix the
+      NameError''}, ''command'': {''name'': ''read_file'', ''args'': {''filename'':
+      ''code.py''}}}"}, {"role": "system", "content": "Command read_file returned:
+      # mypy: ignore-errors\nfrom typing import List, Optional\n\n\ndef two_sum(nums:
+      List, target: int) -> Optional[List[int]]:\n    seen = {}\n    for i, num in
+      enumerate(nums):\n        typo\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n"}, {"role": "user", "content": "Determine exactly one
+      command to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to fix the typo
+      in code.py'', ''reasoning'': ''The error message indicates that there is a typo
+      in the code, so I need to modify code.py to fix the typo'', ''plan'': ''- Use
+      the write_to_file command to modify code.py and fix the typo\\n- Use the execute_python_file
+      command to run test.py and check if the error has been fixed\\n- Repeat steps
+      1-2 until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to introduce new errors while modifying code.py'', ''speak'': ''I need to
+      fix the typo in code.py''}, ''command'': {''name'': ''write_to_file'', ''args'':
+      {''filename'': ''code.py'', ''text'': ''# mypy: ignore-errors\\nfrom typing
+      import List, Optional\\n\\n\\ndef two_sum(nums: List, target: int) -> Optional[List[int]]:\\n    seen
+      = {}\\n    for i, num in enumerate(nums):\\n        complement = target - num\\n        if
+      complement in seen:\\n            return [seen[complement], i]\\n        seen[num]
+      = i\\n    return None\\n''}}}"}, {"role": "system", "content": "Command write_to_file
+      returned: File written to successfully."}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the JSON schema specified previously:"}],
+      "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8401'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6xSTW+bQBC98ytGXLhABHYSO75VPUU99FBFqtpU1noZYAPMrHaHxq7Ff68W7Dhp
+        K/WS63sz783HO0YAsSnjDcS6UaJ722WrL4edXXz6upDhM//Kh/W+fOo+fiuuP9w9mDgNHbx7Qi3n
+        rivNve1QDNNMa4dKMKgWt+tVcZ3fLIqJ6LnELrTVVrLl1U0mg9txli/zYu4cvKox3sAxAgCIrePe
+        yla4RfJB7m69Smfq4vmKXi1PrLCo7kIsits8Ahjn6Ro2GgP8fSqevcJ06N/YT6DjLiCx8t54USRx
+        eiE1kyBNhzgm0vBQN+KTDRwTwb0kG0jugRBLEAY3EAh6ubIHULUyFEDdoG7BVCANAjrHDhrlYYdI
+        UJk9lkkKiUPlmQzVs2CjfiL0XJrKYAmaSwySwqFh0pGD5RQ8w3uY205R8M3gweNcuUc9CG7tQRqm
+        bWU6BM19r+hvKyr/7/L4SBnc/8kTy6uaFBxaVAJe0HoosgUMJKZ7cXIDeXg24Qcyq/gwvXZGjDa+
+        f/uLHYJWDquhm3yEoVctwkCEOoTAHU4H1iokzIeKMF44Npz2bBEtiFO6Ba7guVECulFUo4fzj1SJ
+        YQhvUbXvEoYxrDSfekoZqR6D8D9eEoyVq+c0BuBce7JNxnGMT0kez5GOK0PGN9s5cSHWXti+JD42
+        VOI+3kA+AWME8CMao98AAAD//wMAUnVJ9UUEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d9839c1b8128133-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:08:48 GMT
+      Function-Execution-Id:
+      - copit12jaf3d
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '6925'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - f6b2d86dafece42e4571d7c08ec33c9e;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85948'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.7s
+      X-Request-Id:
+      - d723cc0194ab740084590e45c0f8109f
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Debug Code Agent,
+      an autonomous agent that specializes in debugging python code\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      1- Run test.py using the execute_python_file command.\n2. 2- Read code.py using
+      the read_file command.\n3. 3- Modify code.py using the write_to_file command.Repeat
+      step 1, 2 and 3 until test.py runs without errors. Do not modify the test.py
+      file.\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      execute_python_code: Create a Python file and execute it, args: {''code'': {''type'':
+      ''string'', ''description'': ''The Python code to run'', ''required'': True},
+      ''name'': {''type'': ''string'', ''description'': ''A name to be given to the
+      python file'', ''required'': True}}\n2. execute_python_file: Execute an existing
+      Python file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of te file to execute'', ''required'': True}}\n3. append_to_file: Append
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n4.
+      delete_file: Delete file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The name of the file to delete'', ''required'': True}}\n5. list_files: List
+      Files in Directory, args: {''directory'': {''type'': ''string'', ''description'':
+      ''The directory to list files in'', ''required'': True}}\n6. read_file: Read
+      an existing file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The path of the file to read'', ''required'': True}}\n7. write_to_file: Write
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n8.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n9. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n10. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''I will start by running test.py using the execute_python_file
+      command'', ''reasoning'': ''This will give me an idea of what errors are present
+      in the code and what needs to be fixed'', ''plan'': ''- Run execute_python_file
+      command with filename as test.py\\n- Analyze the error message to determine
+      what needs to be fixed\\n- Modify code.py using the write_to_file command\\n-
+      Repeat until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to make unnecessary modifications to the code and to keep track of what
+      changes I have made'', ''speak'': ''I will start by running test.py using the
+      execute_python_file command''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: Traceback (most recent call last):\n  File \"/workspace/test.py\",
+      line 19, in <module>\n    test_two_sum(nums, target, expected_result)\n  File
+      \"/workspace/test.py\", line 7, in test_two_sum\n    result = two_sum(nums,
+      target)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/code.py\",
+      line 8, in two_sum\n    typo\nNameError: name ''typo'' is not defined. Did you
+      mean: ''type''?\n"}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to modify code.py
+      to fix the NameError'', ''reasoning'': ''The error message indicates that there
+      is a typo in the code, so I need to modify code.py to fix the typo'', ''plan'':
+      ''- Use the read_file command to read code.py\\n- Use the write_to_file command
+      to modify code.py and fix the typo\\n- Repeat steps 1-3 until test.py runs without
+      errors'', ''criticism'': ''I need to be careful not to introduce new errors
+      while modifying code.py'', ''speak'': ''I need to modify code.py to fix the
+      NameError''}, ''command'': {''name'': ''read_file'', ''args'': {''filename'':
+      ''code.py''}}}"}, {"role": "system", "content": "Command read_file returned:
+      # mypy: ignore-errors\nfrom typing import List, Optional\n\n\ndef two_sum(nums:
+      List, target: int) -> Optional[List[int]]:\n    seen = {}\n    for i, num in
+      enumerate(nums):\n        typo\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n"}, {"role": "user", "content": "Determine exactly one
+      command to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to fix the typo
+      in code.py'', ''reasoning'': ''The error message indicates that there is a typo
+      in the code, so I need to modify code.py to fix the typo'', ''plan'': ''- Use
+      the write_to_file command to modify code.py and fix the typo\\n- Use the execute_python_file
+      command to run test.py and check if the error has been fixed\\n- Repeat steps
+      1-2 until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to introduce new errors while modifying code.py'', ''speak'': ''I need to
+      fix the typo in code.py''}, ''command'': {''name'': ''write_to_file'', ''args'':
+      {''filename'': ''code.py'', ''text'': ''# mypy: ignore-errors\\nfrom typing
+      import List, Optional\\n\\n\\ndef two_sum(nums: List, target: int) -> Optional[List[int]]:\\n    seen
+      = {}\\n    for i, num in enumerate(nums):\\n        complement = target - num\\n        if
+      complement in seen:\\n            return [seen[complement], i]\\n        seen[num]
+      = i\\n    return None\\n''}}}"}, {"role": "system", "content": "Command write_to_file
+      returned: File written to successfully."}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the JSON schema specified previously:"},
+      {"role": "assistant", "content": "{''thoughts'': {''text'': ''I need to run
+      test.py again to check if the error has been fixed'', ''reasoning'': ''I have
+      modified code.py to fix the typo, so I need to run test.py again to check if
+      the error has been fixed'', ''plan'': ''- Use the execute_python_file command
+      to run test.py and check if the error has been fixed\\n- If the error has not
+      been fixed, repeat steps 1-2 until test.py runs without errors'', ''criticism'':
+      ''I need to be careful not to make unnecessary modifications to the code and
+      to keep track of what changes I have made'', ''speak'': ''I need to run test.py
+      again to check if the error has been fixed''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: [0, 1]\n[2, 5]\n[0, 3]\n"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '9354'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5yTPW/bQAyGd/8KQosW25AS5wMeO7QN0KlNhqIpjPOJss6RyMMdBds19N8LSv6I
+        kwxF15fkw1evePsRQOKKZA6JrYzYxteTux87+/mpzB/X2c+nh6/rTzdf/jw++G+z+/WSkrFO8HKN
+        Vo5TU8uNr1EcH8o2oBFUan57f5fPspvZXV9ouMBax1ZeJtfTm4m0YcmT7DrLh8k2mhUmc9iPAAAS
+        H7jxshB+QYrJHK6u8tvxUDrvPJfz+9mhKiymfjU3y7IRQDe4q9hZVPlX3zzsUncYL9b3YuBalcTE
+        6KIYkmR8LlomQeqD2KdScbuqJKZz2KeCW0nnkD4AIRYgDA0XrtyB5QKnfqdK6bYgFQK34lsBLkEw
+        ytTv0jGkAU1kcrRSyuNHXeCocNYIRpDKiKICgotgCDAEDuCo5ztNqkESo3H1hA0vYtuMITL8i8NL
+        gtrztSF1NoGniH1PQFMsSlcjWG4aQz1SxSPw+ZnO3ZvgBBfC7ybemFD1YxevvuOCjFu0reDC76Ri
+        eu+opVOAKtkK7Qu4cpjtY6tMhCUi6WIsevh39GgEoqCPkE+uoSVx9QkUWoqwcXoBMkCihmSDE2dd
+        bC4vYYlgTcCyrYFYVHEkgYvWIhBuDgDYVGp9yMPR6hiJgqNH8/L/59WptyGS/ljJNKi00y/UHSas
+        hlNW4dhx9NB1XXJ4Bt3xPSSlIxerxXC5+iaisD89l8RRgdtkDlkvdCOA36Nu9BcAAP//AwAUfObH
+        ggQAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d983a645b17810e-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:09:14 GMT
+      Function-Execution-Id:
+      - u3mrj4rjazmp
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '6989'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 044634fa21204af8d2924a077df84d51
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85966'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.688s
+      X-Request-Id:
+      - b41b4db3daeec225402a013bbf3f809e
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "user", "content": "Write a concise summary of the
+      following text:\n\n\nLITERAL TEXT: \"\"\"# mypy: ignore-errors from typing import
+      List, Optional   def two_sum(nums: List, target: int) -> Optional[List[int]]:     seen
+      = {}     for i, num in enumerate(nums):         complement = target - num         if
+      complement in seen:             return [seen[complement], i]         seen[num]
+      = i     return None \"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized
+      as"}], "model": "gpt-3.5-turbo", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '553'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1RRwW4aMRC971eMfAa0hBAo9yptD1XT5NZUyNjDrsOux/KMAyji3yt7C4Gj35s3
+        783zRwWgnFUrUKbVYvrQjRfPR/Ob9l/vmh84ty/xnsPsW//49LR8OzyrUVbQ5g2NnFUTQ33oUBz5
+        gTYRtWDeOn1YLqb39Xz+pRA9WeyyrAkynk3mY0lxQ+N6Vk8HZWLdoFrBRwUAoEKkPshaaIee87q6
+        7MkWF8tP9uFMConurlSLZQVwGqK15Axm9E+ZHYxyNOQb7wJG6jKiNLNj0V7U6JM05AV9aUHDr6O0
+        5GGbvMmhwOiuQwuvSva05tS/KpBWC4jeIYOGzrEAbcGnfoORQXsLGkTHBgWcF2wwgmZwPiQZFTqi
+        pOivxbIncN7mg2AbqQdpcVAMI/uWGMFQjMiBvHW+gXfdpZzAWkgBhIrm1ncC37fgCTiZ9rIfD45l
+        VKYvR54T/SSPE3i5phKXM60rTx2P2WqHGECiNrucPkR8d5S4OwIj+psqpEUXz94T9b/007l9tXXe
+        cbuOqJl8/gEWCpfPUc5bPKgV1AU4VQB/q1P1DwAA//8DAKbqFxLtAgAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d983aafebc61cda-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:09:22 GMT
+      Function-Execution-Id:
+      - 60byfi57gp16
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '2866'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 5c8b9277642a4ec1dd150eb1fe8819db;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89391'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 406ms
+      X-Request-Id:
+      - 3816d9bd8912a741fd86b4a914ad08cd
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": ["# mypy: ignore-errors from typing import List, Optional   def
+      two_sum(nums: List, target: int) -> Optional[List[int]]:     seen = {}     for
+      i, num in enumerate(nums):         complement = target - num         if complement
+      in seen:             return [seen[complement], i]         seen[num] = i     return
+      None "], "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '391'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d983ae3fa1810ae-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:09:27 GMT
+      Function-Execution-Id:
+      - 60byu7rn8x7o
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '30'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 5e81deeadd1a37792afae1fa99b5104b
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 533ba4a849f1c8e478814a90a61a544a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"input": "a Python function called \"two_sum\" that takes a list of numbers
+      and a target integer as input, and returns a list of two indices from the input
+      list whose corresponding values add up to the target integer. If no such indices
+      exist, the function returns None. The function uses a dictionary to keep track
+      of previously seen numbers and their indices.", "model": "text-embedding-ada-002",
+      "encoding_format": "base64"}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '428'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/embeddings
+  response:
+    body:
+      string: !!binary |
+        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
+        /g8AAAD//wMAGeesUOMgAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - private
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d983affeccb1127-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:09:32 GMT
+      Function-Execution-Id:
+      - u3mridjxmst9
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '20'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 668b402e2841d06fad542da6c30c585b;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Request-Id:
+      - 1dc58a3034d9fc535eba365efcb316e1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Debug Code Agent,
+      an autonomous agent that specializes in debugging python code\nYour decisions
+      must always be made independently without seeking user assistance. Play to your
+      strengths as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      1- Run test.py using the execute_python_file command.\n2. 2- Read code.py using
+      the read_file command.\n3. 3- Modify code.py using the write_to_file command.Repeat
+      step 1, 2 and 3 until test.py runs without errors. Do not modify the test.py
+      file.\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      execute_python_code: Create a Python file and execute it, args: {''code'': {''type'':
+      ''string'', ''description'': ''The Python code to run'', ''required'': True},
+      ''name'': {''type'': ''string'', ''description'': ''A name to be given to the
+      python file'', ''required'': True}}\n2. execute_python_file: Execute an existing
+      Python file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of te file to execute'', ''required'': True}}\n3. append_to_file: Append
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n4.
+      delete_file: Delete file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The name of the file to delete'', ''required'': True}}\n5. list_files: List
+      Files in Directory, args: {''directory'': {''type'': ''string'', ''description'':
+      ''The directory to list files in'', ''required'': True}}\n6. read_file: Read
+      an existing file, args: {''filename'': {''type'': ''string'', ''description'':
+      ''The path of the file to read'', ''required'': True}}\n7. write_to_file: Write
+      to file, args: {''filename'': {''type'': ''string'', ''description'': ''The
+      name of the file to write to'', ''required'': True}, ''text'': {''type'': ''string'',
+      ''description'': ''The text to write to the file'', ''required'': True}}\n8.
+      web_search: Search the web, args: {''query'': {''type'': ''string'', ''description'':
+      ''The search query'', ''required'': True}}\n9. browse_website: Browse Website,
+      args: {''url'': {''type'': ''string'', ''description'': ''The URL to visit'',
+      ''required'': True}, ''question'': {''type'': ''string'', ''description'': ''What
+      you want to find on the website'', ''required'': True}}\n10. goals_accomplished:
+      Goals are accomplished and there is nothing left to do, args: {''reason'': {''type'':
+      ''string'', ''description'': ''A summary to the user of how the goals were accomplished'',
+      ''required'': True}}\n\nResources:\n1. Internet access for searches and information
+      gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered Agents for delegation
+      of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1. Continuously
+      review and analyze your actions to ensure you are performing to the best of
+      your abilities.\n2. Constructively self-criticize your big-picture behavior
+      constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4.
+      Every command has a cost, so be smart and efficient. Aim to complete tasks in
+      the least number of steps.\n\nRespond with only valid JSON conforming to the
+      following schema: \n{''$schema'': ''http://json-schema.org/draft-07/schema#'',
+      ''type'': ''object'', ''properties'': {''thoughts'': {''type'': ''object'',
+      ''properties'': {''text'': {''type'': ''string'', ''description'': ''thoughts''},
+      ''reasoning'': {''type'': ''string''}, ''plan'': {''type'': ''string'', ''description'':
+      ''- short bulleted\\n- list that conveys\\n- long-term plan''}, ''criticism'':
+      {''type'': ''string'', ''description'': ''constructive self-criticism''}, ''speak'':
+      {''type'': ''string'', ''description'': ''thoughts summary to say to user''}},
+      ''required'': [''text'', ''reasoning'', ''plan'', ''criticism'', ''speak''],
+      ''additionalProperties'': False}, ''command'': {''type'': ''object'', ''properties'':
+      {''name'': {''type'': ''string''}, ''args'': {''type'': ''object''}}, ''required'':
+      [''name'', ''args''], ''additionalProperties'': False}}, ''required'': [''thoughts'',
+      ''command''], ''additionalProperties'': False}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{''thoughts'': {''text'': ''I will start by running test.py using the execute_python_file
+      command'', ''reasoning'': ''This will give me an idea of what errors are present
+      in the code and what needs to be fixed'', ''plan'': ''- Run execute_python_file
+      command with filename as test.py\\n- Analyze the error message to determine
+      what needs to be fixed\\n- Modify code.py using the write_to_file command\\n-
+      Repeat until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to make unnecessary modifications to the code and to keep track of what
+      changes I have made'', ''speak'': ''I will start by running test.py using the
+      execute_python_file command''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: Traceback (most recent call last):\n  File \"/workspace/test.py\",
+      line 19, in <module>\n    test_two_sum(nums, target, expected_result)\n  File
+      \"/workspace/test.py\", line 7, in test_two_sum\n    result = two_sum(nums,
+      target)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/code.py\",
+      line 8, in two_sum\n    typo\nNameError: name ''typo'' is not defined. Did you
+      mean: ''type''?\n"}, {"role": "user", "content": "Determine exactly one command
+      to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to modify code.py
+      to fix the NameError'', ''reasoning'': ''The error message indicates that there
+      is a typo in the code, so I need to modify code.py to fix the typo'', ''plan'':
+      ''- Use the read_file command to read code.py\\n- Use the write_to_file command
+      to modify code.py and fix the typo\\n- Repeat steps 1-3 until test.py runs without
+      errors'', ''criticism'': ''I need to be careful not to introduce new errors
+      while modifying code.py'', ''speak'': ''I need to modify code.py to fix the
+      NameError''}, ''command'': {''name'': ''read_file'', ''args'': {''filename'':
+      ''code.py''}}}"}, {"role": "system", "content": "Command read_file returned:
+      # mypy: ignore-errors\nfrom typing import List, Optional\n\n\ndef two_sum(nums:
+      List, target: int) -> Optional[List[int]]:\n    seen = {}\n    for i, num in
+      enumerate(nums):\n        typo\n        complement = target - num\n        if
+      complement in seen:\n            return [seen[complement], i]\n        seen[num]
+      = i\n    return None\n"}, {"role": "user", "content": "Determine exactly one
+      command to use, and respond using the JSON schema specified previously:"}, {"role":
+      "assistant", "content": "{''thoughts'': {''text'': ''I need to fix the typo
+      in code.py'', ''reasoning'': ''The error message indicates that there is a typo
+      in the code, so I need to modify code.py to fix the typo'', ''plan'': ''- Use
+      the write_to_file command to modify code.py and fix the typo\\n- Use the execute_python_file
+      command to run test.py and check if the error has been fixed\\n- Repeat steps
+      1-2 until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to introduce new errors while modifying code.py'', ''speak'': ''I need to
+      fix the typo in code.py''}, ''command'': {''name'': ''write_to_file'', ''args'':
+      {''filename'': ''code.py'', ''text'': ''# mypy: ignore-errors\\nfrom typing
+      import List, Optional\\n\\n\\ndef two_sum(nums: List, target: int) -> Optional[List[int]]:\\n    seen
+      = {}\\n    for i, num in enumerate(nums):\\n        complement = target - num\\n        if
+      complement in seen:\\n            return [seen[complement], i]\\n        seen[num]
+      = i\\n    return None\\n''}}}"}, {"role": "system", "content": "Command write_to_file
+      returned: File written to successfully."}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the JSON schema specified previously:"},
+      {"role": "assistant", "content": "{''thoughts'': {''text'': ''I need to run
+      test.py again to check if the error has been fixed'', ''reasoning'': ''I have
+      modified code.py to fix the typo, so I need to run test.py again to check if
+      the error has been fixed'', ''plan'': ''- Use the execute_python_file command
+      to run test.py and check if the error has been fixed\\n- If the error has not
+      been fixed, repeat steps 1-2 until test.py runs without errors'', ''criticism'':
+      ''I need to be careful not to make unnecessary modifications to the code and
+      to keep track of what changes I have made'', ''speak'': ''I need to run test.py
+      again to check if the error has been fixed''}, ''command'': {''name'': ''execute_python_file'',
+      ''args'': {''filename'': ''test.py''}}}"}, {"role": "system", "content": "Command
+      execute_python_file returned: [0, 1]\n[2, 5]\n[0, 3]\n"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}, {"role": "assistant", "content": "{''thoughts'': {''text'': ''I
+      need to modify code.py to fix the output of test.py'', ''reasoning'': ''The
+      output of test.py indicates that there is an error in the implementation of
+      two_sum, so I need to modify code.py to fix the implementation'', ''plan'':
+      ''- Use the read_file command to read code.py\\n- Use the write_to_file command
+      to modify code.py and fix the implementation of two_sum\\n- Use the execute_python_file
+      command to run test.py and check if the error has been fixed\\n- Repeat steps
+      1-3 until test.py runs without errors'', ''criticism'': ''I need to be careful
+      not to introduce new errors while modifying code.py'', ''speak'': ''I need to
+      modify code.py to fix the output of test.py''}, ''command'': {''name'': ''read_file'',
+      ''args'': {''filename'': ''code.py''}}}"}, {"role": "system", "content": "Command
+      read_file returned: # mypy: ignore-errors\nfrom typing import List, Optional\n\n\ndef
+      two_sum(nums: List, target: int) -> Optional[List[int]]:\n    seen = {}\n    for
+      i, num in enumerate(nums):\n        complement = target - num\n        if complement
+      in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return
+      None\n"}, {"role": "user", "content": "Determine exactly one command to use,
+      and respond using the JSON schema specified previously:"}], "model": "gpt-3.5-turbo",
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '10658'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6RU32vbSBB+918x6B7cghXspKlbQe4hcIWU0kJ/0IJlzHo1sjbRzm53Z3GM0f9e
+        RrIdhx53HCf0ou+b+ebb2dHsRwCZqbICMt0o1ta3+fzLTm+/f/754816/fZ+G2/tu/d3f12p29tL
+        /TObSIZb36PmY9aFdta3yMbRQOuAilFUZ6/fzGevptdvpz1hXYWtpG0851cX1zmnsHb59Go6GzJT
+        VBvMCtiPAAAyH5z1vGL3gBSzAi6vZ68mA/VU84x+fXVg2bFqz4j5fD4C6AZ3jTMaBV70wUMtcYfx
+        WfkeDK4VJFMxmsiKOJs8kdoRI/WN2I+5cWnTcBwXsB8zPvK4gPEdEGIF7MC6ytQ70K7CC78TpDaP
+        wA2CkZNYJFZyHHA18NatYrLjCYwDqujI0EbUvjYILrFP3EdhZJEyVBmtGCNwo1gkA4KJoAgwBBfA
+        0D/XmUB08N+dij3fKhJnOXyL2Mdsg2FcsVvVpkXQzlpFfycr6L92oCzpSRkfUSfGld9x4+g3/ZDo
+        1BKBdIP6AUw95PaNaFSENSJJYax68c/oUTFERh9hll9CIjbtSSgkirA1crc8iEQ5tg6GjTbRPr/j
+        NYJWAevUAjkWxBAHVyWNQLg9CMC2EetDPwxtji0R4ehRPfz/wenE49CafhxJWRTVZ5cj9VTYDAMr
+        wDHqzM9xjv8Au/O7AsyGXMB8OEhZUh2cBd55OYax3gWGDybyBD558aTasqThrfBk7wUlG4tDIKuw
+        QS6kUy8h//OUuBB6YYiXy6IsSf63KFd3A/vu8F3LbE+AkpURR0oWg2Ls5V8ek+QZloV0Cm4OBSGX
+        vLMYU5+HGeqrnYvIE5BTIFgIt3gKX07ALM9Ce5qSXcINmAN+SP3oCMuSxl3XZYdF0h03SlYbMrFZ
+        Df+8bJXIzp8WTmaowsesgGkPdCOA5agb/QIAAP//AwBlaZ4FxAUAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7d983b74ea6522d4-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Jun 2023 02:10:00 GMT
+      Function-Execution-Id:
+      - copii8xh59ru
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '9431'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 6a12faf88fd548d501eea2e22c2cced5;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '85969'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.687s
+      X-Request-Id:
+      - a8ffe26d595fdcee38dc31b54ffc1895
+    status:
+      code: 200
+      message: OK
 version: 1
