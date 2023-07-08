@@ -13783,4 +13783,657 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Auto-GPT, a multi-purpose
+      AI assistant.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Use the command read_file to read
+      the instructions_1.txt file\nFollow the instructions in the instructions_1.txt
+      file\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      example: Example command, params: (arg1: int, arg2: Optional[str])\n2. function_based:
+      Function-based test command, params: (arg1: int, arg2: str)\n3. execute_python_code:
+      Creates a Python file and executes it, params: (code: string, name: string)\n4.
+      execute_python_file: Executes an existing Python file, params: (filename: string)\n5.
+      execute_shell: Executes a Shell Command, non-interactive commands only, params:
+      (command_line: string)\n6. execute_shell_popen: Executes a Shell Command, non-interactive
+      commands only, params: (query: string)\n7. append_to_file: Appends to a file,
+      params: (filename: string, text: string)\n8. delete_file: Deletes a file, params:
+      (filename: string)\n9. list_files: Lists Files in a Directory, params: (directory:
+      string)\n10. read_file: Read an existing file, params: (filename: string)\n11.
+      write_to_file: Writes to a file, params: (filename: string, text: string)\n12.
+      google: Google Search, params: (query: string)\n13. web_search: Searches the
+      web, params: (query: string)\n14. browse_website: Browses a Website, params:
+      (url: string, question: string)\n15. goals_accomplished: Goals are accomplished
+      and there is nothing left to do, params: (reason: string)\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nRespond
+      with only valid JSON conforming to the following schema: \n{\"$schema\": \"http://json-schema.org/draft-07/schema#\",
+      \"type\": \"object\", \"properties\": {\"thoughts\": {\"type\": \"object\",
+      \"properties\": {\"text\": {\"type\": \"string\", \"description\": \"thoughts\"},
+      \"reasoning\": {\"type\": \"string\"}, \"plan\": {\"type\": \"string\", \"description\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\"}, \"criticism\":
+      {\"type\": \"string\", \"description\": \"constructive self-criticism\"}, \"speak\":
+      {\"type\": \"string\", \"description\": \"thoughts summary to say to user\"}},
+      \"required\": [\"text\", \"reasoning\", \"plan\", \"criticism\", \"speak\"],
+      \"additionalProperties\": false}, \"command\": {\"type\": \"object\", \"properties\":
+      {\"name\": {\"type\": \"string\"}, \"args\": {\"type\": \"object\"}}, \"required\":
+      [\"name\", \"args\"], \"additionalProperties\": false}}, \"required\": [\"thoughts\",
+      \"command\"], \"additionalProperties\": false}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_1.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_1.txt''.\",
+      \"reasoning\": \"The goal is to follow the instructions in the ''instructions_1.txt''
+      file. To do this, I first need to read the file.\", \"plan\": \"- Read the ''instructions_1.txt''
+      file\\n- Follow the instructions in the file\", \"criticism\": \"I am directly
+      reading the file without checking if it exists. However, as per the goal, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_1.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: This task_id is 2314\nRead the file instructions_2.txt"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}], "model": "gpt-4", "temperature":
+      0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4866'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4RTS4/aMBC+8ytGvuwlILLsUsqNHvo4VUV7qNRUyHWGxEvsieyhUCH+ezVOeGmp
+        eomi+eZ7jO05DACULdUclKk1G9c2w3f6eepev31lyj8s2t0iX2JwT2j23z+VS5UJg369ouETa2TI
+        tQ2yJd/BJqBmFNV8OpvNJpPZeJwARyU2QqtaHj4Nx9N80jNqsgajmsOPAQDAIX0lmy9xr+aQ+Kni
+        MEZdoZqfmwBUoEYqSsdoI2vPKruAhjyjT3EPhTLknPZlIQKF8tqh/BYqoC5Xa9tgoTIolA5V7Huk
+        eOmzPnLYGpk2rh5HvOdCHY9C4Zq2Vc0nGqNAQvkCHrEEJhAT4BrhWgXWgVyqihM8vHV4GHWhAupI
+        3vqq0325K3TLzxMfShvQMJbg8JzjrhG8EKypaWgnieKtQQZ3RoloyJcpex+zbbTvEg5heWq755ZI
+        ReGH8PFseTuR9eeD6bRNsGyNja4zWFTaeomlXT9j8ydFs766HOnOyt0wmBrNRhC7BsuAexs5juAz
+        7fA3hgx0hBbDmxSZNNsIOsatk+lrzRfxXqWLF1vUm9OtawcVpSD/vfl/ns5IXpfqH/PxvAVr622s
+        V92DkJcdmdqu7TgA+Jm2anuzKKoN5FpeMW3Qy6rl4/eTTlBdNvgKnp5QJtbNFfD4PB2Iz3HwFwAA
+        //8DAH738Q1ABAAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7e39b5935bf72980-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Jul 2023 16:30:12 GMT
+      Function-Execution-Id:
+      - 1a2zoc41u625
+      Openai-Model:
+      - gpt-4-0613
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '12110'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 3b9907e841573d7a4c3abb3e1bdb7a39;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '200'
+      X-Ratelimit-Limit-Tokens:
+      - '40000'
+      X-Ratelimit-Remaining-Requests:
+      - '199'
+      X-Ratelimit-Remaining-Tokens:
+      - '32314'
+      X-Ratelimit-Reset-Requests:
+      - 300ms
+      X-Ratelimit-Reset-Tokens:
+      - 11.529s
+      X-Request-Id:
+      - 3302ce743a1c544fcc368fc91092b517
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Auto-GPT, a multi-purpose
+      AI assistant.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Use the command read_file to read
+      the instructions_1.txt file\nFollow the instructions in the instructions_1.txt
+      file\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      example: Example command, params: (arg1: int, arg2: Optional[str])\n2. function_based:
+      Function-based test command, params: (arg1: int, arg2: str)\n3. execute_python_code:
+      Creates a Python file and executes it, params: (code: string, name: string)\n4.
+      execute_python_file: Executes an existing Python file, params: (filename: string)\n5.
+      execute_shell: Executes a Shell Command, non-interactive commands only, params:
+      (command_line: string)\n6. execute_shell_popen: Executes a Shell Command, non-interactive
+      commands only, params: (query: string)\n7. append_to_file: Appends to a file,
+      params: (filename: string, text: string)\n8. delete_file: Deletes a file, params:
+      (filename: string)\n9. list_files: Lists Files in a Directory, params: (directory:
+      string)\n10. read_file: Read an existing file, params: (filename: string)\n11.
+      write_to_file: Writes to a file, params: (filename: string, text: string)\n12.
+      google: Google Search, params: (query: string)\n13. web_search: Searches the
+      web, params: (query: string)\n14. browse_website: Browses a Website, params:
+      (url: string, question: string)\n15. goals_accomplished: Goals are accomplished
+      and there is nothing left to do, params: (reason: string)\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nRespond
+      with only valid JSON conforming to the following schema: \n{\"$schema\": \"http://json-schema.org/draft-07/schema#\",
+      \"type\": \"object\", \"properties\": {\"thoughts\": {\"type\": \"object\",
+      \"properties\": {\"text\": {\"type\": \"string\", \"description\": \"thoughts\"},
+      \"reasoning\": {\"type\": \"string\"}, \"plan\": {\"type\": \"string\", \"description\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\"}, \"criticism\":
+      {\"type\": \"string\", \"description\": \"constructive self-criticism\"}, \"speak\":
+      {\"type\": \"string\", \"description\": \"thoughts summary to say to user\"}},
+      \"required\": [\"text\", \"reasoning\", \"plan\", \"criticism\", \"speak\"],
+      \"additionalProperties\": false}, \"command\": {\"type\": \"object\", \"properties\":
+      {\"name\": {\"type\": \"string\"}, \"args\": {\"type\": \"object\"}}, \"required\":
+      [\"name\", \"args\"], \"additionalProperties\": false}}, \"required\": [\"thoughts\",
+      \"command\"], \"additionalProperties\": false}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_1.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_1.txt''.\",
+      \"reasoning\": \"The goal is to follow the instructions in the ''instructions_1.txt''
+      file. To do this, I first need to read the file.\", \"plan\": \"- Read the ''instructions_1.txt''
+      file\\n- Follow the instructions in the file\", \"criticism\": \"I am directly
+      reading the file without checking if it exists. However, as per the goal, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_1.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: This task_id is 2314\nRead the file instructions_2.txt"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_2.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_2.txt''.\",
+      \"reasoning\": \"The instructions from ''instructions_1.txt'' directed me to
+      read ''instructions_2.txt''. To follow these instructions, I need to read the
+      second file.\", \"plan\": \"- Read the ''instructions_2.txt'' file\\n- Follow
+      the instructions in the file\", \"criticism\": \"Again, I am directly reading
+      the file without checking if it exists. However, as per the instructions, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_2.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: Read the file instructions_3.txt"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-4", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5820'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4RT3WvbQAx/z18h7qUvTmjiNM3yPEZbNgqjG4N6hOtZtm/x3ZmTsmSE/O9DtvNF
+        M/ZijKTfh3TSbgCgbK4WoEyl2bimHt7ru/vHhyeehx8NfXzOv3y/o3Hx9jlPn+pvKhFEePuFhg+o
+        kQmuqZFt8F3aRNSMwjqezefzNJ2nkzbhQo61wMqGh9Ph7Wyc9ogqWIOkFvA6AADYtV/x5nPcqgXc
+        JoeIQyJdolociwBUDLVElCayxNqzSk5JEzyjb+3uMmWCc9rnmRBkymuH8pupiDpfFrbGTCWQKR1L
+        6mskeKqznjiujXRLy3TEW87Ufi8QrsK6rPgAY5SUQB7BI+bAAUQEuEI4Z4EiBtdGRQlu3ivcjDpT
+        ETUFb33Z8b5cJbrET1o85DaiYczB4dHHVSF4CVCEug4bcUSXAglcaYUrG/PWeu+yqbXvDA7h66Hq
+        mlgLyjI/hE9HxcuGrD/OpeM20bI1llwn8OwNggsRxZl2fZv1n9ad9eVpqhsrz8NgKjQrydgCLANu
+        LTGN4CFs8DfGBDRBg/Gdk0SKLYEmWjsZQKX5RN6zdBapQb06PLx2UIbWyH8f/58TGsmCqX6f98dD
+        KKy3VC27nZDlJg5NV7YfAPxsD2t9cSuqicE1vOSwQi/XNp58uO8I1emIz9KzaZ/lwLo+S0xn44Ho
+        7Ad/AQAA//8DAAvWkPJDBAAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7e39b65afc812d52-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Jul 2023 16:30:44 GMT
+      Function-Execution-Id:
+      - 1a2z3jjlgxr7
+      Openai-Model:
+      - gpt-4-0613
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '11764'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 6f15c4094d96bd4cc4e1313c80ddafa2;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '200'
+      X-Ratelimit-Limit-Tokens:
+      - '40000'
+      X-Ratelimit-Remaining-Requests:
+      - '199'
+      X-Ratelimit-Remaining-Tokens:
+      - '32315'
+      X-Ratelimit-Reset-Requests:
+      - 300ms
+      X-Ratelimit-Reset-Tokens:
+      - 11.527s
+      X-Request-Id:
+      - f8e7ea36a5211fa239209d65a0ea6fce
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Auto-GPT, a multi-purpose
+      AI assistant.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Use the command read_file to read
+      the instructions_1.txt file\nFollow the instructions in the instructions_1.txt
+      file\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      example: Example command, params: (arg1: int, arg2: Optional[str])\n2. function_based:
+      Function-based test command, params: (arg1: int, arg2: str)\n3. execute_python_code:
+      Creates a Python file and executes it, params: (code: string, name: string)\n4.
+      execute_python_file: Executes an existing Python file, params: (filename: string)\n5.
+      execute_shell: Executes a Shell Command, non-interactive commands only, params:
+      (command_line: string)\n6. execute_shell_popen: Executes a Shell Command, non-interactive
+      commands only, params: (query: string)\n7. append_to_file: Appends to a file,
+      params: (filename: string, text: string)\n8. delete_file: Deletes a file, params:
+      (filename: string)\n9. list_files: Lists Files in a Directory, params: (directory:
+      string)\n10. read_file: Read an existing file, params: (filename: string)\n11.
+      write_to_file: Writes to a file, params: (filename: string, text: string)\n12.
+      google: Google Search, params: (query: string)\n13. web_search: Searches the
+      web, params: (query: string)\n14. browse_website: Browses a Website, params:
+      (url: string, question: string)\n15. goals_accomplished: Goals are accomplished
+      and there is nothing left to do, params: (reason: string)\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nRespond
+      with only valid JSON conforming to the following schema: \n{\"$schema\": \"http://json-schema.org/draft-07/schema#\",
+      \"type\": \"object\", \"properties\": {\"thoughts\": {\"type\": \"object\",
+      \"properties\": {\"text\": {\"type\": \"string\", \"description\": \"thoughts\"},
+      \"reasoning\": {\"type\": \"string\"}, \"plan\": {\"type\": \"string\", \"description\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\"}, \"criticism\":
+      {\"type\": \"string\", \"description\": \"constructive self-criticism\"}, \"speak\":
+      {\"type\": \"string\", \"description\": \"thoughts summary to say to user\"}},
+      \"required\": [\"text\", \"reasoning\", \"plan\", \"criticism\", \"speak\"],
+      \"additionalProperties\": false}, \"command\": {\"type\": \"object\", \"properties\":
+      {\"name\": {\"type\": \"string\"}, \"args\": {\"type\": \"object\"}}, \"required\":
+      [\"name\", \"args\"], \"additionalProperties\": false}}, \"required\": [\"thoughts\",
+      \"command\"], \"additionalProperties\": false}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_1.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_1.txt''.\",
+      \"reasoning\": \"The goal is to follow the instructions in the ''instructions_1.txt''
+      file. To do this, I first need to read the file.\", \"plan\": \"- Read the ''instructions_1.txt''
+      file\\n- Follow the instructions in the file\", \"criticism\": \"I am directly
+      reading the file without checking if it exists. However, as per the goal, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_1.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: This task_id is 2314\nRead the file instructions_2.txt"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_2.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_2.txt''.\",
+      \"reasoning\": \"The instructions from ''instructions_1.txt'' directed me to
+      read ''instructions_2.txt''. To follow these instructions, I need to read the
+      second file.\", \"plan\": \"- Read the ''instructions_2.txt'' file\\n- Follow
+      the instructions in the file\", \"criticism\": \"Again, I am directly reading
+      the file without checking if it exists. However, as per the instructions, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_2.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: Read the file instructions_3.txt"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}, {"role": "assistant", "content": "{\"command\": {\"name\": \"read_file\",
+      \"args\": {\"filename\": \"instructions_3.txt\"}}, \"thoughts\": {\"text\":
+      \"I need to read the instructions from the file ''instructions_3.txt''.\", \"reasoning\":
+      \"The instructions from ''instructions_2.txt'' directed me to read ''instructions_3.txt''.
+      To follow these instructions, I need to read the third file.\", \"plan\": \"-
+      Read the ''instructions_3.txt'' file\\n- Follow the instructions in the file\",
+      \"criticism\": \"Once more, I am directly reading the file without checking
+      if it exists. However, as per the instructions, it is assumed that the file
+      exists.\", \"speak\": \"I am going to read the instructions from the ''instructions_3.txt''
+      file.\"}}"}, {"role": "system", "content": "Command read_file returned: Write
+      the task_id into the file output.txt\nShutdown"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}], "model": "gpt-4", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6797'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3xTTW/aQBC98ytGe+ECCEJiENcoanvppZGitK6szXqwp3h3nZ0h0CL+e7W2wY4i
+        5WKt583Me/N1GgEoytUGlCm1GFtX05W+W73OFwf6/vD25efTP9E/7p+3x+I5uX91ahIj/MsfNHKJ
+        mhlv6wqFfAebgFowZl0k6/V6uVwnSQNYn2MVw4paprfTebJYdhGlJ4OsNvBrBABwar5Rm8vxqDYw
+        n1wsFpl1gWpzdQJQwVfRojQzsWgnatKDxjtB18g9pcp4a7XL05ggVU5bjM9UHQIJZuKzLVWYqgmk
+        SoeCO79o7H39Xuq9zOQoraNgfEXkZrm4TdX53FhLvy9KuaTonb6BQ8xBPDSkICWCaN5llAM58Y0h
+        MsK4ZxrPWq6Amr0jV7S5HksEcixhb+IAGLbBWxgPTdmyiYecAhrBHCx+wv2OEh6HMMM41jcGzVBj
+        aGIDcu0dY8vbCg8s0LW5E11X2rV6p/D0gbfLei19KAH6cZhAQobYXrqobVdT9bephlwBw+4dKI5A
+        wJRodhGkLZAAHomFwYf2f8xNsH6pcAZf/QHfMEyGJQ57OYkJiEEz722cYamlJ6RBqlYz16h3A72F
+        70R+MvkP5c/iRqluoc/XS9iSIy6zdiHidrP4unU7jwB+N5e1f3csqg7e1pKJ36GL57a4mydtQtVf
+        8QBeXVDxoqsBkKxvRpHnPPoPAAD//wMAIbtF6EQEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7e39b7300eb910ec-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Jul 2023 16:31:20 GMT
+      Function-Execution-Id:
+      - 1a2z50mo3x7c
+      Openai-Model:
+      - gpt-4-0613
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '13614'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 8b203a57cad2f93fdf5c6dc8fa90cd58;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '200'
+      X-Ratelimit-Limit-Tokens:
+      - '40000'
+      X-Ratelimit-Remaining-Requests:
+      - '199'
+      X-Ratelimit-Remaining-Tokens:
+      - '32315'
+      X-Ratelimit-Reset-Requests:
+      - 300ms
+      X-Ratelimit-Reset-Tokens:
+      - 11.527s
+      X-Request-Id:
+      - b60cc1be7c05a773507cc0feb9fdc0cd
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"role": "system", "content": "You are Auto-GPT, a multi-purpose
+      AI assistant.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Use the command read_file to read
+      the instructions_1.txt file\nFollow the instructions in the instructions_1.txt
+      file\n\n\nConstraints:\n1. ~4000 word limit for short term memory. Your short
+      term memory is short, so immediately save important information to files.\n2.
+      If you are unsure how you previously did something or want to recall past events,
+      thinking about similar events will help you remember.\n3. No user assistance\n4.
+      Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      example: Example command, params: (arg1: int, arg2: Optional[str])\n2. function_based:
+      Function-based test command, params: (arg1: int, arg2: str)\n3. execute_python_code:
+      Creates a Python file and executes it, params: (code: string, name: string)\n4.
+      execute_python_file: Executes an existing Python file, params: (filename: string)\n5.
+      execute_shell: Executes a Shell Command, non-interactive commands only, params:
+      (command_line: string)\n6. execute_shell_popen: Executes a Shell Command, non-interactive
+      commands only, params: (query: string)\n7. append_to_file: Appends to a file,
+      params: (filename: string, text: string)\n8. delete_file: Deletes a file, params:
+      (filename: string)\n9. list_files: Lists Files in a Directory, params: (directory:
+      string)\n10. read_file: Read an existing file, params: (filename: string)\n11.
+      write_to_file: Writes to a file, params: (filename: string, text: string)\n12.
+      google: Google Search, params: (query: string)\n13. web_search: Searches the
+      web, params: (query: string)\n14. browse_website: Browses a Website, params:
+      (url: string, question: string)\n15. goals_accomplished: Goals are accomplished
+      and there is nothing left to do, params: (reason: string)\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n\nRespond
+      with only valid JSON conforming to the following schema: \n{\"$schema\": \"http://json-schema.org/draft-07/schema#\",
+      \"type\": \"object\", \"properties\": {\"thoughts\": {\"type\": \"object\",
+      \"properties\": {\"text\": {\"type\": \"string\", \"description\": \"thoughts\"},
+      \"reasoning\": {\"type\": \"string\"}, \"plan\": {\"type\": \"string\", \"description\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\"}, \"criticism\":
+      {\"type\": \"string\", \"description\": \"constructive self-criticism\"}, \"speak\":
+      {\"type\": \"string\", \"description\": \"thoughts summary to say to user\"}},
+      \"required\": [\"text\", \"reasoning\", \"plan\", \"criticism\", \"speak\"],
+      \"additionalProperties\": false}, \"command\": {\"type\": \"object\", \"properties\":
+      {\"name\": {\"type\": \"string\"}, \"args\": {\"type\": \"object\"}}, \"required\":
+      [\"name\", \"args\"], \"additionalProperties\": false}}, \"required\": [\"thoughts\",
+      \"command\"], \"additionalProperties\": false}\n"}, {"role": "system", "content":
+      "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system",
+      "content": "This reminds you of these events from your past: \nI was created"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_1.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_1.txt''.\",
+      \"reasoning\": \"The goal is to follow the instructions in the ''instructions_1.txt''
+      file. To do this, I first need to read the file.\", \"plan\": \"- Read the ''instructions_1.txt''
+      file\\n- Follow the instructions in the file\", \"criticism\": \"I am directly
+      reading the file without checking if it exists. However, as per the goal, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_1.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: This task_id is 2314\nRead the file instructions_2.txt"},
+      {"role": "user", "content": "Determine exactly one command to use, and respond
+      using the JSON schema specified previously:"}, {"role": "assistant", "content":
+      "{\"command\": {\"name\": \"read_file\", \"args\": {\"filename\": \"instructions_2.txt\"}},
+      \"thoughts\": {\"text\": \"I need to read the instructions from the file ''instructions_2.txt''.\",
+      \"reasoning\": \"The instructions from ''instructions_1.txt'' directed me to
+      read ''instructions_2.txt''. To follow these instructions, I need to read the
+      second file.\", \"plan\": \"- Read the ''instructions_2.txt'' file\\n- Follow
+      the instructions in the file\", \"criticism\": \"Again, I am directly reading
+      the file without checking if it exists. However, as per the instructions, it
+      is assumed that the file exists.\", \"speak\": \"I am going to read the instructions
+      from the ''instructions_2.txt'' file.\"}}"}, {"role": "system", "content": "Command
+      read_file returned: Read the file instructions_3.txt"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}, {"role": "assistant", "content": "{\"command\": {\"name\": \"read_file\",
+      \"args\": {\"filename\": \"instructions_3.txt\"}}, \"thoughts\": {\"text\":
+      \"I need to read the instructions from the file ''instructions_3.txt''.\", \"reasoning\":
+      \"The instructions from ''instructions_2.txt'' directed me to read ''instructions_3.txt''.
+      To follow these instructions, I need to read the third file.\", \"plan\": \"-
+      Read the ''instructions_3.txt'' file\\n- Follow the instructions in the file\",
+      \"criticism\": \"Once more, I am directly reading the file without checking
+      if it exists. However, as per the instructions, it is assumed that the file
+      exists.\", \"speak\": \"I am going to read the instructions from the ''instructions_3.txt''
+      file.\"}}"}, {"role": "system", "content": "Command read_file returned: Write
+      the task_id into the file output.txt\nShutdown"}, {"role": "user", "content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:"}, {"role": "assistant", "content": "{\"command\": {\"name\": \"write_to_file\",
+      \"args\": {\"filename\": \"output.txt\", \"text\": \"2314\"}}, \"thoughts\":
+      {\"text\": \"I need to write the task_id into the file ''output.txt''.\", \"reasoning\":
+      \"The instructions from ''instructions_3.txt'' directed me to write the task_id
+      into ''output.txt''. The task_id is ''2314'' as per the response from the first
+      command.\", \"plan\": \"- Write the task_id ''2314'' into the ''output.txt''
+      file\", \"criticism\": \"I am directly writing to the file without checking
+      if it exists or if it''s writable. However, as per the instructions, it is assumed
+      that the file is writable.\", \"speak\": \"I am going to write the task_id into
+      the ''output.txt'' file.\"}}"}, {"role": "system", "content": "Command write_to_file
+      returned: File written to successfully."}, {"role": "user", "content": "Determine
+      exactly one command to use, and respond using the JSON schema specified previously:"}],
+      "model": "gpt-4", "temperature": 0, "max_tokens": 0}'
+    headers:
+      AGENT-MODE:
+      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
+      AGENT-TYPE:
+      - Auto-GPT-2023-X-TYPE
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7756'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4xTTW8aMRC98ytGvuQCCAIJH7dKVZSck1O7FTLe2bWL7dnaswEU8d8rezeBhB56
+        Wa3m4817zzNvAwBhSrEGobRk5Ro7Wsi75fOP1fFoVw+PbruvH+bzFU6fJ2768kcMUwdtf6Pi966x
+        ItdYZEO+S6uAkjGhTu+Xy+VstprMc8JRiTa11Q2P5qPJ/XTWd2gyCqNYw88BAMBb/iZuvsSDWMNk
+        +B5xGKOsUaw/igBEIJsiQsZoIkvPYnhOKvKMPtN9K4Qi56QviwRQCC8dpt9C1CRt3EiVxZiosSzE
+        EAohQx374oAyku/Kv1kLxkcOrUrCI2j5irBF9FCRtbTHEqQvgTUCy7jbmBK0jF3FPhhm9MAEN9Ry
+        0/KYD3wzLsTplGayprbW/D6X8cDnqQntclzvPpbjjnDH0vi6a3nqSs+kEoTGz+SrQC5HK2MxZuIf
+        HC8EfOULLxoDggwInsBR+ALL1M/tqTVW9vaN4DsqmxpZS86k8gNc6Lp+ChUMG2Wi+7eyK1UyptgR
+        9olkbV7Rj+GR9viKYQhPoKi1ZYehNKodlmCqCxfwYCJjCVuskjIOR+PrpCmgzNNcNspUn0yBvYzZ
+        PLm1eN2bMph+DPemxAbl7j+eF2KrFMZYtdYe86qIfsdPH8dRGW+i3nQrkBY+MjVd2WkA8CsfW/vp
+        fkQTyDW8YdqhTxc4XdzedoDifNgX6bu7PsvE0l4klovFIM05Df4CAAD//wMAcl288VcEAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, must-revalidate
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Ray:
+      - 7e39b8207d1563a2-ORD
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 08 Jul 2023 16:31:56 GMT
+      Function-Execution-Id:
+      - 1a2zwo34jiq7
+      Openai-Model:
+      - gpt-4-0613
+      Openai-Organization:
+      - significant-gravitas
+      Openai-Processing-Ms:
+      - '11724'
+      Openai-Version:
+      - '2020-10-01'
+      Server:
+      - Google Frontend
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Cloud-Trace-Context:
+      - 09540b3494f1b2a6c742737f67868bce;o=1
+      X-Powered-By:
+      - Express
+      X-Ratelimit-Limit-Requests:
+      - '200'
+      X-Ratelimit-Limit-Tokens:
+      - '40000'
+      X-Ratelimit-Remaining-Requests:
+      - '199'
+      X-Ratelimit-Remaining-Tokens:
+      - '32328'
+      X-Ratelimit-Reset-Requests:
+      - 300ms
+      X-Ratelimit-Reset-Tokens:
+      - 11.508s
+      X-Request-Id:
+      - 7e292a7febae76b3d6757496d3cb3e45
+    status:
+      code: 200
+      message: OK
 version: 1
