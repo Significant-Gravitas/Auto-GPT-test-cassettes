@@ -1,52 +1,48 @@
 interactions:
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Search for ''tesla revenue 2022''
-      and write the revenue of Tesla in 2022 to a file called output.txt. You should
-      write the number without commas and you should not use signs like B for billion
-      and M for million.\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
-      Your short term memory is short, so immediately save important information to
-      files.\n2. If you are unsure how you previously did something or want to recall
-      past events, thinking about similar events will help you remember.\n3. No user
-      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
-      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
-      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
-      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
-      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
-      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
-      google: Google Search, args: \"query\": \"<query>\"\n7. delete_agent: Delete
-      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
-      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
-      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
-      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
-      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
-      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
-      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
-      access for searches and information gathering.\n2. Long Term memory management.\n3.
-      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
-      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
-      performing to the best of your abilities.\n2. Constructively self-criticize
-      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
-      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
-      Aim to complete tasks in the least number of steps.\n5. Write all code to a
-      file.\n\nYou should only respond in JSON format as described below \nResponse
-      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
-      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
-      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
-      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
-      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "user", "content": "Determine which next command to use, and respond using the
-      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Search for ''tesla revenue 2022'' and write the revenue of Tesla in 2022 to
+      a file called output.txt. You should write the number without commas and you
+      should not use signs like B for billion and M for million.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. google: Google Search, args: \"query\":
+      \"<query>\"\n7. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n8.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n9. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n10.
+      list_agents: List GPT Agents, args: () -> str\n11. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n12. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n13. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -57,6 +53,8 @@ interactions:
       - '3379'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - ea4337eddd18699f215a4973fc42b94752c0943371b3d0cffa6f51c1f2fdf9e7
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -133,6 +131,8 @@ interactions:
       - '20'
       Content-Type:
       - application/x-www-form-urlencoded
+      X-Content-Hash:
+      - d483457e3d0b70ebccc0b42cf22b23afe1322f442fab526603fcec8d11905eaa
     method: POST
     uri: https://duckduckgo.com/
   response:
@@ -486,59 +486,59 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Search for ''tesla revenue 2022''
-      and write the revenue of Tesla in 2022 to a file called output.txt. You should
-      write the number without commas and you should not use signs like B for billion
-      and M for million.\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
-      Your short term memory is short, so immediately save important information to
-      files.\n2. If you are unsure how you previously did something or want to recall
-      past events, thinking about similar events will help you remember.\n3. No user
-      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
-      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
-      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
-      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
-      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
-      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
-      google: Google Search, args: \"query\": \"<query>\"\n7. delete_agent: Delete
-      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
-      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
-      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
-      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
-      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
-      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
-      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
-      access for searches and information gathering.\n2. Long Term memory management.\n3.
-      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
-      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
-      performing to the best of your abilities.\n2. Constructively self-criticize
-      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
-      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
-      Aim to complete tasks in the least number of steps.\n5. Write all code to a
-      file.\n\nYou should only respond in JSON format as described below \nResponse
-      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
-      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
-      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
-      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
-      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
-      "{\n    \"thoughts\": {\n        \"text\": \"I need to search for the revenue
-      of Tesla in 2022. I can use the google command to search for this information.\",\n        \"reasoning\":
-      \"I will use the google command to search for the revenue of Tesla in 2022 because
-      it is the most efficient way to find this information.\",\n        \"plan\":
-      \"- Use the google command to search for the revenue of Tesla in 2022.\",\n        \"criticism\":
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Search for ''tesla revenue 2022'' and write the revenue of Tesla in 2022 to
+      a file called output.txt. You should write the number without commas and you
+      should not use signs like B for billion and M for million.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. google: Google Search, args: \"query\":
+      \"<query>\"\n7. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n8.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n9. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n10.
+      list_agents: List GPT Agents, args: () -> str\n11. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n12. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n13. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "This
+      reminds you of these events from your past: \nI was created", "role": "system"},
+      {"content": "Determine which next command to use, and respond using the format
+      specified above:", "role": "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I need to search for the revenue of Tesla in 2022. I can use the google command
+      to search for this information.\",\n        \"reasoning\": \"I will use the
+      google command to search for the revenue of Tesla in 2022 because it is the
+      most efficient way to find this information.\",\n        \"plan\": \"- Use the
+      google command to search for the revenue of Tesla in 2022.\",\n        \"criticism\":
       \"I need to ensure that I am using the correct search terms to find the information
       I need.\",\n        \"speak\": \"I will use the google command to search for
       the revenue of Tesla in 2022.\"\n    },\n    \"command\": {\n        \"name\":
-      \"google\",\n        \"args\": {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}"},
-      {"role": "system", "content": "Command google returned: [\n    {\n        \"title\":
+      \"google\",\n        \"args\": {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}",
+      "role": "assistant"}, {"content": "Command google returned: [\n    {\n        \"title\":
       \"Tesla Reports Record Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\":
       \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
       \"The automaker now turns its attention to software to drive profit. The Model
@@ -578,14 +578,10 @@ interactions:
       \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
       \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
       this year back in August 2022. \\\"You definitely don''t want to count chickens
-      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"}],
-      "temperature": 0, "max_tokens": 0}'
+      until they''re hatched.\"\n    }\n]", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -596,6 +592,8 @@ interactions:
       - '8032'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - e9e1cf7cb467a7ee217b86719bfd04bc6c7960c6967a60c67cc31bba90fffe05
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -667,59 +665,59 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Search for ''tesla revenue 2022''
-      and write the revenue of Tesla in 2022 to a file called output.txt. You should
-      write the number without commas and you should not use signs like B for billion
-      and M for million.\n\n\nConstraints:\n1. ~4000 word limit for short term memory.
-      Your short term memory is short, so immediately save important information to
-      files.\n2. If you are unsure how you previously did something or want to recall
-      past events, thinking about similar events will help you remember.\n3. No user
-      assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
-      append_to_file: Append to file, args: \"filename\": \"<filename>\", \"text\":
-      \"<text>\"\n2. delete_file: Delete file, args: \"filename\": \"<filename>\"\n3.
-      list_files: List Files in Directory, args: \"directory\": \"<directory>\"\n4.
-      read_file: Read a file, args: \"filename\": \"<filename>\"\n5. write_to_file:
-      Write to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n6.
-      google: Google Search, args: \"query\": \"<query>\"\n7. delete_agent: Delete
-      GPT Agent, args: \"key\": \"<key>\"\n8. get_hyperlinks: Get hyperlinks, args:
-      \"url\": \"<url>\"\n9. get_text_summary: Get text summary, args: \"url\": \"<url>\",
-      \"question\": \"<question>\"\n10. list_agents: List GPT Agents, args: () ->
-      str\n11. message_agent: Message GPT Agent, args: \"key\": \"<key>\", \"message\":
-      \"<message>\"\n12. start_agent: Start GPT Agent, args: \"name\": \"<name>\",
-      \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n13. task_complete:
-      Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1. Internet
-      access for searches and information gathering.\n2. Long Term memory management.\n3.
-      GPT-3.5 powered Agents for delegation of simple tasks.\n4. File output.\n\nPerformance
-      Evaluation:\n1. Continuously review and analyze your actions to ensure you are
-      performing to the best of your abilities.\n2. Constructively self-criticize
-      your big-picture behavior constantly.\n3. Reflect on past decisions and strategies
-      to refine your approach.\n4. Every command has a cost, so be smart and efficient.
-      Aim to complete tasks in the least number of steps.\n5. Write all code to a
-      file.\n\nYou should only respond in JSON format as described below \nResponse
-      Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
-      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
-      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
-      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
-      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
-      "{\n    \"thoughts\": {\n        \"text\": \"I need to search for the revenue
-      of Tesla in 2022. I can use the google command to search for this information.\",\n        \"reasoning\":
-      \"I will use the google command to search for the revenue of Tesla in 2022 because
-      it is the most efficient way to find this information.\",\n        \"plan\":
-      \"- Use the google command to search for the revenue of Tesla in 2022.\",\n        \"criticism\":
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Search for ''tesla revenue 2022'' and write the revenue of Tesla in 2022 to
+      a file called output.txt. You should write the number without commas and you
+      should not use signs like B for billion and M for million.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. google: Google Search, args: \"query\":
+      \"<query>\"\n7. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n8.
+      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n9. get_text_summary:
+      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n10.
+      list_agents: List GPT Agents, args: () -> str\n11. message_agent: Message GPT
+      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n12. start_agent:
+      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+      \"prompt\": \"<prompt>\"\n13. task_complete: Task Complete (Shutdown), args:
+      \"reason\": \"<reason>\"\n\nResources:\n1. Internet access for searches and
+      information gathering.\n2. Long Term memory management.\n3. GPT-3.5 powered
+      Agents for delegation of simple tasks.\n4. File output.\n\nPerformance Evaluation:\n1.
+      Continuously review and analyze your actions to ensure you are performing to
+      the best of your abilities.\n2. Constructively self-criticize your big-picture
+      behavior constantly.\n3. Reflect on past decisions and strategies to refine
+      your approach.\n4. Every command has a cost, so be smart and efficient. Aim
+      to complete tasks in the least number of steps.\n5. Write all code to a file.\n\nYou
+      should only respond in JSON format as described below \nResponse Format: \n{\n    \"thoughts\":
+      {\n        \"text\": \"thought\",\n        \"reasoning\": \"reasoning\",\n        \"plan\":
+      \"- short bulleted\\n- list that conveys\\n- long-term plan\",\n        \"criticism\":
+      \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
+      to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
+      {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
+      can be parsed by Python json.loads", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "This
+      reminds you of these events from your past: \nI was created", "role": "system"},
+      {"content": "Determine which next command to use, and respond using the format
+      specified above:", "role": "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I need to search for the revenue of Tesla in 2022. I can use the google command
+      to search for this information.\",\n        \"reasoning\": \"I will use the
+      google command to search for the revenue of Tesla in 2022 because it is the
+      most efficient way to find this information.\",\n        \"plan\": \"- Use the
+      google command to search for the revenue of Tesla in 2022.\",\n        \"criticism\":
       \"I need to ensure that I am using the correct search terms to find the information
       I need.\",\n        \"speak\": \"I will use the google command to search for
       the revenue of Tesla in 2022.\"\n    },\n    \"command\": {\n        \"name\":
-      \"google\",\n        \"args\": {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}"},
-      {"role": "system", "content": "Command google returned: [\n    {\n        \"title\":
+      \"google\",\n        \"args\": {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}",
+      "role": "assistant"}, {"content": "Command google returned: [\n    {\n        \"title\":
       \"Tesla Reports Record Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\":
       \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
       \"The automaker now turns its attention to software to drive profit. The Model
@@ -759,11 +757,11 @@ interactions:
       \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
       \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
       this year back in August 2022. \\\"You definitely don''t want to count chickens
-      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"},
-      {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
-      \"I found the information I need in the first search result. I can use the write_to_file
-      command to write the revenue of Tesla in 2022 to a file called output.txt.\",\n        \"reasoning\":
+      until they''re hatched.\"\n    }\n]", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\": \"I found the
+      information I need in the first search result. I can use the write_to_file command
+      to write the revenue of Tesla in 2022 to a file called output.txt.\",\n        \"reasoning\":
       \"I will use the write_to_file command to write the revenue of Tesla in 2022
       to a file called output.txt because it is the most efficient way to save this
       information for later use.\",\n        \"plan\": \"- Use the write_to_file command
@@ -773,15 +771,11 @@ interactions:
       \"I will use the write_to_file command to write the revenue of Tesla in 2022
       to a file called output.txt.\"\n    },\n    \"command\": {\n        \"name\":
       \"write_to_file\",\n        \"args\": {\n            \"filename\": \"output.txt\",\n            \"text\":
-      \"81500000000\"\n        }\n    }\n}"}, {"role": "system", "content": "Command
-      write_to_file returned: File written to successfully."}, {"role": "user", "content":
+      \"81500000000\"\n        }\n    }\n}", "role": "assistant"}, {"content": "Command
+      write_to_file returned: File written to successfully.", "role": "system"}, {"content":
       "Determine which next command to use, and respond using the format specified
-      above:"}], "temperature": 0, "max_tokens": 0}'
+      above:", "role": "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -792,6 +786,8 @@ interactions:
       - '9297'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - fdf72a104fd10725087fec2e672334a8d993a7189c68c2071d576bc9b071f132
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -862,15 +858,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"81500000000\"\"\"\n\n\nCONCISE
-      SUMMARY: The text is best summarized as"}], "temperature": 0, "max_tokens":
-      0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"81500000000\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized
+      as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -881,6 +872,8 @@ interactions:
       - '252'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - ce755fe439122c0c8842c68671b7c2b2e2f726708a320bffa5cfe0000150ab7e
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -947,13 +940,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["81500000000"], "model": "text-embedding-ada-002", "encoding_format":
-      "base64"}'
+    body: '{"encoding_format": "base64", "input": ["81500000000"], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -964,6 +952,8 @@ interactions:
       - '90'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - a21c7baa691e3cc27fbbbead948d00bf4c872b1eae927b91b52674bdc0b26ba2
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1126,13 +1116,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "a string of numbers, with no context or meaning provided.",
-      "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "a string of numbers, with no context
+      or meaning provided.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1143,6 +1129,8 @@ interactions:
       - '134'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 8186b1df14eb64c3e50eb09d4c99e0c63710730a967bd786f48a6c022611748f
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1304,27 +1292,26 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
-      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
-      ~4000 word limit for short term memory. Your short term memory is short, so
-      immediately save important information to files.\n2. If you are unsure how you
-      previously did something or want to recall past events, thinking about similar
-      events will help you remember.\n3. No user assistance\n4. Exclusively use the
-      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
-      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
-      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
-      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
-      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
-      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
-      args: \"filename\": \"<filename>\"\n7. write_to_file: Write to file, args: \"filename\":
-      \"<filename>\", \"text\": \"<text>\"\n8. google: Google Search, args: \"query\":
-      \"<query>\"\n9. improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
-      \"code\": \"<full_code_string>\"\n10. browse_website: Browse Website, args:
-      \"url\": \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n11.
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to a file called output.txt tesla''s revenue in 2022 after searching for
+      ''tesla revenue 2022''.\n\n\nConstraints:\n1. ~4000 word limit for short term
+      memory. Your short term memory is short, so immediately save important information
+      to files.\n2. If you are unsure how you previously did something or want to
+      recall past events, thinking about similar events will help you remember.\n3.
+      No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      analyze_code: Analyze Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n3. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n5. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n6. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n7. write_to_file: Write to
+      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n8. google: Google
+      Search, args: \"query\": \"<query>\"\n9. improve_code: Get Improved Code, args:
+      \"suggestions\": \"<list_of_suggestions>\", \"code\": \"<full_code_string>\"\n10.
+      browse_website: Browse Website, args: \"url\": \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n11.
       write_tests: Write Tests, args: \"code\": \"<full_code_string>\", \"focus\":
       \"<list_of_focus_areas>\"\n12. delete_agent: Delete GPT Agent, args: \"key\":
       \"<key>\"\n13. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n14.
@@ -1347,15 +1334,11 @@ interactions:
       \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
       to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
       {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
-      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
-      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"}],
-      "temperature": 0, "max_tokens": 0}'
+      can be parsed by Python json.loads", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1366,6 +1349,8 @@ interactions:
       - '3768'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 404befd72ccba53cad9f39ea703902720f07a7112fe7e28a54704b1b7cfee373
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1438,27 +1423,26 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
-      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
-      ~4000 word limit for short term memory. Your short term memory is short, so
-      immediately save important information to files.\n2. If you are unsure how you
-      previously did something or want to recall past events, thinking about similar
-      events will help you remember.\n3. No user assistance\n4. Exclusively use the
-      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
-      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
-      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
-      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
-      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
-      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
-      args: \"filename\": \"<filename>\"\n7. write_to_file: Write to file, args: \"filename\":
-      \"<filename>\", \"text\": \"<text>\"\n8. google: Google Search, args: \"query\":
-      \"<query>\"\n9. improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
-      \"code\": \"<full_code_string>\"\n10. browse_website: Browse Website, args:
-      \"url\": \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n11.
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to a file called output.txt tesla''s revenue in 2022 after searching for
+      ''tesla revenue 2022''.\n\n\nConstraints:\n1. ~4000 word limit for short term
+      memory. Your short term memory is short, so immediately save important information
+      to files.\n2. If you are unsure how you previously did something or want to
+      recall past events, thinking about similar events will help you remember.\n3.
+      No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      analyze_code: Analyze Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n3. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n5. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n6. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n7. write_to_file: Write to
+      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n8. google: Google
+      Search, args: \"query\": \"<query>\"\n9. improve_code: Get Improved Code, args:
+      \"suggestions\": \"<list_of_suggestions>\", \"code\": \"<full_code_string>\"\n10.
+      browse_website: Browse Website, args: \"url\": \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n11.
       write_tests: Write Tests, args: \"code\": \"<full_code_string>\", \"focus\":
       \"<list_of_focus_areas>\"\n12. delete_agent: Delete GPT Agent, args: \"key\":
       \"<key>\"\n13. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n14.
@@ -1481,11 +1465,11 @@ interactions:
       \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
       to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
       {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
-      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
-      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
-      reminds you of these events from your past: \nI was created"}, {"role": "user",
-      "content": "Determine which next command to use, and respond using the format
-      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      can be parsed by Python json.loads", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "This
+      reminds you of these events from your past: \nI was created", "role": "system"},
+      {"content": "Determine which next command to use, and respond using the format
+      specified above:", "role": "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\":
       \"To find Tesla''s revenue in 2022, I can use a Google search to look for relevant
       information. Once I find the information, I can write it to a file called output.txt.
       I will use the ''google'' command to search for ''tesla revenue 2022''.\",\n        \"reasoning\":
@@ -1497,8 +1481,8 @@ interactions:
       should ensure that the information I find is accurate and from a reliable source.\",\n        \"speak\":
       \"I will use a Google search to find Tesla''s revenue in 2022 and write it to
       a file called output.txt.\"\n    },\n    \"command\": {\n        \"name\": \"google\",\n        \"args\":
-      {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}"}, {"role":
-      "system", "content": "Command google returned: [\n    {\n        \"title\":
+      {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}", "role":
+      "assistant"}, {"content": "Command google returned: [\n    {\n        \"title\":
       \"Tesla Reports Record Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\":
       \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
       \"The automaker now turns its attention to software to drive profit. The Model
@@ -1538,14 +1522,10 @@ interactions:
       \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
       \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
       this year back in August 2022. \\\"You definitely don''t want to count chickens
-      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"}],
-      "temperature": 0, "max_tokens": 0}'
+      until they''re hatched.\"\n    }\n]", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1556,6 +1536,8 @@ interactions:
       - '8693'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - dd28d2039340d093c9b110c3b95781e6efc6340c5c555f3e52799cccb6f92e63
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1627,27 +1609,26 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
-      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
-      ~4000 word limit for short term memory. Your short term memory is short, so
-      immediately save important information to files.\n2. If you are unsure how you
-      previously did something or want to recall past events, thinking about similar
-      events will help you remember.\n3. No user assistance\n4. Exclusively use the
-      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
-      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
-      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
-      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
-      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
-      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
-      args: \"filename\": \"<filename>\"\n7. write_to_file: Write to file, args: \"filename\":
-      \"<filename>\", \"text\": \"<text>\"\n8. google: Google Search, args: \"query\":
-      \"<query>\"\n9. improve_code: Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\",
-      \"code\": \"<full_code_string>\"\n10. browse_website: Browse Website, args:
-      \"url\": \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n11.
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to a file called output.txt tesla''s revenue in 2022 after searching for
+      ''tesla revenue 2022''.\n\n\nConstraints:\n1. ~4000 word limit for short term
+      memory. Your short term memory is short, so immediately save important information
+      to files.\n2. If you are unsure how you previously did something or want to
+      recall past events, thinking about similar events will help you remember.\n3.
+      No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      analyze_code: Analyze Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n3. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n5. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n6. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n7. write_to_file: Write to
+      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n8. google: Google
+      Search, args: \"query\": \"<query>\"\n9. improve_code: Get Improved Code, args:
+      \"suggestions\": \"<list_of_suggestions>\", \"code\": \"<full_code_string>\"\n10.
+      browse_website: Browse Website, args: \"url\": \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n11.
       write_tests: Write Tests, args: \"code\": \"<full_code_string>\", \"focus\":
       \"<list_of_focus_areas>\"\n12. delete_agent: Delete GPT Agent, args: \"key\":
       \"<key>\"\n13. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n14.
@@ -1670,11 +1651,11 @@ interactions:
       \"constructive self-criticism\",\n        \"speak\": \"thoughts summary to say
       to user\"\n    },\n    \"command\": {\n        \"name\": \"command name\",\n        \"args\":
       {\n            \"arg name\": \"value\"\n        }\n    }\n} \nEnsure the response
-      can be parsed by Python json.loads"}, {"role": "system", "content": "The current
-      time and date is Tue Jan  1 00:00:00 2000"}, {"role": "system", "content": "This
-      reminds you of these events from your past: \nI was created"}, {"role": "user",
-      "content": "Determine which next command to use, and respond using the format
-      specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      can be parsed by Python json.loads", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "This
+      reminds you of these events from your past: \nI was created", "role": "system"},
+      {"content": "Determine which next command to use, and respond using the format
+      specified above:", "role": "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\":
       \"To find Tesla''s revenue in 2022, I can use a Google search to look for relevant
       information. Once I find the information, I can write it to a file called output.txt.
       I will use the ''google'' command to search for ''tesla revenue 2022''.\",\n        \"reasoning\":
@@ -1686,8 +1667,8 @@ interactions:
       should ensure that the information I find is accurate and from a reliable source.\",\n        \"speak\":
       \"I will use a Google search to find Tesla''s revenue in 2022 and write it to
       a file called output.txt.\"\n    },\n    \"command\": {\n        \"name\": \"google\",\n        \"args\":
-      {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}"}, {"role":
-      "system", "content": "Command google returned: [\n    {\n        \"title\":
+      {\n            \"query\": \"tesla revenue 2022\"\n        }\n    }\n}", "role":
+      "assistant"}, {"content": "Command google returned: [\n    {\n        \"title\":
       \"Tesla Reports Record Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\":
       \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
       \"The automaker now turns its attention to software to drive profit. The Model
@@ -1727,10 +1708,10 @@ interactions:
       \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
       \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
       this year back in August 2022. \\\"You definitely don''t want to count chickens
-      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"},
-      {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
-      \"I found the information I need from the Google search. I will use the ''write_to_file''
+      until they''re hatched.\"\n    }\n]", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\": \"I found the
+      information I need from the Google search. I will use the ''write_to_file''
       command to write the revenue information to a file called output.txt.\",\n        \"reasoning\":
       \"Writing the information to a file will ensure that it is saved for future
       use.\",\n        \"plan\": \"- Use the ''write_to_file'' command to write the
@@ -1739,15 +1720,12 @@ interactions:
       a reliable source.\",\n        \"speak\": \"I will write the revenue information
       to a file called output.txt.\"\n    },\n    \"command\": {\n        \"name\":
       \"write_to_file\",\n        \"args\": {\n            \"filename\": \"output.txt\",\n            \"text\":
-      \"Tesla''s revenue in 2022 was $81.5 billion.\"\n        }\n    }\n}"}, {"role":
-      "system", "content": "Command write_to_file returned: File written to successfully."},
-      {"role": "user", "content": "Determine which next command to use, and respond
-      using the format specified above:"}], "temperature": 0, "max_tokens": 0}'
+      \"Tesla''s revenue in 2022 was $81.5 billion.\"\n        }\n    }\n}", "role":
+      "assistant"}, {"content": "Command write_to_file returned: File written to successfully.",
+      "role": "system"}, {"content": "Determine which next command to use, and respond
+      using the format specified above:", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1758,6 +1736,8 @@ interactions:
       - '9808'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 6d7546303a04265edda5614b9327e38b83d9c69beaaf27931709a46a3e881767
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1828,15 +1808,11 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Tesla''s revenue
-      in 2022 was $81.5 billion.\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized
-      as"}], "temperature": 0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Tesla''s revenue in 2022 was $81.5 billion.\"\"\"\n\n\nCONCISE SUMMARY:
+      The text is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1847,6 +1823,8 @@ interactions:
       - '283'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 75b90c51d163d7be3d6827d8bd6c7d518e4d8896e854f440fe412c863d063f0a
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1913,13 +1891,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Tesla''s revenue in 2022 was $81.5 billion."], "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": ["Tesla''s revenue in 2022 was $81.5
+      billion."], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1930,6 +1904,8 @@ interactions:
       - '121'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - efd2fe4cf3c19918365b28ee23abeedefac58bd0655bcccaf55acab0498cf978
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -2093,13 +2069,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "\"Tesla''s revenue in 2022 was $81.5 billion.\"", "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "\"Tesla''s revenue in 2022 was
+      $81.5 billion.\"", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2110,6 +2082,8 @@ interactions:
       - '123'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 42dc7b916241b96399e9a38171959a0b71c922c76a8e3b6bd9f8b0a809f786d7
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -2272,24 +2246,23 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
-      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
-      ~4000 word limit for short term memory. Your short term memory is short, so
-      immediately save important information to files.\n2. If you are unsure how you
-      previously did something or want to recall past events, thinking about similar
-      events will help you remember.\n3. No user assistance\n4. Exclusively use the
-      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
-      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
-      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
-      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
-      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
-      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
-      args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace text or code
-      in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to a file called output.txt tesla''s revenue in 2022 after searching for
+      ''tesla revenue 2022''.\n\n\nConstraints:\n1. ~4000 word limit for short term
+      memory. Your short term memory is short, so immediately save important information
+      to files.\n2. If you are unsure how you previously did something or want to
+      recall past events, thinking about similar events will help you remember.\n3.
+      No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      analyze_code: Analyze Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n3. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n5. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n6. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
       \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n8.
       write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
       \"<text>\"\n9. google: Google Search, args: \"query\": \"<query>\"\n10. improve_code:
@@ -2317,15 +2290,12 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "user", "content": "Determine which next command to use, and respond using the
-      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "Determine which next command to use, and respond using
+      the format specified above:", "role": "user"}], "model": "gpt-3.5-turbo", "temperature":
+      0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2336,6 +2306,8 @@ interactions:
       - '3963'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 77e12a06f2d3fe7adf94d3faf5f785681f711c42e14e45d49e4b441bd446a669
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -2407,24 +2379,23 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
-      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
-      ~4000 word limit for short term memory. Your short term memory is short, so
-      immediately save important information to files.\n2. If you are unsure how you
-      previously did something or want to recall past events, thinking about similar
-      events will help you remember.\n3. No user assistance\n4. Exclusively use the
-      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
-      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
-      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
-      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
-      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
-      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
-      args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace text or code
-      in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to a file called output.txt tesla''s revenue in 2022 after searching for
+      ''tesla revenue 2022''.\n\n\nConstraints:\n1. ~4000 word limit for short term
+      memory. Your short term memory is short, so immediately save important information
+      to files.\n2. If you are unsure how you previously did something or want to
+      recall past events, thinking about similar events will help you remember.\n3.
+      No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      analyze_code: Analyze Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n3. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n5. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n6. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
       \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n8.
       write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
       \"<text>\"\n9. google: Google Search, args: \"query\": \"<query>\"\n10. improve_code:
@@ -2452,11 +2423,11 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "This reminds you of these events from your past: \nI
+      was created", "role": "system"}, {"content": "Determine which next command to
+      use, and respond using the format specified above:", "role": "user"}, {"content":
       "{\n    \"thoughts\": {\n        \"text\": \"I need to search for Tesla''s revenue
       in 2022. I can use the ''google'' command to search for this information.\",\n        \"reasoning\":
       \"I need to use the internet to find the information I need, and the ''google''
@@ -2466,7 +2437,7 @@ interactions:
       \"I need to make sure that the information I find is reliable and accurate.\",\n        \"speak\":
       \"I will use the ''google'' command to search for Tesla''s revenue in 2022.\"\n    },\n    \"command\":
       {\n        \"name\": \"google\",\n        \"args\": {\n            \"query\":
-      \"tesla revenue 2022\"\n        }\n    }\n}"}, {"role": "system", "content":
+      \"tesla revenue 2022\"\n        }\n    }\n}", "role": "assistant"}, {"content":
       "Command google returned: [\n    {\n        \"title\": \"Tesla Reports Record
       Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\": \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
       \"The automaker now turns its attention to software to drive profit. The Model
@@ -2506,14 +2477,10 @@ interactions:
       \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
       \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
       this year back in August 2022. \\\"You definitely don''t want to count chickens
-      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"}],
-      "temperature": 0, "max_tokens": 0}'
+      until they''re hatched.\"\n    }\n]", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2524,6 +2491,8 @@ interactions:
       - '8673'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 72096684ac6068f2ca303ec1a12802961a1ac4f7a0de6961225f9230250b952b
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -2596,24 +2565,23 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
-      information.\nYour decisions must always be made independently without seeking
-      user assistance. Play to your strengths as an LLM and pursue simple strategies
-      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
-      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
-      ~4000 word limit for short term memory. Your short term memory is short, so
-      immediately save important information to files.\n2. If you are unsure how you
-      previously did something or want to recall past events, thinking about similar
-      events will help you remember.\n3. No user assistance\n4. Exclusively use the
-      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
-      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
-      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
-      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
-      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
-      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
-      args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace text or code
-      in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+    body: '{"messages": [{"content": "You are Information Retrieval Agent, an autonomous
+      agent that specializes in retrieving information.\nYour decisions must always
+      be made independently without seeking user assistance. Play to your strengths
+      as an LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to a file called output.txt tesla''s revenue in 2022 after searching for
+      ''tesla revenue 2022''.\n\n\nConstraints:\n1. ~4000 word limit for short term
+      memory. Your short term memory is short, so immediately save important information
+      to files.\n2. If you are unsure how you previously did something or want to
+      recall past events, thinking about similar events will help you remember.\n3.
+      No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\nCommands:\n1.
+      analyze_code: Analyze Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file:
+      Execute Python File, args: \"filename\": \"<filename>\"\n3. append_to_file:
+      Append to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4.
+      delete_file: Delete file, args: \"filename\": \"<filename>\"\n5. list_files:
+      List Files in Directory, args: \"directory\": \"<directory>\"\n6. read_file:
+      Read a file, args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace
+      text or code in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
       \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n8.
       write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
       \"<text>\"\n9. google: Google Search, args: \"query\": \"<query>\"\n10. improve_code:
@@ -2641,11 +2609,11 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "This reminds you of these events from your past: \nI
+      was created", "role": "system"}, {"content": "Determine which next command to
+      use, and respond using the format specified above:", "role": "user"}, {"content":
       "{\n    \"thoughts\": {\n        \"text\": \"I need to search for Tesla''s revenue
       in 2022. I can use the ''google'' command to search for this information.\",\n        \"reasoning\":
       \"I need to use the internet to find the information I need, and the ''google''
@@ -2655,7 +2623,7 @@ interactions:
       \"I need to make sure that the information I find is reliable and accurate.\",\n        \"speak\":
       \"I will use the ''google'' command to search for Tesla''s revenue in 2022.\"\n    },\n    \"command\":
       {\n        \"name\": \"google\",\n        \"args\": {\n            \"query\":
-      \"tesla revenue 2022\"\n        }\n    }\n}"}, {"role": "system", "content":
+      \"tesla revenue 2022\"\n        }\n    }\n}", "role": "assistant"}, {"content":
       "Command google returned: [\n    {\n        \"title\": \"Tesla Reports Record
       Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\": \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
       \"The automaker now turns its attention to software to drive profit. The Model
@@ -2695,10 +2663,10 @@ interactions:
       \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
       \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
       this year back in August 2022. \\\"You definitely don''t want to count chickens
-      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
-      which next command to use, and respond using the format specified above:"},
-      {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
-      \"I found the information I need from the ''google'' search. I can use the ''write_to_file''
+      until they''re hatched.\"\n    }\n]", "role": "system"}, {"content": "Determine
+      which next command to use, and respond using the format specified above:", "role":
+      "user"}, {"content": "{\n    \"thoughts\": {\n        \"text\": \"I found the
+      information I need from the ''google'' search. I can use the ''write_to_file''
       command to write the revenue information to a file called ''output.txt''.\",\n        \"reasoning\":
       \"I have found the information I need, and the ''write_to_file'' command is
       the best way to save this information to a file.\",\n        \"plan\": \"- Use
@@ -2709,16 +2677,12 @@ interactions:
       the ''write_to_file'' command to write the revenue information to a file called
       ''output.txt''.\"\n    },\n    \"command\": {\n        \"name\": \"write_to_file\",\n        \"args\":
       {\n            \"filename\": \"output.txt\",\n            \"text\": \"Tesla''s
-      revenue in 2022 was $81.5 billion according to Statista (https://www.statista.com/statistics/272120/revenue-of-tesla/).\"\n        }\n    }\n}"},
-      {"role": "system", "content": "Command write_to_file returned: File written
-      to successfully."}, {"role": "user", "content": "Determine which next command
-      to use, and respond using the format specified above:"}], "temperature": 0,
-      "max_tokens": 0}'
+      revenue in 2022 was $81.5 billion according to Statista (https://www.statista.com/statistics/272120/revenue-of-tesla/).\"\n        }\n    }\n}",
+      "role": "assistant"}, {"content": "Command write_to_file returned: File written
+      to successfully.", "role": "system"}, {"content": "Determine which next command
+      to use, and respond using the format specified above:", "role": "user"}], "model":
+      "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2729,6 +2693,8 @@ interactions:
       - '10031'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - f03ae5d8d8c434fd1326a6849f33601f98bbffbf43336add6f86de1556464c47
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -2799,16 +2765,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Tesla''s revenue
-      in 2022 was $81.5 billion according to Statista (https://www.statista.com/statistics/272120/revenue-of-tesla/).\"\"\"\n\n\nCONCISE
-      SUMMARY: The text is best summarized as"}], "temperature": 0, "max_tokens":
-      0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Tesla''s revenue in 2022 was $81.5 billion according to Statista
+      (https://www.statista.com/statistics/272120/revenue-of-tesla/).\"\"\"\n\n\nCONCISE
+      SUMMARY: The text is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2819,6 +2781,8 @@ interactions:
       - '368'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - bb541cea51df128e7958b7459d9b291e15ba3948c2713011f95c9c3ae3944045
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -2885,14 +2849,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Tesla''s revenue in 2022 was $81.5 billion according to Statista
-      (https://www.statista.com/statistics/272120/revenue-of-tesla/)."], "model":
-      "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": ["Tesla''s revenue in 2022 was $81.5
+      billion according to Statista (https://www.statista.com/statistics/272120/revenue-of-tesla/)."],
+      "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2903,6 +2863,8 @@ interactions:
       - '206'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 123a50e70008c53540fb29a88862baaf8bd83d8129ff7b23c4cd07198ccfaeb3
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -3065,13 +3027,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "Tesla''s revenue in 2022 was $81.5 billion according to Statista.",
-      "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "Tesla''s revenue in 2022 was $81.5
+      billion according to Statista.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -3082,6 +3040,8 @@ interactions:
       - '141'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 81fe69a0bb31e13b213ff204f33a35b24cf93db308ce21343e2f6d4802bbf4f1
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:

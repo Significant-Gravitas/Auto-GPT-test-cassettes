@@ -1,12 +1,8 @@
 interactions:
 - request:
-    body: '{"prompt": "astronaut riding a horse", "n": 1, "size": "1024x1024", "response_format":
-      "b64_json"}'
+    body: '{"n": 1, "prompt": "astronaut riding a horse", "response_format": "b64_json",
+      "size": "1024x1024"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -17,6 +13,8 @@ interactions:
       - '98'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 87065e04f94711e717efcee2e6add308f1bd35761c10abb5f06230565213a37b
     method: POST
     uri: https://api.openai.com/v1/images/generations
   response:

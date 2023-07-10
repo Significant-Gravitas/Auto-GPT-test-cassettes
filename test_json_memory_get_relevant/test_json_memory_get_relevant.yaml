@@ -1,14 +1,9 @@
 interactions:
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Sample text\"\"\"\n\n\nCONCISE
-      SUMMARY: The text is best summarized as"}], "temperature": 0, "max_tokens":
-      0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Sample text\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized
+      as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -19,6 +14,8 @@ interactions:
       - '252'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 6aed0705d32e348cb8097edb6751e0e21e6a0686e5ffaecd3862671c8c953e81
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -85,13 +82,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Sample text"], "model": "text-embedding-ada-002", "encoding_format":
-      "base64"}'
+    body: '{"encoding_format": "base64", "input": ["Sample text"], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -102,6 +94,8 @@ interactions:
       - '90'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 7ed20269d49fa1fab505a3f89f1e0450ccfc25414903efd5f86dac93bde2460c
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -264,13 +258,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "\"Sample text.\"", "model": "text-embedding-ada-002", "encoding_format":
-      "base64"}'
+    body: '{"encoding_format": "base64", "input": "\"Sample text.\"", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -281,6 +270,8 @@ interactions:
       - '93'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 9e843d209e8a9b1520b66b516eb7cb80dfa043eb7bd56be9a8dcbe6d4a5e2264
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -443,15 +434,11 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Grocery list:
-      - Pancake mix\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized as"}],
-      "temperature": 0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Grocery list: - Pancake mix\"\"\"\n\n\nCONCISE SUMMARY: The text
+      is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature":
+      0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -462,6 +449,8 @@ interactions:
       - '268'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 3cef93e1796ec9427d87df416ba86b457264c171a7eabd29b1c2c9ce775da252
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -528,13 +517,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Grocery list: - Pancake mix"], "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": ["Grocery list: - Pancake mix"],
+      "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -545,6 +530,8 @@ interactions:
       - '106'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 4553b8783e72681ffff589f86bc1863590ec44e5dd6eaab49536c918cf709be7
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -707,13 +694,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "a grocery list item for pancake mix.", "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "a grocery list item for pancake
+      mix.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -724,6 +707,8 @@ interactions:
       - '113'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - b1c5df27e1e36d6eb39cb3ef6902190e395edc2021aae58ea3a676358e238f9b
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -886,15 +871,11 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"What is your
-      favorite color?\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized as"}],
-      "temperature": 0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"What is your favorite color?\"\"\"\n\n\nCONCISE SUMMARY: The text
+      is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature":
+      0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -905,6 +886,8 @@ interactions:
       - '269'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 38d20531436192fb8255580dfb7ce30502e52339421e65a8c7238d1156ff41dd
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -971,13 +954,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["What is your favorite color?"], "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": ["What is your favorite color?"],
+      "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -988,6 +967,8 @@ interactions:
       - '107'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - b7eb65677dc45d3ea1dac7654d00d8d9b8b07b460029a7a98876f9222d6fa03e
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1150,13 +1131,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "a question asking for someone''s favorite color.", "model":
-      "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "a question asking for someone''s
+      favorite color.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1167,6 +1144,8 @@ interactions:
       - '124'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - c21ce1b51a1410173e5d41a137a2028f04cf2b6a4ca7ac95c2b61e730aac9466
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1329,8 +1308,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Lorem ipsum
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
       dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
       dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
       dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
@@ -1363,14 +1342,10 @@ interactions:
       dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
       dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
       dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-      dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-      dolor sit amet\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized as"}],
-      "temperature": 0, "max_tokens": 0}'
+      dolor sit amet Lorem ipsum dolor sit amet\"\"\"\n\n\nCONCISE SUMMARY: The text
+      is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature":
+      0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1381,6 +1356,8 @@ interactions:
       - '2940'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 33b5fea704b2ba7b86588151cb94cdd9f169438e9e7b43949f31432b53b5db87
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1448,7 +1425,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
+    body: '{"encoding_format": "base64", "input": ["Lorem ipsum dolor sit amet Lorem
       ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
       ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
       ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
@@ -1481,13 +1458,9 @@ interactions:
       ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
       ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
       ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem
-      ipsum dolor sit amet Lorem ipsum dolor sit amet"], "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+      ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"],
+      "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1498,6 +1471,8 @@ interactions:
       - '2778'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - cecb71cb2fefb6f17a8b73e0091726169e74691af5a2b3f09f2a705fd1cb924c
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1661,14 +1636,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "a repetitive and meaningless string of words commonly used as
-      a placeholder in design and publishing.", "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "a repetitive and meaningless string
+      of words commonly used as a placeholder in design and publishing.", "model":
+      "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1679,6 +1650,8 @@ interactions:
       - '178'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 984c031f967be53b3acaee805b5bc9754e22306200a7cd9e5935281c7fa1ff79
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1842,13 +1815,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "Sample text", "model": "text-embedding-ada-002", "encoding_format":
-      "base64"}'
+    body: '{"encoding_format": "base64", "input": "Sample text", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1859,6 +1827,8 @@ interactions:
       - '88'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - f8ecf27a55b167db0dc35a6a93f25e7d8a266c8515d80cc3ee99c59f90a6a7f5
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -2021,13 +1991,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "Grocery list: - Pancake mix", "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "Grocery list: - Pancake mix", "model":
+      "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2038,6 +2004,8 @@ interactions:
       - '104'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 282c634443b2c7f712fa67aaf8b7d9149dcb41c439b93d0499a3ad2abef7d58d
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -2199,13 +2167,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "What is your favorite color?", "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "What is your favorite color?",
+      "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2216,6 +2180,8 @@ interactions:
       - '105'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - b2bdcc2a4cb5f13ca3a52911c8fcf25a4d31008059e97931ca45a099630f9760
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -2378,13 +2344,9 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "Lorem ipsum dolor sit amet", "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "Lorem ipsum dolor sit amet", "model":
+      "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2395,6 +2357,8 @@ interactions:
       - '103'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 816bd9d6ae5db461468269beb0d784db08d1dcb0703878e6b3d2d8771996004a
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:

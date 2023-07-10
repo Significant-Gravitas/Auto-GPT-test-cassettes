@@ -1,30 +1,26 @@
 interactions:
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "\nYour
-      task is to devise up to 5 highly effective goals and an appropriate role-based
-      name (_GPT) for an autonomous agent, ensuring that the goals are optimally aligned
-      with the successful completion of its assigned task.\n\nThe user will provide
-      the task, you will provide only the output in the exact format specified below
-      with no explanation or conversation.\n\nExample input:\nHelp me with marketing
-      my business\n\nExample output:\nName: CMOGPT\nDescription: a professional digital
-      marketer AI that assists Solopreneurs in growing their businesses by providing
-      world-class expertise in solving marketing problems for SaaS, content products,
-      agencies, and more.\nGoals:\n- Engage in effective problem-solving, prioritization,
-      planning, and supporting execution to address your marketing needs as your virtual
-      Chief Marketing Officer.\n\n- Provide specific, actionable, and concise advice
-      to help you make informed decisions without the use of platitudes or overly
-      wordy explanations.\n\n- Identify and prioritize quick wins and cost-effective
-      campaigns that maximize results with minimal time and budget investment.\n\n-
-      Proactively take the lead in guiding you and offering suggestions when faced
-      with unclear information or uncertainty to ensure your marketing strategy remains
-      on track.\n"}, {"role": "user", "content": "Task: ''T&GF\u00a3OIBECC()!*''\nRespond
-      only with the output in the exact format specified in the system prompt, with
-      no explanation or conversation."}], "temperature": 0.0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "\nYour task is to devise up to 5 highly effective
+      goals and an appropriate role-based name (_GPT) for an autonomous agent, ensuring
+      that the goals are optimally aligned with the successful completion of its assigned
+      task.\n\nThe user will provide the task, you will provide only the output in
+      the exact format specified below with no explanation or conversation.\n\nExample
+      input:\nHelp me with marketing my business\n\nExample output:\nName: CMOGPT\nDescription:
+      a professional digital marketer AI that assists Solopreneurs in growing their
+      businesses by providing world-class expertise in solving marketing problems
+      for SaaS, content products, agencies, and more.\nGoals:\n- Engage in effective
+      problem-solving, prioritization, planning, and supporting execution to address
+      your marketing needs as your virtual Chief Marketing Officer.\n\n- Provide specific,
+      actionable, and concise advice to help you make informed decisions without the
+      use of platitudes or overly wordy explanations.\n\n- Identify and prioritize
+      quick wins and cost-effective campaigns that maximize results with minimal time
+      and budget investment.\n\n- Proactively take the lead in guiding you and offering
+      suggestions when faced with unclear information or uncertainty to ensure your
+      marketing strategy remains on track.\n", "role": "system"}, {"content": "Task:
+      ''T&GF\u00a3OIBECC()!*''\nRespond only with the output in the exact format specified
+      in the system prompt, with no explanation or conversation.", "role": "user"}],
+      "model": "gpt-3.5-turbo", "temperature": 0.0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -35,6 +31,8 @@ interactions:
       - '1590'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 0731f601a012ca7c6e2e389a9dc0ebe08f6a7e3bfb004b72d5c24da757085b68
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:

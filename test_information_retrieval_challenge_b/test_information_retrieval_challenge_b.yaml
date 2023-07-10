@@ -1,27 +1,26 @@
 interactions:
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Get-PhysicsNobelPrize, An autonomous agent that specializes in physics history.\nYour
-      decisions must always be made independently without seeking user assistance.
-      Play to your strengths as an LLM and pursue simple strategies with no legal
-      complications.\n\nGOALS:\n\n1. Write to file the winner''s name(s), affiliated
-      university, and discovery of the 2010 nobel prize in physics. Write your final
-      answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1. ~4000 word limit
-      for short term memory. Your short term memory is short, so immediately save
-      important information to files.\n2. If you are unsure how you previously did
-      something or want to recall past events, thinking about similar events will
-      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
-      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
-      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
-      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
-      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
-      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
-      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
-      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
-      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
-      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
-      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
-      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+    body: '{"messages": [{"content": "You are Get-PhysicsNobelPrize, An autonomous
+      agent that specializes in physics history.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to file the winner''s name(s), affiliated university, and discovery of
+      the 2010 nobel prize in physics. Write your final answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args:
+      \"key\": \"<key>\"\n7. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n9. list_agents: List GPT Agents, args: () -> str\n10. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
       \"prompt\": \"<prompt>\"\n12. browse_website: Browse Website, args: \"url\":
       \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n\nResources:\n1.
       Internet access for searches and information gathering.\n2. Long Term memory
@@ -37,15 +36,12 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "user", "content": "Determine which next command to use, and respond using the
-      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "Determine which next command to use, and respond using
+      the format specified above:", "role": "user"}], "model": "gpt-3.5-turbo", "temperature":
+      0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -56,6 +52,8 @@ interactions:
       - '3304'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 8181236cb66ed968b9e9da85dd4eaa937937921c5e1eb6506a0850bad3ec995d
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -129,48 +127,48 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text; include any information that can be
-      used to answer the question \"2010 Nobel Prize in Physics winner\". Do not directly
-      answer the question itself:\n\n\nLITERAL TEXT: \"\"\"Skip to content This website
-      uses cookies to improve the user experience. By using this website you consent
-      to all cookies in accordance with our cookie policy.I understand Close the search
-      form A button that allows you to close the search form if needed Close the search
-      form A button that allows you to close the search form if needed Close Mobile
-      Menu The Nobel Prize The Nobel Prize Logo Toggle Mobile Menu Nobel Prizes &
-      Laureates All Nobel Prizes Physics Prize Chemistry Prize Medicine Prize Literature
-      Prize Peace Prize Prize in Economic Sciences Quick facts Nomination Physics
+    body: '{"messages": [{"content": "Write a concise summary of the following text;
+      include any information that can be used to answer the question \"2010 Nobel
+      Prize in Physics winner\". Do not directly answer the question itself:\n\n\nLITERAL
+      TEXT: \"\"\"Skip to content This website uses cookies to improve the user experience.
+      By using this website you consent to all cookies in accordance with our cookie
+      policy.I understand Close the search form A button that allows you to close
+      the search form if needed Close the search form A button that allows you to
+      close the search form if needed Close Mobile Menu The Nobel Prize The Nobel
+      Prize Logo Toggle Mobile Menu Nobel Prizes & Laureates All Nobel Prizes Physics
       Prize Chemistry Prize Medicine Prize Literature Prize Peace Prize Prize in Economic
-      Sciences Nomination Archive Alfred Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s
-      will News & insights Press In-depth Events Public events Nobel Prize Concert
-      Nobel Week Dialogue Nobel Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration
-      Initiative Nobel Prize award ceremonies Educational Close the search form A
-      button that allows you to close the search form if needed Close the search form
-      A button that allows you to close the search form if needed Header Search Submit
-      a search term Allows users to submit a search term Physics The Nobel Prize in
-      Physics 2010 Explore Summary Physics Prizes Chemistry Prizes Medicine Prizes
-      Literature Prizes Peace Prizes Prizes in Economic Sciences Summary Prize announcement
-      Press release Advanced information Popular information Illustrated information
-      Speed read Award ceremony video Award ceremony speech Banquet video Laureates
-      Andre Geim Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in
-      Physics 2010 The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel
-      Prize in Physics - Press release The Nobel Prize in Physics 2010 Andre Geim
-      Konstantin Novoselov Share this Share on Facebook: The Nobel Prize in Physics
-      2010 Share this content on Facebook Facebook Tweet: The Nobel Prize in Physics
-      2010 Share this content on Twitter Twitter Share on LinkedIn: The Nobel Prize
-      in Physics 2010 Share this content on LinkedIn LinkedIn Share via Email: The
-      Nobel Prize in Physics 2010 Share this content via Email Email this page The
-      Nobel Prize in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre
-      Geim Prize share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin
-      Novoselov Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly
-      to Andre Geim and Konstantin Novoselov \"for groundbreaking experiments regarding
-      the two-dimensional material graphene\" To cite this section MLA style: The
-      Nobel Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Tue.
-      30 May 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back
-      to top Back To Top Takes users back to the top of the page Nobel Prizes and
-      laureates Nobel Prizes 2022 Fourteen laureates were awarded a Nobel Prize in
-      2022, for achievements that have conferred the greatest benefit to humankind.
-      Their work and discoveries range from paleogenomics and click chemistry to documenting
+      Sciences Quick facts Nomination Physics Prize Chemistry Prize Medicine Prize
+      Literature Prize Peace Prize Prize in Economic Sciences Nomination Archive Alfred
+      Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s will News & insights Press
+      In-depth Events Public events Nobel Prize Concert Nobel Week Dialogue Nobel
+      Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration Initiative Nobel Prize
+      award ceremonies Educational Close the search form A button that allows you
+      to close the search form if needed Close the search form A button that allows
+      you to close the search form if needed Header Search Submit a search term Allows
+      users to submit a search term Physics The Nobel Prize in Physics 2010 Explore
+      Summary Physics Prizes Chemistry Prizes Medicine Prizes Literature Prizes Peace
+      Prizes Prizes in Economic Sciences Summary Prize announcement Press release
+      Advanced information Popular information Illustrated information Speed read
+      Award ceremony video Award ceremony speech Banquet video Laureates Andre Geim
+      Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in Physics 2010
+      The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel Prize in
+      Physics - Press release The Nobel Prize in Physics 2010 Andre Geim Konstantin
+      Novoselov Share this Share on Facebook: The Nobel Prize in Physics 2010 Share
+      this content on Facebook Facebook Tweet: The Nobel Prize in Physics 2010 Share
+      this content on Twitter Twitter Share on LinkedIn: The Nobel Prize in Physics
+      2010 Share this content on LinkedIn LinkedIn Share via Email: The Nobel Prize
+      in Physics 2010 Share this content via Email Email this page The Nobel Prize
+      in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre Geim Prize
+      share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin Novoselov
+      Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly to Andre
+      Geim and Konstantin Novoselov \"for groundbreaking experiments regarding the
+      two-dimensional material graphene\" To cite this section MLA style: The Nobel
+      Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Tue. 30
+      May 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back to
+      top Back To Top Takes users back to the top of the page Nobel Prizes and laureates
+      Nobel Prizes 2022 Fourteen laureates were awarded a Nobel Prize in 2022, for
+      achievements that have conferred the greatest benefit to humankind. Their work
+      and discoveries range from paleogenomics and click chemistry to documenting
       war crimes.See them all presented here. Explore prizes and laureates Look for
       popular awards and laureates in different fields, and discover the history of
       the Nobel Prize. Select the category or categories you would like to filter
@@ -190,12 +188,8 @@ interactions:
       Youtube Icon Follow The Nobel Prize on Youtube Youtube LinkedIn IconConnect
       with The Nobel Prize on LinkedIn LinkedIn The Nobel Prize Copyright \u00a9 Nobel
       Prize Outreach AB 2023\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized
-      as"}], "temperature": 0, "max_tokens": 0}'
+      as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -206,6 +200,8 @@ interactions:
       - '4870'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 29d7656aad4088ae628e3565eeb19a0069ac684ba220dd01baa519d495105e85
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -273,45 +269,45 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Skip to content This website uses cookies to improve the user
-      experience. By using this website you consent to all cookies in accordance with
-      our cookie policy.I understand Close the search form A button that allows you
-      to close the search form if needed Close the search form A button that allows
-      you to close the search form if needed Close Mobile Menu The Nobel Prize The
-      Nobel Prize Logo Toggle Mobile Menu Nobel Prizes & Laureates All Nobel Prizes
-      Physics Prize Chemistry Prize Medicine Prize Literature Prize Peace Prize Prize
-      in Economic Sciences Quick facts Nomination Physics Prize Chemistry Prize Medicine
-      Prize Literature Prize Peace Prize Prize in Economic Sciences Nomination Archive
-      Alfred Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s will News & insights
-      Press In-depth Events Public events Nobel Prize Concert Nobel Week Dialogue
-      Nobel Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration Initiative Nobel
-      Prize award ceremonies Educational Close the search form A button that allows
-      you to close the search form if needed Close the search form A button that allows
-      you to close the search form if needed Header Search Submit a search term Allows
-      users to submit a search term Physics The Nobel Prize in Physics 2010 Explore
-      Summary Physics Prizes Chemistry Prizes Medicine Prizes Literature Prizes Peace
-      Prizes Prizes in Economic Sciences Summary Prize announcement Press release
-      Advanced information Popular information Illustrated information Speed read
-      Award ceremony video Award ceremony speech Banquet video Laureates Andre Geim
-      Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in Physics 2010
-      The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel Prize in
-      Physics - Press release The Nobel Prize in Physics 2010 Andre Geim Konstantin
-      Novoselov Share this Share on Facebook: The Nobel Prize in Physics 2010 Share
-      this content on Facebook Facebook Tweet: The Nobel Prize in Physics 2010 Share
-      this content on Twitter Twitter Share on LinkedIn: The Nobel Prize in Physics
-      2010 Share this content on LinkedIn LinkedIn Share via Email: The Nobel Prize
-      in Physics 2010 Share this content via Email Email this page The Nobel Prize
-      in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre Geim Prize
-      share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin Novoselov
-      Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly to Andre
-      Geim and Konstantin Novoselov \"for groundbreaking experiments regarding the
-      two-dimensional material graphene\" To cite this section MLA style: The Nobel
-      Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Tue. 30
-      May 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back to
-      top Back To Top Takes users back to the top of the page Nobel Prizes and laureates
-      Nobel Prizes 2022 Fourteen laureates were awarded a Nobel Prize in 2022, for
-      achievements that have conferred the greatest benefit to humankind. Their work
-      and discoveries range from paleogenomics and click chemistry to documenting
+    body: '{"encoding_format": "base64", "input": ["Skip to content This website uses
+      cookies to improve the user experience. By using this website you consent to
+      all cookies in accordance with our cookie policy.I understand Close the search
+      form A button that allows you to close the search form if needed Close the search
+      form A button that allows you to close the search form if needed Close Mobile
+      Menu The Nobel Prize The Nobel Prize Logo Toggle Mobile Menu Nobel Prizes &
+      Laureates All Nobel Prizes Physics Prize Chemistry Prize Medicine Prize Literature
+      Prize Peace Prize Prize in Economic Sciences Quick facts Nomination Physics
+      Prize Chemistry Prize Medicine Prize Literature Prize Peace Prize Prize in Economic
+      Sciences Nomination Archive Alfred Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s
+      will News & insights Press In-depth Events Public events Nobel Prize Concert
+      Nobel Week Dialogue Nobel Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration
+      Initiative Nobel Prize award ceremonies Educational Close the search form A
+      button that allows you to close the search form if needed Close the search form
+      A button that allows you to close the search form if needed Header Search Submit
+      a search term Allows users to submit a search term Physics The Nobel Prize in
+      Physics 2010 Explore Summary Physics Prizes Chemistry Prizes Medicine Prizes
+      Literature Prizes Peace Prizes Prizes in Economic Sciences Summary Prize announcement
+      Press release Advanced information Popular information Illustrated information
+      Speed read Award ceremony video Award ceremony speech Banquet video Laureates
+      Andre Geim Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in
+      Physics 2010 The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel
+      Prize in Physics - Press release The Nobel Prize in Physics 2010 Andre Geim
+      Konstantin Novoselov Share this Share on Facebook: The Nobel Prize in Physics
+      2010 Share this content on Facebook Facebook Tweet: The Nobel Prize in Physics
+      2010 Share this content on Twitter Twitter Share on LinkedIn: The Nobel Prize
+      in Physics 2010 Share this content on LinkedIn LinkedIn Share via Email: The
+      Nobel Prize in Physics 2010 Share this content via Email Email this page The
+      Nobel Prize in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre
+      Geim Prize share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin
+      Novoselov Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly
+      to Andre Geim and Konstantin Novoselov \"for groundbreaking experiments regarding
+      the two-dimensional material graphene\" To cite this section MLA style: The
+      Nobel Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Tue.
+      30 May 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back
+      to top Back To Top Takes users back to the top of the page Nobel Prizes and
+      laureates Nobel Prizes 2022 Fourteen laureates were awarded a Nobel Prize in
+      2022, for achievements that have conferred the greatest benefit to humankind.
+      Their work and discoveries range from paleogenomics and click chemistry to documenting
       war crimes.See them all presented here. Explore prizes and laureates Look for
       popular awards and laureates in different fields, and discover the history of
       the Nobel Prize. Select the category or categories you would like to filter
@@ -330,13 +326,8 @@ interactions:
       on Twitter Twitter Instagram Icon Follow The Nobel Prize on Instagram Instagram
       Youtube Icon Follow The Nobel Prize on Youtube Youtube LinkedIn IconConnect
       with The Nobel Prize on LinkedIn LinkedIn The Nobel Prize Copyright \u00a9 Nobel
-      Prize Outreach AB 2023"], "model": "text-embedding-ada-002", "encoding_format":
-      "base64"}'
+      Prize Outreach AB 2023"], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -347,6 +338,8 @@ interactions:
       - '4560'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 86f44f4c53fd0b8994b13ed733d2e685ad84d0e9b7f042fa8f104e3315e5a256
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -508,14 +501,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "announcing the 2010 Nobel Prize in Physics winners, Andre Geim
-      and Konstantin Novoselov, for their experiments on graphene, a two-dimensional
-      material.", "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "announcing the 2010 Nobel Prize
+      in Physics winners, Andre Geim and Konstantin Novoselov, for their experiments
+      on graphene, a two-dimensional material.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -526,6 +515,8 @@ interactions:
       - '228'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - a61edd3b35f7614b92a7ce79212a615e3b4a9d1efea3b1691dadbe2497f20367
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -688,28 +679,27 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Get-PhysicsNobelPrize, An autonomous agent that specializes in physics history.\nYour
-      decisions must always be made independently without seeking user assistance.
-      Play to your strengths as an LLM and pursue simple strategies with no legal
-      complications.\n\nGOALS:\n\n1. Write to file the winner''s name(s), affiliated
-      university, and discovery of the 2010 nobel prize in physics. Write your final
-      answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1. ~4000 word limit
-      for short term memory. Your short term memory is short, so immediately save
-      important information to files.\n2. If you are unsure how you previously did
-      something or want to recall past events, thinking about similar events will
-      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
-      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
-      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
-      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
-      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
-      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
-      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
-      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
-      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
-      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
-      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
-      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+    body: '{"messages": [{"content": "You are Get-PhysicsNobelPrize, An autonomous
+      agent that specializes in physics history.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to file the winner''s name(s), affiliated university, and discovery of
+      the 2010 nobel prize in physics. Write your final answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args:
+      \"key\": \"<key>\"\n7. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n9. list_agents: List GPT Agents, args: () -> str\n10. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
       \"prompt\": \"<prompt>\"\n12. browse_website: Browse Website, args: \"url\":
       \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n\nResources:\n1.
       Internet access for searches and information gathering.\n2. Long Term memory
@@ -725,11 +715,11 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "This reminds you of these events from your past: \nI
+      was created", "role": "system"}, {"content": "Determine which next command to
+      use, and respond using the format specified above:", "role": "user"}, {"content":
       "{\n    \"thoughts\": {\n        \"text\": \"I need to find out who won the
       2010 Nobel Prize in Physics and write their names, affiliated university, and
       discovery to a file. I can start by searching for the information online.\",\n        \"reasoning\":
@@ -742,24 +732,21 @@ interactions:
       on the 2010 Nobel Prize in Physics and write it to a file.\"\n    },\n    \"command\":
       {\n        \"name\": \"browse_website\",\n        \"args\": {\n            \"url\":
       \"https://www.nobelprize.org/prizes/physics/2010/summary/\",\n            \"question\":
-      \"2010 Nobel Prize in Physics winner\"\n        }\n    }\n}"}, {"role": "system",
-      "content": "Command browse_website returned: Answer gathered from website: announcing
-      the 2010 Nobel Prize in Physics winners, Andre Geim and Konstantin Novoselov,
-      for their experiments on graphene, a two-dimensional material.\n\nLinks: [''\\nSkip
-      to content  (https://www.nobelprize.org/prizes/physics/2010/summary/#content)'',
+      \"2010 Nobel Prize in Physics winner\"\n        }\n    }\n}", "role": "assistant"},
+      {"content": "Command browse_website returned: Answer gathered from website:
+      announcing the 2010 Nobel Prize in Physics winners, Andre Geim and Konstantin
+      Novoselov, for their experiments on graphene, a two-dimensional material.\n\nLinks:
+      [''\\nSkip to content  (https://www.nobelprize.org/prizes/physics/2010/summary/#content)'',
       ''cookie policy (https://www.nobelprize.org/about/privacy-policy/)'', ''\\n\\nClose
       the search form\\nA button that allows you to close the search form if needed\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nClose
       the search form\\nA button that allows you to close the search form if needed\\n\\n\\n
       (https://www.nobelprize.org/prizes/physics/2010/summary/)'', ''\\nClose Mobile
       Menu\\n (https://www.nobelprize.org/prizes/physics/2010/summary/)'', ''\\n\\nThe
-      Nobel Prize\\nThe Nobel Prize Logo\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n (https://www.nobelprize.org)'']"},
-      {"role": "user", "content": "Determine which next command to use, and respond
-      using the format specified above:"}], "temperature": 0, "max_tokens": 0}'
+      Nobel Prize\\nThe Nobel Prize Logo\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n (https://www.nobelprize.org)'']",
+      "role": "system"}, {"content": "Determine which next command to use, and respond
+      using the format specified above:", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -770,6 +757,8 @@ interactions:
       - '5499'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - daaf3ce6ceed44c20ac938bba906210ed5e7bf0a6bfb37a70ab53dbf15afe63e
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -842,28 +831,27 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Get-PhysicsNobelPrize, An autonomous agent that specializes in physics history.\nYour
-      decisions must always be made independently without seeking user assistance.
-      Play to your strengths as an LLM and pursue simple strategies with no legal
-      complications.\n\nGOALS:\n\n1. Write to file the winner''s name(s), affiliated
-      university, and discovery of the 2010 nobel prize in physics. Write your final
-      answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1. ~4000 word limit
-      for short term memory. Your short term memory is short, so immediately save
-      important information to files.\n2. If you are unsure how you previously did
-      something or want to recall past events, thinking about similar events will
-      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
-      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
-      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
-      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
-      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
-      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
-      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
-      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
-      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
-      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
-      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
-      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+    body: '{"messages": [{"content": "You are Get-PhysicsNobelPrize, An autonomous
+      agent that specializes in physics history.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to file the winner''s name(s), affiliated university, and discovery of
+      the 2010 nobel prize in physics. Write your final answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args:
+      \"key\": \"<key>\"\n7. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n9. list_agents: List GPT Agents, args: () -> str\n10. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
       \"prompt\": \"<prompt>\"\n12. browse_website: Browse Website, args: \"url\":
       \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n\nResources:\n1.
       Internet access for searches and information gathering.\n2. Long Term memory
@@ -879,11 +867,11 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "This reminds you of these events from your past: \nI
+      was created", "role": "system"}, {"content": "Determine which next command to
+      use, and respond using the format specified above:", "role": "user"}, {"content":
       "{\n    \"thoughts\": {\n        \"text\": \"I need to find out who won the
       2010 Nobel Prize in Physics and write their names, affiliated university, and
       discovery to a file. I can start by searching for the information online.\",\n        \"reasoning\":
@@ -896,19 +884,19 @@ interactions:
       on the 2010 Nobel Prize in Physics and write it to a file.\"\n    },\n    \"command\":
       {\n        \"name\": \"browse_website\",\n        \"args\": {\n            \"url\":
       \"https://www.nobelprize.org/prizes/physics/2010/summary/\",\n            \"question\":
-      \"2010 Nobel Prize in Physics winner\"\n        }\n    }\n}"}, {"role": "system",
-      "content": "Command browse_website returned: Answer gathered from website: announcing
-      the 2010 Nobel Prize in Physics winners, Andre Geim and Konstantin Novoselov,
-      for their experiments on graphene, a two-dimensional material.\n\nLinks: [''\\nSkip
-      to content  (https://www.nobelprize.org/prizes/physics/2010/summary/#content)'',
+      \"2010 Nobel Prize in Physics winner\"\n        }\n    }\n}", "role": "assistant"},
+      {"content": "Command browse_website returned: Answer gathered from website:
+      announcing the 2010 Nobel Prize in Physics winners, Andre Geim and Konstantin
+      Novoselov, for their experiments on graphene, a two-dimensional material.\n\nLinks:
+      [''\\nSkip to content  (https://www.nobelprize.org/prizes/physics/2010/summary/#content)'',
       ''cookie policy (https://www.nobelprize.org/about/privacy-policy/)'', ''\\n\\nClose
       the search form\\nA button that allows you to close the search form if needed\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nClose
       the search form\\nA button that allows you to close the search form if needed\\n\\n\\n
       (https://www.nobelprize.org/prizes/physics/2010/summary/)'', ''\\nClose Mobile
       Menu\\n (https://www.nobelprize.org/prizes/physics/2010/summary/)'', ''\\n\\nThe
-      Nobel Prize\\nThe Nobel Prize Logo\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n (https://www.nobelprize.org)'']"},
-      {"role": "user", "content": "Determine which next command to use, and respond
-      using the format specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\":
+      Nobel Prize\\nThe Nobel Prize Logo\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n (https://www.nobelprize.org)'']",
+      "role": "system"}, {"content": "Determine which next command to use, and respond
+      using the format specified above:", "role": "user"}, {"content": "{\n    \"thoughts\":
       {\n        \"text\": \"I have found the information I need. Now I need to write
       it to a file.\",\n        \"reasoning\": \"I can use the write_to_file command
       to write the information to a file.\",\n        \"plan\": \"- Use the write_to_file
@@ -918,15 +906,12 @@ interactions:
       I found to a file.\"\n    },\n    \"command\": {\n        \"name\": \"write_to_file\",\n        \"args\":
       {\n            \"filename\": \"2010_nobel_prize_winners.txt\",\n            \"text\":
       \"Andre Geim and Konstantin Novoselov, University of Manchester, for their experiments
-      on graphene, a two-dimensional material.\"\n        }\n    }\n}"}, {"role":
-      "system", "content": "Command write_to_file returned: File written to successfully."},
-      {"role": "user", "content": "Determine which next command to use, and respond
-      using the format specified above:"}], "temperature": 0, "max_tokens": 0}'
+      on graphene, a two-dimensional material.\"\n        }\n    }\n}", "role": "assistant"},
+      {"content": "Command write_to_file returned: File written to successfully.",
+      "role": "system"}, {"content": "Determine which next command to use, and respond
+      using the format specified above:", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -937,6 +922,8 @@ interactions:
       - '6594'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 40aabb2d99d750967915ddaa12249a709d6910132926ec05fea8bd850b8eb038
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1008,16 +995,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Andre Geim
-      and Konstantin Novoselov, University of Manchester, for their experiments on
-      graphene, a two-dimensional material.\"\"\"\n\n\nCONCISE SUMMARY: The text is
-      best summarized as"}], "temperature": 0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Andre Geim and Konstantin Novoselov, University of Manchester, for
+      their experiments on graphene, a two-dimensional material.\"\"\"\n\n\nCONCISE
+      SUMMARY: The text is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1028,6 +1011,8 @@ interactions:
       - '366'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 980ec91e2a3ffd042d5b5a576b8d948fa4eb51deb4527cc0ac18ef2bd5760b93
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1095,14 +1080,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Andre Geim and Konstantin Novoselov, University of Manchester,
-      for their experiments on graphene, a two-dimensional material."], "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": ["Andre Geim and Konstantin Novoselov,
+      University of Manchester, for their experiments on graphene, a two-dimensional
+      material."], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1113,6 +1094,8 @@ interactions:
       - '204'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 253e20203cf3c7c8869816e72354b953cc79b7d3922b15ae4674b54ea4f82879
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1275,14 +1258,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "Andre Geim and Konstantin Novoselov from the University of Manchester
-      were awarded for their experiments on graphene, a two-dimensional material.",
-      "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "Andre Geim and Konstantin Novoselov
+      from the University of Manchester were awarded for their experiments on graphene,
+      a two-dimensional material.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1293,6 +1272,8 @@ interactions:
       - '222'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 628ae3ed202b9266c6797e5917d75d9c4ca0508f36805e6f25d6daea6834b73e
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1455,28 +1436,27 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
-      are Get-PhysicsNobelPrize, An autonomous agent that specializes in physics history.\nYour
-      decisions must always be made independently without seeking user assistance.
-      Play to your strengths as an LLM and pursue simple strategies with no legal
-      complications.\n\nGOALS:\n\n1. Write to file the winner''s name(s), affiliated
-      university, and discovery of the 2010 nobel prize in physics. Write your final
-      answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1. ~4000 word limit
-      for short term memory. Your short term memory is short, so immediately save
-      important information to files.\n2. If you are unsure how you previously did
-      something or want to recall past events, thinking about similar events will
-      help you remember.\n3. No user assistance\n4. Exclusively use the commands listed
-      below e.g. command_name\n\nCommands:\n1. append_to_file: Append to file, args:
-      \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file: Delete file,
-      args: \"filename\": \"<filename>\"\n3. list_files: List Files in Directory,
-      args: \"directory\": \"<directory>\"\n4. read_file: Read a file, args: \"filename\":
-      \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\": \"<filename>\",
-      \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n7.
-      get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8. get_text_summary:
-      Get text summary, args: \"url\": \"<url>\", \"question\": \"<question>\"\n9.
-      list_agents: List GPT Agents, args: () -> str\n10. message_agent: Message GPT
-      Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11. start_agent:
-      Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
+    body: '{"messages": [{"content": "You are Get-PhysicsNobelPrize, An autonomous
+      agent that specializes in physics history.\nYour decisions must always be made
+      independently without seeking user assistance. Play to your strengths as an
+      LLM and pursue simple strategies with no legal complications.\n\nGOALS:\n\n1.
+      Write to file the winner''s name(s), affiliated university, and discovery of
+      the 2010 nobel prize in physics. Write your final answer to 2010_nobel_prize_winners.txt.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. append_to_file: Append
+      to file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n2. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n3. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n4. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n5. write_to_file: Write to file, args: \"filename\":
+      \"<filename>\", \"text\": \"<text>\"\n6. delete_agent: Delete GPT Agent, args:
+      \"key\": \"<key>\"\n7. get_hyperlinks: Get hyperlinks, args: \"url\": \"<url>\"\n8.
+      get_text_summary: Get text summary, args: \"url\": \"<url>\", \"question\":
+      \"<question>\"\n9. list_agents: List GPT Agents, args: () -> str\n10. message_agent:
+      Message GPT Agent, args: \"key\": \"<key>\", \"message\": \"<message>\"\n11.
+      start_agent: Start GPT Agent, args: \"name\": \"<name>\", \"task\": \"<short_task_desc>\",
       \"prompt\": \"<prompt>\"\n12. browse_website: Browse Website, args: \"url\":
       \"<url>\", \"question\": \"<what_you_want_to_find_on_website>\"\n\nResources:\n1.
       Internet access for searches and information gathering.\n2. Long Term memory
@@ -1492,11 +1472,11 @@ interactions:
       long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
       \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
       \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
-      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
-      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
-      "system", "content": "This reminds you of these events from your past: \nI was
-      created"}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}, {"role": "assistant", "content":
+      \nEnsure the response can be parsed by Python json.loads", "role": "system"},
+      {"content": "The current time and date is Tue Jan  1 00:00:00 2000", "role":
+      "system"}, {"content": "This reminds you of these events from your past: \nI
+      was created", "role": "system"}, {"content": "Determine which next command to
+      use, and respond using the format specified above:", "role": "user"}, {"content":
       "{\n    \"thoughts\": {\n        \"text\": \"I need to find out who won the
       2010 Nobel Prize in Physics and write their names, affiliated university, and
       discovery to a file. I can start by searching for the information online.\",\n        \"reasoning\":
@@ -1509,19 +1489,19 @@ interactions:
       on the 2010 Nobel Prize in Physics and write it to a file.\"\n    },\n    \"command\":
       {\n        \"name\": \"browse_website\",\n        \"args\": {\n            \"url\":
       \"https://www.nobelprize.org/prizes/physics/2010/summary/\",\n            \"question\":
-      \"2010 Nobel Prize in Physics winner\"\n        }\n    }\n}"}, {"role": "system",
-      "content": "Command browse_website returned: Answer gathered from website: announcing
-      the 2010 Nobel Prize in Physics winners, Andre Geim and Konstantin Novoselov,
-      for their experiments on graphene, a two-dimensional material.\n\nLinks: [''\\nSkip
-      to content  (https://www.nobelprize.org/prizes/physics/2010/summary/#content)'',
+      \"2010 Nobel Prize in Physics winner\"\n        }\n    }\n}", "role": "assistant"},
+      {"content": "Command browse_website returned: Answer gathered from website:
+      announcing the 2010 Nobel Prize in Physics winners, Andre Geim and Konstantin
+      Novoselov, for their experiments on graphene, a two-dimensional material.\n\nLinks:
+      [''\\nSkip to content  (https://www.nobelprize.org/prizes/physics/2010/summary/#content)'',
       ''cookie policy (https://www.nobelprize.org/about/privacy-policy/)'', ''\\n\\nClose
       the search form\\nA button that allows you to close the search form if needed\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nClose
       the search form\\nA button that allows you to close the search form if needed\\n\\n\\n
       (https://www.nobelprize.org/prizes/physics/2010/summary/)'', ''\\nClose Mobile
       Menu\\n (https://www.nobelprize.org/prizes/physics/2010/summary/)'', ''\\n\\nThe
-      Nobel Prize\\nThe Nobel Prize Logo\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n (https://www.nobelprize.org)'']"},
-      {"role": "user", "content": "Determine which next command to use, and respond
-      using the format specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\":
+      Nobel Prize\\nThe Nobel Prize Logo\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n (https://www.nobelprize.org)'']",
+      "role": "system"}, {"content": "Determine which next command to use, and respond
+      using the format specified above:", "role": "user"}, {"content": "{\n    \"thoughts\":
       {\n        \"text\": \"I have found the information I need. Now I need to write
       it to a file.\",\n        \"reasoning\": \"I can use the write_to_file command
       to write the information to a file.\",\n        \"plan\": \"- Use the write_to_file
@@ -1531,10 +1511,10 @@ interactions:
       I found to a file.\"\n    },\n    \"command\": {\n        \"name\": \"write_to_file\",\n        \"args\":
       {\n            \"filename\": \"2010_nobel_prize_winners.txt\",\n            \"text\":
       \"Andre Geim and Konstantin Novoselov, University of Manchester, for their experiments
-      on graphene, a two-dimensional material.\"\n        }\n    }\n}"}, {"role":
-      "system", "content": "Command write_to_file returned: File written to successfully."},
-      {"role": "user", "content": "Determine which next command to use, and respond
-      using the format specified above:"}, {"role": "assistant", "content": "{\n    \"thoughts\":
+      on graphene, a two-dimensional material.\"\n        }\n    }\n}", "role": "assistant"},
+      {"content": "Command write_to_file returned: File written to successfully.",
+      "role": "system"}, {"content": "Determine which next command to use, and respond
+      using the format specified above:", "role": "user"}, {"content": "{\n    \"thoughts\":
       {\n        \"text\": \"I have completed the task. I should review my actions
       to ensure that I have performed to the best of my abilities.\",\n        \"reasoning\":
       \"Reviewing my actions will help me identify any areas where I can improve and
@@ -1544,17 +1524,13 @@ interactions:
       or missed opportunities.\",\n        \"speak\": \"I will review my actions to
       ensure that I have performed to the best of my abilities.\"\n    },\n    \"command\":
       {\n        \"name\": \"read_file\",\n        \"args\": {\n            \"filename\":
-      \"2010_nobel_prize_winners.txt\"\n        }\n    }\n}"}, {"role": "system",
-      "content": "Command read_file returned: Andre Geim and Konstantin Novoselov,
+      \"2010_nobel_prize_winners.txt\"\n        }\n    }\n}", "role": "assistant"},
+      {"content": "Command read_file returned: Andre Geim and Konstantin Novoselov,
       University of Manchester, for their experiments on graphene, a two-dimensional
-      material."}, {"role": "user", "content": "Determine which next command to use,
-      and respond using the format specified above:"}], "temperature": 0, "max_tokens":
-      0}'
+      material.", "role": "system"}, {"content": "Determine which next command to
+      use, and respond using the format specified above:", "role": "user"}], "model":
+      "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1565,6 +1541,8 @@ interactions:
       - '7744'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - e2672526c16e44664a1cf8d1849f4d2b186cc49923668e9413ee575a95b623b7
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1636,16 +1614,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text:\n\n\nLITERAL TEXT: \"\"\"Andre Geim
-      and Konstantin Novoselov, University of Manchester, for their experiments on
-      graphene, a two-dimensional material.\"\"\"\n\n\nCONCISE SUMMARY: The text is
-      best summarized as"}], "temperature": 0, "max_tokens": 0}'
+    body: '{"messages": [{"content": "Write a concise summary of the following text:\n\n\nLITERAL
+      TEXT: \"\"\"Andre Geim and Konstantin Novoselov, University of Manchester, for
+      their experiments on graphene, a two-dimensional material.\"\"\"\n\n\nCONCISE
+      SUMMARY: The text is best summarized as", "role": "user"}], "model": "gpt-3.5-turbo",
+      "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1656,6 +1630,8 @@ interactions:
       - '366'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 980ec91e2a3ffd042d5b5a576b8d948fa4eb51deb4527cc0ac18ef2bd5760b93
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -1723,14 +1699,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Andre Geim and Konstantin Novoselov, University of Manchester,
-      for their experiments on graphene, a two-dimensional material."], "model": "text-embedding-ada-002",
-      "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": ["Andre Geim and Konstantin Novoselov,
+      University of Manchester, for their experiments on graphene, a two-dimensional
+      material."], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1741,6 +1713,8 @@ interactions:
       - '204'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 253e20203cf3c7c8869816e72354b953cc79b7d3922b15ae4674b54ea4f82879
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -1903,14 +1877,10 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": "Andre Geim and Konstantin Novoselov from the University of Manchester
-      were awarded for their experiments on graphene, a two-dimensional material.",
-      "model": "text-embedding-ada-002", "encoding_format": "base64"}'
+    body: '{"encoding_format": "base64", "input": "Andre Geim and Konstantin Novoselov
+      from the University of Manchester were awarded for their experiments on graphene,
+      a two-dimensional material.", "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -1921,6 +1891,8 @@ interactions:
       - '222'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 628ae3ed202b9266c6797e5917d75d9c4ca0508f36805e6f25d6daea6834b73e
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
@@ -2083,44 +2055,44 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": "Write
-      a concise summary of the following text; include any information that can be
-      used to answer the question \"2010 Nobel Prize in Physics winner\". Do not directly
-      answer the question itself:\n\n\nLITERAL TEXT: \"\"\"Skip to content This website
-      uses cookies to improve the user experience. By using this website you consent
-      to all cookies in accordance with our cookie policy.I understand Close the search
-      form A button that allows you to close the search form if needed Close the search
-      form A button that allows you to close the search form if needed Close Mobile
-      Menu The Nobel Prize The Nobel Prize Logo Toggle Mobile Menu Nobel Prizes &
-      Laureates All Nobel Prizes Physics Prize Chemistry Prize Medicine Prize Literature
-      Prize Peace Prize Prize in Economic Sciences Quick facts Nomination Physics
+    body: '{"messages": [{"content": "Write a concise summary of the following text;
+      include any information that can be used to answer the question \"2010 Nobel
+      Prize in Physics winner\". Do not directly answer the question itself:\n\n\nLITERAL
+      TEXT: \"\"\"Skip to content This website uses cookies to improve the user experience.
+      By using this website you consent to all cookies in accordance with our cookie
+      policy.I understand Close the search form A button that allows you to close
+      the search form if needed Close the search form A button that allows you to
+      close the search form if needed Close Mobile Menu The Nobel Prize The Nobel
+      Prize Logo Toggle Mobile Menu Nobel Prizes & Laureates All Nobel Prizes Physics
       Prize Chemistry Prize Medicine Prize Literature Prize Peace Prize Prize in Economic
-      Sciences Nomination Archive Alfred Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s
-      will News & insights Press In-depth Events Public events Nobel Prize Concert
-      Nobel Week Dialogue Nobel Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration
-      Initiative Nobel Prize award ceremonies Educational Close the search form A
-      button that allows you to close the search form if needed Close the search form
-      A button that allows you to close the search form if needed Header Search Submit
-      a search term Allows users to submit a search term Physics The Nobel Prize in
-      Physics 2010 Explore Summary Physics Prizes Chemistry Prizes Medicine Prizes
-      Literature Prizes Peace Prizes Prizes in Economic Sciences Summary Prize announcement
-      Press release Advanced information Popular information Illustrated information
-      Speed read Award ceremony video Award ceremony speech Banquet video Laureates
-      Andre Geim Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in
-      Physics 2010 The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel
-      Prize in Physics - Press release The Nobel Prize in Physics 2010 Andre Geim
-      Konstantin Novoselov Share this Share on Facebook: The Nobel Prize in Physics
-      2010 Share this content on Facebook Facebook Tweet: The Nobel Prize in Physics
-      2010 Share this content on Twitter Twitter Share on LinkedIn: The Nobel Prize
-      in Physics 2010 Share this content on LinkedIn LinkedIn Share via Email: The
-      Nobel Prize in Physics 2010 Share this content via Email Email this page The
-      Nobel Prize in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre
-      Geim Prize share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin
-      Novoselov Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly
-      to Andre Geim and Konstantin Novoselov \"for groundbreaking experiments regarding
-      the two-dimensional material graphene\" To cite this section MLA style: The
-      Nobel Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Sat.
-      3 Jun 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back to
+      Sciences Quick facts Nomination Physics Prize Chemistry Prize Medicine Prize
+      Literature Prize Peace Prize Prize in Economic Sciences Nomination Archive Alfred
+      Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s will News & insights Press
+      In-depth Events Public events Nobel Prize Concert Nobel Week Dialogue Nobel
+      Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration Initiative Nobel Prize
+      award ceremonies Educational Close the search form A button that allows you
+      to close the search form if needed Close the search form A button that allows
+      you to close the search form if needed Header Search Submit a search term Allows
+      users to submit a search term Physics The Nobel Prize in Physics 2010 Explore
+      Summary Physics Prizes Chemistry Prizes Medicine Prizes Literature Prizes Peace
+      Prizes Prizes in Economic Sciences Summary Prize announcement Press release
+      Advanced information Popular information Illustrated information Speed read
+      Award ceremony video Award ceremony speech Banquet video Laureates Andre Geim
+      Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in Physics 2010
+      The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel Prize in
+      Physics - Press release The Nobel Prize in Physics 2010 Andre Geim Konstantin
+      Novoselov Share this Share on Facebook: The Nobel Prize in Physics 2010 Share
+      this content on Facebook Facebook Tweet: The Nobel Prize in Physics 2010 Share
+      this content on Twitter Twitter Share on LinkedIn: The Nobel Prize in Physics
+      2010 Share this content on LinkedIn LinkedIn Share via Email: The Nobel Prize
+      in Physics 2010 Share this content via Email Email this page The Nobel Prize
+      in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre Geim Prize
+      share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin Novoselov
+      Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly to Andre
+      Geim and Konstantin Novoselov \"for groundbreaking experiments regarding the
+      two-dimensional material graphene\" To cite this section MLA style: The Nobel
+      Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Sat. 3
+      Jun 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back to
       top Back To Top Takes users back to the top of the page Nobel Prizes and laureates
       Nobel Prizes 2022 Fourteen laureates were awarded a Nobel Prize in 2022, for
       achievements that have conferred the greatest benefit to humankind. Their work
@@ -2144,12 +2116,8 @@ interactions:
       Youtube Icon Follow The Nobel Prize on Youtube Youtube LinkedIn IconConnect
       with The Nobel Prize on LinkedIn LinkedIn The Nobel Prize Copyright \u00a9 Nobel
       Prize Outreach AB 2023\"\"\"\n\n\nCONCISE SUMMARY: The text is best summarized
-      as"}], "temperature": 0, "max_tokens": 0}'
+      as", "role": "user"}], "model": "gpt-3.5-turbo", "temperature": 0}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2160,6 +2128,8 @@ interactions:
       - '4869'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - 0bcf0e56dd8561aab36d8591668978e63122c19fbb98eef05eed927928f6fb8b
     method: POST
     uri: https://api.openai.com/v1/chat/completions
   response:
@@ -2227,41 +2197,41 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"input": ["Skip to content This website uses cookies to improve the user
-      experience. By using this website you consent to all cookies in accordance with
-      our cookie policy.I understand Close the search form A button that allows you
-      to close the search form if needed Close the search form A button that allows
-      you to close the search form if needed Close Mobile Menu The Nobel Prize The
-      Nobel Prize Logo Toggle Mobile Menu Nobel Prizes & Laureates All Nobel Prizes
-      Physics Prize Chemistry Prize Medicine Prize Literature Prize Peace Prize Prize
-      in Economic Sciences Quick facts Nomination Physics Prize Chemistry Prize Medicine
-      Prize Literature Prize Peace Prize Prize in Economic Sciences Nomination Archive
-      Alfred Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s will News & insights
-      Press In-depth Events Public events Nobel Prize Concert Nobel Week Dialogue
-      Nobel Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration Initiative Nobel
-      Prize award ceremonies Educational Close the search form A button that allows
-      you to close the search form if needed Close the search form A button that allows
-      you to close the search form if needed Header Search Submit a search term Allows
-      users to submit a search term Physics The Nobel Prize in Physics 2010 Explore
-      Summary Physics Prizes Chemistry Prizes Medicine Prizes Literature Prizes Peace
-      Prizes Prizes in Economic Sciences Summary Prize announcement Press release
-      Advanced information Popular information Illustrated information Speed read
-      Award ceremony video Award ceremony speech Banquet video Laureates Andre Geim
-      Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in Physics 2010
-      The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel Prize in
-      Physics - Press release The Nobel Prize in Physics 2010 Andre Geim Konstantin
-      Novoselov Share this Share on Facebook: The Nobel Prize in Physics 2010 Share
-      this content on Facebook Facebook Tweet: The Nobel Prize in Physics 2010 Share
-      this content on Twitter Twitter Share on LinkedIn: The Nobel Prize in Physics
-      2010 Share this content on LinkedIn LinkedIn Share via Email: The Nobel Prize
-      in Physics 2010 Share this content via Email Email this page The Nobel Prize
-      in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre Geim Prize
-      share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin Novoselov
-      Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly to Andre
-      Geim and Konstantin Novoselov \"for groundbreaking experiments regarding the
-      two-dimensional material graphene\" To cite this section MLA style: The Nobel
-      Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Sat. 3
-      Jun 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back to
+    body: '{"encoding_format": "base64", "input": ["Skip to content This website uses
+      cookies to improve the user experience. By using this website you consent to
+      all cookies in accordance with our cookie policy.I understand Close the search
+      form A button that allows you to close the search form if needed Close the search
+      form A button that allows you to close the search form if needed Close Mobile
+      Menu The Nobel Prize The Nobel Prize Logo Toggle Mobile Menu Nobel Prizes &
+      Laureates All Nobel Prizes Physics Prize Chemistry Prize Medicine Prize Literature
+      Prize Peace Prize Prize in Economic Sciences Quick facts Nomination Physics
+      Prize Chemistry Prize Medicine Prize Literature Prize Peace Prize Prize in Economic
+      Sciences Nomination Archive Alfred Nobel Alfred Nobel\u2019s life Alfred Nobel\u2019s
+      will News & insights Press In-depth Events Public events Nobel Prize Concert
+      Nobel Week Dialogue Nobel Prize Dialogue Nobel Prize Summit Nobel Prize Inspiration
+      Initiative Nobel Prize award ceremonies Educational Close the search form A
+      button that allows you to close the search form if needed Close the search form
+      A button that allows you to close the search form if needed Header Search Submit
+      a search term Allows users to submit a search term Physics The Nobel Prize in
+      Physics 2010 Explore Summary Physics Prizes Chemistry Prizes Medicine Prizes
+      Literature Prizes Peace Prizes Prizes in Economic Sciences Summary Prize announcement
+      Press release Advanced information Popular information Illustrated information
+      Speed read Award ceremony video Award ceremony speech Banquet video Laureates
+      Andre Geim Konstantin Novoselov Enhanced Page Navigation The Nobel Prize in
+      Physics 2010 The Nobel Prize in Physics 2010 - Prize announcement The 2010 Nobel
+      Prize in Physics - Press release The Nobel Prize in Physics 2010 Andre Geim
+      Konstantin Novoselov Share this Share on Facebook: The Nobel Prize in Physics
+      2010 Share this content on Facebook Facebook Tweet: The Nobel Prize in Physics
+      2010 Share this content on Twitter Twitter Share on LinkedIn: The Nobel Prize
+      in Physics 2010 Share this content on LinkedIn LinkedIn Share via Email: The
+      Nobel Prize in Physics 2010 Share this content via Email Email this page The
+      Nobel Prize in Physics 2010 \u00a9 The Nobel Foundation. Photo: U. Montan Andre
+      Geim Prize share: 1/2 \u00a9 The Nobel Foundation. Photo: U. Montan Konstantin
+      Novoselov Prize share: 1/2 The Nobel Prize in Physics 2010 was awarded jointly
+      to Andre Geim and Konstantin Novoselov \"for groundbreaking experiments regarding
+      the two-dimensional material graphene\" To cite this section MLA style: The
+      Nobel Prize in Physics 2010. NobelPrize.org. Nobel Prize Outreach AB 2023. Sat.
+      3 Jun 2023. <https://www.nobelprize.org/prizes/physics/2010/summary/> Back to
       top Back To Top Takes users back to the top of the page Nobel Prizes and laureates
       Nobel Prizes 2022 Fourteen laureates were awarded a Nobel Prize in 2022, for
       achievements that have conferred the greatest benefit to humankind. Their work
@@ -2284,13 +2254,8 @@ interactions:
       on Twitter Twitter Instagram Icon Follow The Nobel Prize on Instagram Instagram
       Youtube Icon Follow The Nobel Prize on Youtube Youtube LinkedIn IconConnect
       with The Nobel Prize on LinkedIn LinkedIn The Nobel Prize Copyright \u00a9 Nobel
-      Prize Outreach AB 2023"], "model": "text-embedding-ada-002", "encoding_format":
-      "base64"}'
+      Prize Outreach AB 2023"], "model": "text-embedding-ada-002"}'
     headers:
-      AGENT-MODE:
-      - AAAAAAAAAAAAAAAAAAAAAMLheAAaAAAA0%2BuSeid%2BULvsea4JtiGRiSDSJSI%3DEUifiRBkKG5E2XzMDjRfl76ZC9Ub0wnz4XsNiRVBChTYbJcE3F
-      AGENT-TYPE:
-      - Auto-GPT-2023-X-TYPE
       Accept:
       - '*/*'
       Accept-Encoding:
@@ -2301,6 +2266,8 @@ interactions:
       - '4559'
       Content-Type:
       - application/json
+      X-Content-Hash:
+      - b7a1eb8ed730fa78acca4d4142ded5364372136302571e685d1b9be5ef0ebfaf
     method: POST
     uri: https://api.openai.com/v1/embeddings
   response:
