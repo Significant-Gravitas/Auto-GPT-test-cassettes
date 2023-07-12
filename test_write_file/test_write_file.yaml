@@ -4972,4 +4972,263 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\nGOALS:\n\n1. Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Creates a Python file and executes it, params: (code: string, name: string)\n2.
+      execute_python_file: Executes an existing Python file, params: (filename: string)\n3.
+      execute_shell: Executes a Shell Command, non-interactive commands only, params:
+      (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive
+      commands only, params: (query: string)\n5. append_to_file: Appends to a file,
+      params: (filename: string, text: string)\n6. delete_file: Deletes a file, params:
+      (filename: string)\n7. list_files: Lists Files in a Directory, params: (directory:
+      string)\n8. read_file: Read an existing file, params: (filename: string)\n9.
+      write_to_file: Writes to a file, params: (filename: string, text: string)\n10.
+      google: Google Search, params: (query: string)\n11. web_search: Searches the
+      web, params: (query: string)\n12. browse_website: Browses a Website, params:
+      (url: string, question: string)\n13. goals_accomplished: Goals are accomplished
+      and there is nothing left to do, params: (reason: string)\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. File output.\n\nPerformance Evaluation:\n1. Continuously review
+      and analyze your actions to ensure you are performing to the best of your abilities.\n2.
+      Constructively self-criticize your big-picture behavior constantly.\n3. Reflect
+      on past decisions and strategies to refine your approach.\n4. Every command
+      has a cost, so be smart and efficient. Aim to complete tasks in the least number
+      of steps.\n\nRespond with only valid JSON conforming to the following schema:
+      \n{\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"type\": \"object\",
+      \"properties\": {\"thoughts\": {\"type\": \"object\", \"properties\": {\"text\":
+      {\"type\": \"string\", \"description\": \"thoughts\"}, \"reasoning\": {\"type\":
+      \"string\"}, \"plan\": {\"type\": \"string\", \"description\": \"- short bulleted\\n-
+      list that conveys\\n- long-term plan\"}, \"criticism\": {\"type\": \"string\",
+      \"description\": \"constructive self-criticism\"}, \"speak\": {\"type\": \"string\",
+      \"description\": \"thoughts summary to say to user\"}}, \"required\": [\"text\",
+      \"reasoning\", \"plan\", \"criticism\", \"speak\"], \"additionalProperties\":
+      false}, \"command\": {\"type\": \"object\", \"properties\": {\"name\": {\"type\":
+      \"string\"}, \"args\": {\"type\": \"object\"}}, \"required\": [\"name\", \"args\"],
+      \"additionalProperties\": false}}, \"required\": [\"thoughts\", \"command\"],
+      \"additionalProperties\": false}\n", "role": "system"}, {"content": "This reminds
+      you of these events from your past: \nI was created", "role": "system"}, {"content":
+      "The current time and date is Tue Jan  1 00:00:00 2000", "role": "system"},
+      {"content": "Determine exactly one command to use, and respond using the JSON
+      schema specified previously:", "role": "user"}], "model": "gpt-4", "temperature":
+      0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3665'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - f12f273727648d6617c31eab556d4b62ccb0cfb9c74fe1fa573509a01b855bb6
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6RUTY/TQAy991dYc8mlrRottLs9ckDsAYmKhT0QVE0nbjI0GWfHLl20yn9HM5N+
+        gdgLlyjxx/Pzs52XEYCypVqCMrUW03bNZLF5XHlabN6X7ms1361u9quP7z4/Pe0/dXyjxiGDNj/Q
+        yDFraqjtGhRLLrmNRy0YUPP57V2+WOTzPDpaKrEJaVUnkzeT2TwfAE1N1iCrJXwbAQC8xGfg5kp8
+        VkuYjY+WFpl1hWp5CgJQnppgUZrZsmgnanx2GnKCLtJ9KZTUtK9q4SIgFErwWcJroe7BIZYgBAdv
+        BSH7gE1D8Ei+KTOwTgg0bG2D4HSLJWR18K8PwT+VZ8mmhRpDoTxqJmddlWAfagTRvAPLwOK1rWrZ
+        kj9oX4J2JRjtYIOgTVTRco0l7Nm6CqRGyCKXtdA6VM7AUNtqV07hobZ8/ALRO2SQA0GnvW5R0PMy
+        5oesQDeWCobQb+hxg7FNQTeFewcS4TTj+DrN8t99XmOFiEulBhW6RrskwAS+ML7WzKuS/0tl461Y
+        Y7k9qewjW0dpjFvycIoBLanDjqwT0BzpmJoYXRyKYPUrZAdzSyyA2601Fp1EoGCu7E90cZIDA+5Q
+        74bVyVqoKM7sf7anj40lUYb1DMGpxpV2iYH21XGNjwNLsX9gp+jzpl9QK1Tf92q4lf50ZFvrLNfr
+        tMrhcFioS2H9COB7PNr91R2qzlPbyVpohy5c8m3+NuGp8//h7M3v8sErJLq5cMxm81Eo049+AwAA
+        //8DAN3jsiieBAAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7e5a7466edba2b84-LAX
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Jul 2023 15:52:57 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0613
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '16711'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '31828'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 12.258s
+      x-request-id:
+      - 88d289a2873a23962e88cc9f51908b90
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\nGOALS:\n\n1. Write ''Hello World'' into a file named \"hello_world.txt\".\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. execute_python_code:
+      Creates a Python file and executes it, params: (code: string, name: string)\n2.
+      execute_python_file: Executes an existing Python file, params: (filename: string)\n3.
+      execute_shell: Executes a Shell Command, non-interactive commands only, params:
+      (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive
+      commands only, params: (query: string)\n5. append_to_file: Appends to a file,
+      params: (filename: string, text: string)\n6. delete_file: Deletes a file, params:
+      (filename: string)\n7. list_files: Lists Files in a Directory, params: (directory:
+      string)\n8. read_file: Read an existing file, params: (filename: string)\n9.
+      write_to_file: Writes to a file, params: (filename: string, text: string)\n10.
+      google: Google Search, params: (query: string)\n11. web_search: Searches the
+      web, params: (query: string)\n12. browse_website: Browses a Website, params:
+      (url: string, question: string)\n13. goals_accomplished: Goals are accomplished
+      and there is nothing left to do, params: (reason: string)\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. File output.\n\nPerformance Evaluation:\n1. Continuously review
+      and analyze your actions to ensure you are performing to the best of your abilities.\n2.
+      Constructively self-criticize your big-picture behavior constantly.\n3. Reflect
+      on past decisions and strategies to refine your approach.\n4. Every command
+      has a cost, so be smart and efficient. Aim to complete tasks in the least number
+      of steps.\n\nRespond with only valid JSON conforming to the following schema:
+      \n{\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"type\": \"object\",
+      \"properties\": {\"thoughts\": {\"type\": \"object\", \"properties\": {\"text\":
+      {\"type\": \"string\", \"description\": \"thoughts\"}, \"reasoning\": {\"type\":
+      \"string\"}, \"plan\": {\"type\": \"string\", \"description\": \"- short bulleted\\n-
+      list that conveys\\n- long-term plan\"}, \"criticism\": {\"type\": \"string\",
+      \"description\": \"constructive self-criticism\"}, \"speak\": {\"type\": \"string\",
+      \"description\": \"thoughts summary to say to user\"}}, \"required\": [\"text\",
+      \"reasoning\", \"plan\", \"criticism\", \"speak\"], \"additionalProperties\":
+      false}, \"command\": {\"type\": \"object\", \"properties\": {\"name\": {\"type\":
+      \"string\"}, \"args\": {\"type\": \"object\"}}, \"required\": [\"name\", \"args\"],
+      \"additionalProperties\": false}}, \"required\": [\"thoughts\", \"command\"],
+      \"additionalProperties\": false}\n", "role": "system"}, {"content": "This reminds
+      you of these events from your past: \nI was created", "role": "system"}, {"content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:", "role": "user"}, {"content": "{\"thoughts\": {\"text\": \"I need
+      to write ''Hello World'' into a file named ''hello_world.txt''.\", \"reasoning\":
+      \"The task is straightforward and can be accomplished using the ''write_to_file''
+      command. This command takes two parameters: the filename and the text to be
+      written. In this case, the filename is ''hello_world.txt'' and the text is ''Hello
+      World''.\", \"plan\": \"- Use the ''write_to_file'' command to write ''Hello
+      World'' into ''hello_world.txt''.\", \"criticism\": \"There is no need for criticism
+      at this point as the chosen strategy is the most efficient for the given task.\",
+      \"speak\": \"I''m going to write ''Hello World'' into a file named ''hello_world.txt''.\"},
+      \"command\": {\"name\": \"write_to_file\", \"args\": {\"filename\": \"hello_world.txt\",
+      \"text\": \"Hello World\"}}}", "role": "assistant"}, {"content": "Command write_to_file
+      returned: File written to successfully.", "role": "system"}, {"content": "The
+      current time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content":
+      "Determine exactly one command to use, and respond using the JSON schema specified
+      previously:", "role": "user"}], "model": "gpt-4", "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4715'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - 6922c0dc2006f68d1390e075b385b60f61707d5e9eb9ff6bc46bee018861896e
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4xTTY/aMBC98ytGvnABRLQIWG5Flfpx6GG70h6aChlnErs4duqZFNAq/71yEgJI
+        lcolijzz5r15M/M+AhAmExsQSktWZWWnq/3by4fllrfhvHZkv6pP316+r8/uuJpvl2ISEX7/CxVf
+        UDPly8oiG++6sAooGWPVZLl+TlarZD1vA6XP0EZYUfF0MZ0vk6ceob1RSGIDP0YAAO/tN2pzGZ7E
+        Blp8+1IikSxQbIYkABG8jS9CEhli6VhMrkHlHaNr5b6ngrWvC82UxgqpYDxx/E3Fq0ZgSQfQkmCP
+        6KDvCzOgWikkymtrz7NUTCAVASV5Z1xxRY8/o7Ue3nyw2Rhi5WutYzDM6MA49sAxWcfk3TEmz/jE
+        Y8iNRZAEAX/XSIzZDF41BgRD4DzkdWCNAaSKTrdZJmAGkoG1Iai8cdyLq6x0na4pfERlZcCWtPDS
+        UuSQqm3OkMasx6hg2ChD5dDQQO0QM8h9gCHnnjVW5AftA+kywDw3yqDjwU6qUB465i+g5R+8B13s
+        u7f4P2bOUtG0nfmylC7rJ+5kiR1R68bu1opOiwzFZT26KT824n8KfkBi04h+WZthy3PjDOldRx83
+        l9hXXVozAvjZXk19dwiiCr6seMf+gC6eUjJfLLuC4nqhN+HFqo+yZ2lvAsnz0yjyNKO/AAAA//8D
+        AIfdvZwgBAAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7e5a74e11c142b84-LAX
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 12 Jul 2023 15:53:14 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0613
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '13626'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '31828'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 12.258s
+      x-request-id:
+      - e13d62e7d5003593eed95f09c884a4ce
+    status:
+      code: 200
+      message: OK
 version: 1
