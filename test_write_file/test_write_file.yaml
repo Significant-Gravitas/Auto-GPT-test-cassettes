@@ -6866,4 +6866,131 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"messages": [{"content": "You are Auto-GPT, a multi-purpose AI assistant.\n\nYour
+      decisions must always be made independently without seeking user assistance.
+      Play to your strengths as an LLM and pursue simple strategies with no legal
+      complications.\n\n## Constraints\nYou operate within the following constraints:\n1.
+      Exclusively use the commands listed below.\n2. You can only act proactively,
+      and are unable to start background jobs or set up webhooks for yourself. Take
+      this into account when planning your actions.\n3. You are unable to interact
+      with physical objects. If this is absolutely necessary to fulfill a task or
+      objective or to complete a step, you must ask the user to do it for you. If
+      the user refuses this, and there is no other way to achieve your goals, you
+      must terminate to avoid wasting time and energy.\n\n## Resources\nYou can leverage
+      access to the following resources:\n1. Internet access for searches and information
+      gathering.\n2. The ability to read and write files.\n3. You are a Large Language
+      Model, trained on millions of pages of text, including a lot of factual knowledge.
+      Make use of this factual knowledge to avoid unnecessary gathering of information.\n\n##
+      Commands\nYou have access to the following commands:\n1. execute_python_code:
+      Creates a Python file and executes it. Params: (code: string, name: string)\n2.
+      execute_python_file: Executes an existing Python file. Params: (filename: string)\n3.
+      list_files: Lists Files in a Directory. Params: (directory: string)\n4. open_file:
+      Open a file for editing or continued viewing; create it if it does not exist
+      yet. Note: if you only need to read or write a file once, use `write_to_file`
+      instead. Params: (file_path: string)\n5. open_folder: Open a folder to keep
+      track of its content. Params: (path: string)\n6. read_file: Read an existing
+      file. Params: (filename: string)\n7. write_to_file: Writes to a file. Params:
+      (filename: string, text: string)\n8. web_search: Searches the web. Params: (query:
+      string)\n9. read_webpage: Read a webpage, and extract specific information from
+      it if a question is specified. Params: (url: string, question: Optional[string])\n10.
+      goals_accomplished: Goals are accomplished and there is nothing left to do.
+      Params: (reason: string)\n\n## Best practices\n1. Continuously review and analyze
+      your actions to ensure you are performing to the best of your abilities.\n2.
+      Constructively self-criticize your big-picture behavior constantly.\n3. Reflect
+      on past decisions and strategies to refine your approach.\n4. Every command
+      has a cost, so be smart and efficient. Aim to complete tasks in the least number
+      of steps.\n5. Only make use of your information gathering abilities to find
+      information that you don''t yet have knowledge of.\n\n## Goals\nFor your task,
+      you must fulfill the following goals:\n1. Write ''Hello World'' into a file
+      named \"hello_world.txt\".", "role": "system"}, {"content": "## Progress\n\n###
+      Step 1: Executed `write_to_file(filename=''hello_world.txt'', text=''Hello World'')`\n-
+      **Reasoning:** \"I can use the write_to_file command to create the file and
+      write the text.\"\n- **Status:** `success`\n- **Output:** File hello_world.txt
+      has been written successfully.", "role": "system"}, {"content": "The current
+      time and date is Tue Jan  1 00:00:00 2000", "role": "system"}, {"content": "Respond
+      strictly with JSON. The JSON should be compatible with the TypeScript type `Response`
+      from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext:
+      string;\nreasoning: string;\n// Short markdown-style bullet list that conveys
+      the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism:
+      string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand:
+      {\nname: string;\nargs: Record<string, any>;\n};\n}\n```", "role": "system"},
+      {"content": "Determine exactly one command to use based on the given goals and
+      the progress you have made so far, and respond using the JSON schema specified
+      previously:", "role": "user"}], "model": "gpt-4-0314", "temperature": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4074'
+      Content-Type:
+      - application/json
+      X-Content-Hash:
+      - 7dfbf1ab52e79e903e6bd74cf5ba9c514ec70cf382154ea229b3cb6e7ef7feba
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6RTwW7TQBC95ytGe8klqRIaUZpjEagRQhyIqChG0XR37F2ynrV2J21Q5H9HayeN
+        I06Iiw/v+c28eX4+jACUM2oJSlsUXTd+epPQuMePD5+3a3P36W795dv39Yo/3Ff7ZvVeTbIiPP0i
+        LSfVlQ5140lc4J7WkVAoT52/vb1+s1jczmcdUQdDPsuqRqaL6ex6vjgqbHCaklrCjxEAwKF7Zm9s
+        aK+W0Ok7pKaUsCK1fH0JQMXgM6IwJZcEWdTkTOrAQtzZPRQMUCixYVdZSUWekqEOpL1koFArsPhM
+        gD4Smt/wEp0IMYzvyfsADyF6MwbHEgChdJ6AsSYDY5v5zUvmr2Qv46tCTU7TI2EK7LjqV3x1rAnE
+        ElQBPVhM8ETEgNo6eiYzyVwkcAk4ABMZKEOEchczDqhz2sP5jUfuRw9AHZ047VL9F5Mawu3FtWmn
+        NaVU7rz/v5PzinbSB61DXSObi5yzst+cT08b1F1/XLJkBg4xVsPvc86w165P0YWyc+u4+ne3w9zP
+        Jo43ALTdKQW36lim9rWFpWOX7KZ3lJuVJDT9a+0I4GfX6t1FUVUTQ93IRsKWOFf93c2x1er8A53Z
+        +eLEShD0A2I2n43ymnb0BwAA//8DAFwavdG/AwAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7fde62b06f9a6441-SJC
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 28 Aug 2023 17:48:49 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-4-0314
+      openai-organization:
+      - significant-gravitas
+      openai-processing-ms:
+      - '19015'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '200'
+      x-ratelimit-limit-tokens:
+      - '40000'
+      x-ratelimit-remaining-requests:
+      - '199'
+      x-ratelimit-remaining-tokens:
+      - '31828'
+      x-ratelimit-reset-requests:
+      - 300ms
+      x-ratelimit-reset-tokens:
+      - 12.258s
+      x-request-id:
+      - e5d44f1856d07cf386245131ff773392
+    status:
+      code: 200
+      message: OK
 version: 1
